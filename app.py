@@ -8,7 +8,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 # Create a model client using gpt-3.5-turbo
 model_client = OpenAIChatCompletionClient(
     model="gpt-4o-2024-08-06",
-    api_key="sk-svcacct-0WEk0WLu_3rnl9hzGpjNfwKLvvkh9J2SU3Jnk7ZZD9MzBDt2B4yhvnmy0UUvftxjNT3BlbkFJHRcP8A5g1b5m-8KMFizhDuO19NgAytpyC6oVJZPkPH-3Vex5vmkKK7I-i2iiT6wAA"
+    api_key="your-api-key"
 )
 
 # Define the Planner/Moderator Agent
