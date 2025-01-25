@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /posts/{postId} {
+      allow read: if true;  // Anyone can read posts
+      allow create: if true; // Anyone can create posts
+      // You might want to add authentication later
+    }
+  }
+} 
