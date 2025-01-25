@@ -1,41 +1,60 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import Header from './components/Header';
-import PostList from './components/PostList';
-import CreatePost from './components/CreatePost';
-
-const initialPosts = [
-  {
-    id: uuidv4(),
-    title: "Need GPT-4 Integration Expert",
-    description: "Looking for someone to help integrate GPT-4 API into our existing Node.js backend. Must have experience with AI workflows.",
-    category: "LLM Integration",
-    date: new Date().toISOString()
-  },
-  {
-    id: uuidv4(),
-    title: "Custom AI Chatbot Development",
-    description: "Seeking developer to build custom chatbot using LangChain and RAG architecture. Python experience required.",
-    category: "AI Development",
-    date: new Date().toISOString()
-  }
-];
+import Header from './components/Header.jsx';
+import FilterBar from './components/FilterBar.jsx';
+import PostList from './components/PostList.jsx';
+import CreatePost from './components/CreatePost.jsx';
+import NewsMarquee from './components/NewsMarquee';
+import RulesModal from './components/RulesModal';
+import Footer from './components/Footer';
+import sampleData from './data/samplePosts.json';
 
 function App() {
-  const [posts, setPosts] = useState(initialPosts);
+  const [posts] = useState(sampleData.posts);
   const [showCreateForm, setShowCreateForm] = useState(false);
+  const [showRules, setShowRules] = useState(false);
+  const [filters, setFilters] = useState({
+    category: 'all',
+    budgetRange: 'all',
+    skillLevel: 'all',
+    timeframe: 'all',
+    geography: 'all'
+  });
 
-  const addPost = (newPost) => {
-    setPosts([{ ...newPost, id: uuidv4(), date: new Date().toISOString() }, ...posts]);
-    setShowCreateForm(false);
+  const handleFilterChange = (newFilters) => {
+    setFilters(newFilters);
   };
 
+  const filteredPosts = posts.filter(post => {
+    return (filters.category === 'all' || post.category === filters.category) &&
+           (filters.budgetRange === 'all' || post.budget === filters.budgetRange) &&
+           (filters.skillLevel === 'all' || post.skillLevel === filters.skillLevel) &&
+           (filters.timeframe === 'all' || post.timeframe === filters.timeframe) &&
+           (filters.geography === 'all' || post.geography === filters.geography);
+  });
+
   return (
-    <div className="container">
-      <Header onCreatePost={() => setShowCreateForm(true)} />
-      {showCreateForm && <CreatePost onAddPost={addPost} onCancel={() => setShowCreateForm(false)} />}
-      <PostList posts={posts} />
-    </div>
+    <>
+      <div className="container">
+        <Header 
+          onCreatePost={() => setShowCreateForm(true)} 
+          onShowRules={() => setShowRules(true)}
+        />
+        <NewsMarquee />
+        <FilterBar onFilterChange={handleFilterChange} />
+        {showCreateForm && (
+          <CreatePost 
+            onClose={() => setShowCreateForm(false)}
+            onSubmit={() => setShowCreateForm(false)}
+          />
+        )}
+        {showRules && <RulesModal onClose={() => setShowRules(false)} />}
+        <PostList 
+          posts={filteredPosts}
+          currentUserId="sample1"
+        />
+      </div>
+      <Footer />
+    </>
   );
 }
 
