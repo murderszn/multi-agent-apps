@@ -3,147 +3,833 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Human 2.0: an editorial concept log and field paper on supervising local and cloud agents as a practical extension of one human operator.">
-  <meta property="og:title" content="Human 2.0 — Concept Log">
-  <meta property="og:description" content="A notebook-paper editorial on agent systems, human judgment, and the operating range between them.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://murderszn.github.io/multi-agent-apps/">
-  <meta name="theme-color" content="#f4f1e8">
-  <title>Human 2.0 — Six-Agent Hybrid Lab</title>
+  <meta name="description" content="Human 2.0: Operating Manual for the Agent Age — a book-length treatment of the concepts reshaping how one human directs a network of agents.">
+  <meta name="theme-color" content="#f4efe6">
+  <title>Human 2.0 — Operating Manual for the Agent Age</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='8' fill='%23f4efe6'/><line x1='12' y1='20' x2='12' y2='80' stroke='%23b83a2a' stroke-width='1.5' opacity='.3'/><line x1='20' y1='30' x2='88' y2='30' stroke='%232560a0' stroke-width='.5' opacity='.2'/><line x1='20' y1='42' x2='88' y2='42' stroke='%232560a0' stroke-width='.5' opacity='.2'/><line x1='20' y1='54' x2='88' y2='54' stroke='%232560a0' stroke-width='.5' opacity='.2'/><line x1='20' y1='66' x2='88' y2='66' stroke='%232560a0' stroke-width='.5' opacity='.2'/><line x1='20' y1='78' x2='88' y2='78' stroke='%232560a0' stroke-width='.5' opacity='.2'/><text x='30' y='52' font-family='Caveat, cursive' font-size='28' fill='%231a1a1a'>H2</text></svg>">
 </head>
 <body>
+
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Human 2.0 home"><span>H2</span> HUMAN 2.0</a>
-    <span class="issue">CONCEPT LOG / FIRST DRAFT</span>
+    <a class="brand" href="#top" aria-label="Human 2.0 home">
+      <span class="mark">H2</span> HUMAN 2.0
+    </a>
+    <nav aria-label="Book sections">
+      <a href="#ch1">The Transition</a>
+      <a href="#toc">Contents</a>
+    </nav>
+    <span class="issue">BOOK / 001</span>
   </header>
 
   <main id="top">
+
+    <!-- ═══════════════ HERO ═══════════════ -->
     <section class="hero section-shell">
       <div class="hero-copy">
-        <p class="eyebrow">AURABLOX / APPLIED AGENT SYSTEMS</p>
-        <h1>HUMAN<br><span>2.0</span></h1>
-        <p class="dek">A practical editorial on moving from one person operating software to one person supervising a coordinated network of physical and cloud agents.</p>
-        <a class="button" href="#map">Inspect the network <span aria-hidden="true">↓</span></a>
+        <p class="eyebrow mono">AURABLOX / APPLIED AGENT SYSTEMS</p>
+        <h1>HUMAN<br><span class="accent">2.0</span></h1>
+        <p class="dek">An operating manual for the agent age. One human. A named fleet. A bigger operating range.</p>
+        <a class="button" href="#ch1">
+          Read the book <span class="arrow" aria-hidden="true">↓</span>
+        </a>
       </div>
+
       <aside class="hero-manifesto" aria-label="Core thesis">
-        <span class="big-number">01</span>
+        <span class="num">01</span>
         <p>Human 1.0 carries the work.</p>
         <p>Human 2.0 designs the system that carries the work.</p>
       </aside>
     </section>
 
+    <!-- ═══════════════ TICKER ═══════════════ -->
     <section class="ticker" aria-label="System attributes">
-      <span>LOCAL COMPUTE</span><b>+</b><span>CLOUD INTELLIGENCE</span><b>+</b><span>SECURE REMOTE ACCESS</span><b>+</b><span>HUMAN JUDGMENT</span>
+      <span>LOCAL COMPUTE</span><span class="sep">+</span>
+      <span>CLOUD INTELLIGENCE</span><span class="sep">+</span>
+      <span>SECURE REMOTE ACCESS</span><span class="sep">+</span>
+      <span>HUMAN JUDGMENT</span>
     </section>
 
+    <!-- ═══════════════ THESIS ═══════════════ -->
     <section id="thesis" class="section-shell split-section">
       <div>
-        <p class="eyebrow">THE THESIS</p>
-        <h2>THE HUMAN SHOULD NOT CARRY EVERY QUEUE.</h2>
+        <p class="eyebrow mono">THE THESIS</p>
+        <h2>THE HUMAN IS NO LONGER THE BOTTLENECK.</h2>
       </div>
       <div class="prose lead-prose">
         <p>Human 1.0 is the default operating model of the digital age: one mind, one screen, one queue. Every task waits for the person to open the app, hold the context, make the move and remember what comes next.</p>
         <p>Human 2.0 changes the unit of work. The person remains accountable, but execution is distributed across a trusted agent network. Some agents live beside the operator on physical machines. Others live in the cloud. Each has a role, a place to run and a controlled path back to the human.</p>
-        <p class="pullquote">The upgrade is not replacing the human. It is increasing the number of useful, supervised processes one human can keep in motion.</p>
+        <p>Yuval Noah Harari argues that what makes humans distinctive is not individual intelligence but the ability to cooperate flexibly through shared fictions — laws, money, institutions. The network is the operating system of civilization. The problem is that the individual human operator is still running on a legacy kernel: one foreground thread, one active context window, one queue.</p>
+        <p>Max Tegmark writes about a coming wave of AI systems that will not just answer questions but take actions in the world. The operative word is <em>actions</em>. A system that can act, persist, observe results and retry is not a tool you use. It is a process you supervise. That distinction is the entire story.</p>
+        <p class="pullquote hand">The upgrade is not replacing the human. It is increasing the number of useful, supervised processes one human can keep in motion.</p>
       </div>
     </section>
 
+    <!-- ═══════════════ NETWORK MAP ═══════════════ -->
     <section id="map" class="map-section section-shell">
       <div class="section-heading">
-        <div><p class="eyebrow">CONCEPT LOG / PROOF CASE</p><h2>SIX AGENTS. ONE OPERATING SYSTEM.</h2></div>
-        <p>This public working document records the architecture, essays, and open questions behind a book in progress. It is a concept log, not a finished product claim: four physical hosts, two cloud hosts, and two access devices that keep the human in command.</p>
+        <div>
+          <p class="eyebrow mono">THE PROOF CASE / NETWORK MAP</p>
+          <h2>SIX AGENTS. ONE OPERATING SYSTEM.</h2>
+        </div>
+        <p>The sketch is the architecture: four agents on physical computers, two on independent cloud computers, and two access devices that keep the human in command.</p>
       </div>
+
       <figure class="map-frame sketch-frame">
-        <img src="assets/network-map-sketch.jpeg" alt="Hand-drawn network map of the six-agent hybrid lab with home PC, cloud agents, remote controllers, facility LAN and display plane">
-        <figcaption><span>FIG. 01</span> The operator's notebook map. The point is not more screens. It is clear boundaries, explicit routes and a countable agent fleet.</figcaption>
+        <img src="network-diagram-map.png" alt="Hand-drawn notebook paper network map of the six-agent hybrid lab">
+        <figcaption>
+          <span class="fig-num mono">FIG. 01</span>
+          <span class="hand">The operator's notebook map. The point is not more screens. It is clear boundaries, explicit routes and a countable agent fleet.</span>
+        </figcaption>
       </figure>
-      <details class="clean-map">
-        <summary>Open the clean engineering view</summary>
-        <figure class="map-frame"><img src="assets/network-map-clean.jpeg" alt="Clean black, white and red engineering diagram of the six-agent hybrid lab"><figcaption><span>FIG. 02</span> Legible implementation view.</figcaption></figure>
-      </details>
     </section>
 
     <section class="section-shell architecture">
-      <p class="eyebrow">SYSTEM LAYERS</p>
+      <p class="eyebrow mono">SYSTEM LAYERS</p>
       <h2>THE STACK</h2>
       <div class="layer-grid">
-        <article><span class="index">01</span><h3>PHYSICAL PLANE</h3><p>Three always-on mini PCs sit on the facility LAN. A fourth agent runs on the Chicago custom PC and acts as a remote manager. The physical plane is useful when work needs local networks, peripherals, stable long-running processes, or predictable recovery.</p><strong>3 MINI PCs + 1 CUSTOM PC</strong></article>
-        <article><span class="index">02</span><h3>CLOUD PLANE</h3><p>Instinct and Muse each run on their own cloud computer. They add durable remote capacity without pretending to be local devices. In this setup, an “agent” means a delegated worker with context, tools, a runtime, and a reporting path—not simply another chat tab.</p><strong>2 INDEPENDENT CLOUD AGENTS</strong></article>
-        <article><span class="index">03</span><h3>ACCESS PLANE</h3><p>The iPhone is the primary conversational control surface. The MacBook moves between remote Tailscale access and direct local Wi-Fi on-site. These are controllers, not additional hosts: they help the human set intent, approve consequential actions, and review evidence.</p><strong>IPHONE + MACBOOK</strong></article>
-        <article><span class="index">04</span><h3>DISPLAY PLANE</h3><p>A 3-to-1 HDMI switch gives the three mini PCs one shared monitor. The system stays inspectable without becoming a wall of hardware. Six is a current arrangement, not a prescription; the smallest useful version is one coordinator, two focused workers, and one verifier.</p><strong>1 MONITOR / 3 HOSTS</strong></article>
+        <article>
+          <span class="index mono">01</span>
+          <h3>PHYSICAL PLANE</h3>
+          <p>Three always-on mini PCs sit on the facility LAN. A fourth agent runs on the Chicago custom PC and acts as a remote manager.</p>
+          <strong>3 MINI PCs + 1 CUSTOM PC</strong>
+        </article>
+        <article>
+          <span class="index mono">02</span>
+          <h3>CLOUD PLANE</h3>
+          <p>Instinct and Muse each run on their own cloud computer. They add durable remote capacity without pretending to be local devices.</p>
+          <strong>2 INDEPENDENT CLOUD AGENTS</strong>
+        </article>
+        <article>
+          <span class="index mono">03</span>
+          <h3>ACCESS PLANE</h3>
+          <p>The iPhone is the primary conversational control surface. The MacBook moves between remote Tailscale access and direct local Wi-Fi on-site.</p>
+          <strong>IPHONE + MACBOOK</strong>
+        </article>
+        <article>
+          <span class="index mono">04</span>
+          <h3>DISPLAY PLANE</h3>
+          <p>A 3-to-1 HDMI switch gives the three mini PCs one shared monitor. The system stays inspectable without becoming a wall of hardware.</p>
+          <strong>1 MONITOR / 3 HOSTS</strong>
+        </article>
       </div>
     </section>
 
-    <section id="book" class="section-shell book-outline">
-      <div class="section-heading">
-        <div><p class="eyebrow">SITE NOTE</p><h2>THE NEW OPERATING RANGE.</h2></div>
-        <p>This is no longer only a white paper. It is the working table of contents for a book about how models, tools, code, hardware, and human judgment are becoming one operating system.</p>
-      </div>
-      <div class="book-intro">
-        <p class="book-kicker">A field guide for the person who wants to understand what is actually happening beneath the AI conversation — and build a system they can trust.</p>
-        <p>Each chapter will explain the mechanism, show the practical consequence, and ask what it means in 2026. The book will move from the inside of a model, to the tools around a model, to the agent systems people are beginning to operate, and finally to the computer science and social questions that determine whether those systems are useful.</p>
-      </div>
-      <div class="essay-deck">
-        <div class="essay-deck-head"><p class="eyebrow">FIELD ESSAYS / PERSONAL CASES</p><p>These are the lived chapters: the arguments, experiments, and operating lessons underneath the technical concepts.</p></div>
-        <article class="essay-card"><span class="essay-mark">A</span><div><h3>I DON'T CODE ANYMORE. I VIBE.</h3><p class="essay-hook">Coding used to mean typing. Now it means directing.</p><ul><li>What vibe coding looks like day to day, beyond the hype.</li><li>Why “I shipped fast” stopped being a moat.</li><li>The difference between prompting for demos and prompting for systems that have to stay up.</li><li>Knowing enough to catch when the agent is lying.</li></ul></div></article>
-        <article class="essay-card"><span class="essay-mark">B</span><div><h3>THE SMALL FACTORY UNDER THE DESK</h3><p class="essay-hook">You don’t need a data center. You need a few cheap machines and a standard.</p><ul><li>Mini PCs running Hermes agents, plus one controller with a GPU.</li><li>OpenRouter as the model layer, without marrying one lab.</li><li>How a swarm divides work: research, draft, build, test, execute.</li><li>Why small and reliable beats big and theatrical.</li></ul></div></article>
-        <article class="essay-card"><span class="essay-mark">C</span><div><h3>CLAUDE DREAMS. CODEX SHIPS.</h3><p class="essay-hook">Different models are good at different jobs. Stop using one for everything.</p><ul><li>Claude as dreamer, planner, and explainer.</li><li>Codex and similar coding agents as implementers.</li><li>How to switch models inside a real workflow.</li><li>Why “which model is smartest?” is the wrong question.</li></ul></div></article>
-        <article class="essay-card"><span class="essay-mark">D</span><div><h3>MUSE, INSTINCT, AND THE REMOTE AGENT WARS</h3><p class="essay-hook">The interesting fight is which agent actually lives in your life.</p><ul><li>Why Muse clicked as a remote agent.</li><li>Texting Instinct like a friend and letting it do job applications.</li><li>What makes an agent usable instead of merely impressive.</li><li>Why screenshots and Twitter wars do not decide which tool wins.</li></ul></div></article>
-        <article class="essay-card"><span class="essay-mark">E</span><div><h3>AGENTS APPLIED TO MY JOB SEARCH BEFORE I DID</h3><p class="essay-hook">Staying unemployed is getting harder — and that is a feature.</p><ul><li>Letting Instinct and Muse write and send applications.</li><li>The moment the concept is proven: landing the job.</li><li>Whether to turn the system off after success or keep it hunting.</li><li>What this does to the idea of looking for work.</li></ul></div></article>
-        <article class="essay-card"><span class="essay-mark">F</span><div><h3>SOMEONE HAS TO OWN THE OUTCOME</h3><p class="essay-hook">Agents can run all night. They still do not get to be the boss.</p><ul><li>The human sets the standard, reviews the work, and protects private information.</li><li>Why full autonomy sounds cool and fails in practice.</li><li>Review as the real skill: reading diffs, rejecting garbage, keeping taste.</li><li>The factory only works when one person is accountable.</li></ul></div></article>
-        <article class="essay-card"><span class="essay-mark">G</span><div><h3>VIBE-CODED APPS GET HACKED. THAT’S THE PRODUCT.</h3><p class="essay-hook">Shipping fast is easy. Shipping without leaking credentials is the work.</p><ul><li>Why vibe-coded apps are sloppy about secrets, auth, and dependencies.</li><li>Cerberus: review the repo, talk through findings, patch, and open a real PR.</li><li>Security as a conversation with the agent, not a PDF audit.</li><li>The new loop: generate → review → fix → merge.</li></ul></div></article>
-        <article class="essay-card"><span class="essay-mark">H</span><div><h3>MY OFFICE IS A DESK, POWER, WI-FI, AND A SWARM</h3><p class="essay-hook">Travel between Chicago and St. Louis killed the idea that work needs a building.</p><ul><li>Coworking desk, documented workflows, and machines that keep moving when you are gone.</li><li>Tailscale as the boring glue behind remote agents.</li><li>Infrastructure over aesthetics.</li><li>What “going to work” means when the team is software.</li></ul></div></article>
-        <article class="essay-card"><span class="essay-mark">I</span><div><h3>BUILD IN PUBLIC OR IT DIDN’T HAPPEN</h3><p class="essay-hook">If you cannot show the repo, dashboard, or broken version, you are just talking.</p><ul><li>AURABLOX and shipping ugly early.</li><li>GitHub as curriculum, portfolio, and classroom through OpenTutor.</li><li>Why showing the stack matters more than the pitch.</li><li>#buildinpublic as a forcing function, not a clout strategy.</li></ul></div></article>
-        <article class="essay-card"><span class="essay-mark">J</span><div><h3>THE FIRST-TRY PROBLEM</h3><p class="essay-hook">We have agents that apply to jobs and review repos. We still sit there regenerating answers.</p><ul><li>Why current LLM UX still feels like fighting the tool.</li><li>Prompt tweaking as wasted motion.</li><li>What “just gets it on the first try” would require.</li><li>Why first-try quality matters more when agents run in loops.</li></ul></div></article>
-      </div>
-      <div class="book-groups">
-        <article class="book-group"><span class="group-no">I</span><div><h3>THE MACHINE UNDERNEATH</h3><ol><li><b>Tokens, Embeddings, and Meaning as Numbers</b><span>Why models do not read words the way people do.</span></li><li><b>Attention, Transformers, and the Architecture of Recall</b><span>How the mechanism behind modern models changed software.</span></li><li><b>Next-Token Prediction Is Not “Just Autocomplete”</b><span>What prediction explains — and what it does not.</span></li><li><b>Context Windows, the Dumb Zone, and Lost in the Middle</b><span>Why more context can become less useful context.</span></li><li><b>Temperature, Sampling, and Hallucination</b><span>Where variation comes from, why confident errors happen, and how to respond.</span></li></ol></div></article>
-        <article class="book-group"><span class="group-no">II</span><div><h3>THE PRACTICE OF MAKING MODELS USEFUL</h3><ol><li><b>Prompt Engineering Was Chapter One</b><span>Zero-shot, few-shot, reasoning patterns, and the limits of clever wording.</span></li><li><b>Context Engineering</b><span>The new discipline: deciding what the system should know at the moment it acts.</span></li><li><b>RAG, Vector Databases, and Grounded Memory</b><span>How systems retrieve useful evidence instead of pretending to remember.</span></li><li><b>Prompting, Fine-Tuning, LoRA, and QLoRA</b><span>Choosing between instructions, examples, and changing the model itself.</span></li><li><b>Quantization, KV Cache, and the Price of Inference</b><span>The practical economics of making intelligence fit inside real machines.</span></li><li><b>Function Calling, Tool Use, and MCP</b><span>The moment a model stops only speaking and starts touching the world.</span></li></ol></div></article>
-        <article class="book-group"><span class="group-no">III</span><div><h3>THE AGENTIC TURN</h3><ol><li><b>From Chatbot to Agent</b><span>Delegation, tools, state, feedback, and the reporting path.</span></li><li><b>One Strong Model or an Ant Swarm?</b><span>When multi-agent systems add capacity — and when they only add ceremony.</span></li><li><b>Coding Agents and the End of the One-Window Workflow</b><span>Claude Code, Codex, Cursor-style systems, and the new coding loop.</span></li><li><b>Vibe Coding Was Chapter One</b><span>Why conversational coding is powerful, and why specification is the next discipline.</span></li><li><b>Harnesses, Memory, and Self-Improving Loops</b><span>How an agent becomes a system that can restart, inspect, and improve.</span></li><li><b>The Verification Gap</b><span>Generation is cheap. Trust is expensive. Proof becomes the product.</span></li><li><b>Orchestration and Horizontal Agents</b><span>Routing work across roles without losing accountability.</span></li></ol></div></article>
-        <article class="book-group"><span class="group-no">IV</span><div><h3>THE COMPUTER SCIENCE THAT STILL MATTERS</h3><ol><li><b>Big O and the Cost of a Thought</b><span>Time, space, and why scale eventually becomes a product decision.</span></li><li><b>Graphs, Trees, Hash Maps, and the Shapes of Problems</b><span>The data structures hiding beneath modern systems.</span></li><li><b>Concurrency, Parallelism, and Coordination</b><span>Why more workers do not automatically mean more progress.</span></li><li><b>Testing, Evals, and the Evidence Habit</b><span>Unit tests, integration tests, model evaluations, and what they can actually prove.</span></li><li><b>Git, Technical Debt, and the Cost of Unclear Change</b><span>Why memory, history, and clean boundaries matter in human-machine teams.</span></li></ol></div></article>
-        <article class="book-group"><span class="group-no">V</span><div><h3>THE HARDWARE, ECONOMICS, AND FUTURE</h3><ol><li><b>GPUs, CUDA, TPUs, and the Physical Reality of Intelligence</b><span>Why the software future is constrained by hardware.</span></li><li><b>Mixture of Experts and Scaling Laws</b><span>How systems grow without every parameter working every time.</span></li><li><b>Local Models, Cloud Models, Open Models, Closed Models</b><span>Tradeoffs in cost, privacy, capability, and control.</span></li><li><b>World Models, Alignment, and Agentic Misalignment</b><span>The arguments about what systems understand and what they may pursue.</span></li><li><b>Will AI Replace Programmers?</b><span>A serious answer requires separating typing from specification, judgment, and responsibility.</span></li><li><b>Human 2.0</b><span>The final question: what should one person become responsible for when execution is distributed?</span></li></ol></div></article>
-      </div>
-      <div class="book-note"><strong>EDITORIAL RULE</strong><span>Every chapter must contain a plain-language explanation, a working example, a failure mode, and a section titled “Why this matters in 2026.” No mythology without mechanism. No optimism without measurement.</span></div>
-    </section>
+    <!-- ═══════════════ OPERATING MODEL ═══════════════ -->
     <section id="operating-model" class="section-shell operating">
       <div class="section-heading">
-        <div><p class="eyebrow">OPERATING MODEL</p><h2>HOW HUMAN 2.0 RUNS THE DAY.</h2></div>
+        <div>
+          <p class="eyebrow mono">OPERATING MODEL</p>
+          <h2>HOW HUMAN 2.0 RUNS THE DAY.</h2>
+        </div>
         <p>The topology creates capacity. Operations turn that capacity into reliable outcomes.</p>
       </div>
       <ol class="operating-list">
-        <li><span>01 / DIRECT</span><div><h3>Intent begins with the human.</h3><p>The operator sets the outcome, stakes and constraints. Agents do not invent authority. They receive a bounded job.</p></div></li>
-        <li><span>02 / ROUTE</span><div><h3>Work goes to the right environment.</h3><p>Local, persistent work runs on physical agents. Remote research and coordination can run in the cloud. Device and data boundaries stay explicit.</p></div></li>
-        <li><span>03 / EXECUTE</span><div><h3>Agents work in parallel.</h3><p>Each agent owns a focused lane, records state and returns evidence. A typical request might split into retrieval, synthesis, implementation, and verification. Parallelism is valuable only when the lanes are genuinely independent.</p></div></li>
-        <li><span>04 / VERIFY</span><div><h3>Proof closes the loop.</h3><p>Outputs are checked against source systems, rendered artifacts and current state. Completion means the result landed, not merely that a process ran. Tailscale reduces public exposure; it does not replace host hardening, ACLs, credential isolation, or recovery plans.</p></div></li>
-        <li><span>05 / LEARN</span><div><h3>The system keeps useful context.</h3><p>Decisions, preferences and outcomes become operating memory. The next cycle starts with more context and less re-explanation. The goal is not autonomous theater; it is a system that becomes easier to direct because it can show what it knows, what it tried, and where it is uncertain.</p></div></li>
+        <li>
+          <span class="step-num hand-strong">01 / DIRECT</span>
+          <div class="step-body">
+            <div>
+              <h3>Intent begins with the human.</h3>
+              <p>The operator sets the outcome, stakes and constraints. Agents do not invent authority. They receive a bounded job.</p>
+            </div>
+            <div>
+              <h3>Work goes to the right environment.</h3>
+              <p>Local, persistent work runs on physical agents. Remote research and coordination can run in the cloud. Device and data boundaries stay explicit.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="step-num hand-strong">02 / ROUTE</span>
+          <div class="step-body">
+            <div>
+              <h3>Agents work in parallel.</h3>
+              <p>Each agent owns a focused lane, records state and returns evidence. The human no longer serializes every action through one desktop session.</p>
+            </div>
+            <div>
+              <h3>Proof closes the loop.</h3>
+              <p>Outputs are checked against source systems, rendered artifacts and current state. Completion means the result landed, not merely that a process ran.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="step-num hand-strong">03 / EXECUTE</span>
+          <div class="step-body">
+            <div>
+              <h3>The system keeps useful context.</h3>
+              <p>Decisions, preferences and outcomes become operating memory. The next cycle starts with more context and less re-explanation.</p>
+            </div>
+            <div>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+        </li>
       </ol>
     </section>
 
+    <!-- ═══════════════ SECURITY ═══════════════ -->
     <section class="section-shell security">
       <div class="security-card">
-        <p class="eyebrow">SECURITY POSTURE</p><h2>PRIVATE BY DEFAULT.</h2>
-        <p>Remote management travels through Tailscale. The lab exposes no public management ports. Local printing remains local. Cloud agents are identified as cloud machines, not blurred into the physical network. This is a network boundary, not a complete security guarantee: each host still needs hardening, least-privilege credentials, access controls, and a recovery path.</p>
-        <div class="security-facts"><span>NO EXPOSED PORTS</span><span>TAILSCALE-ONLY REMOTE</span><span>LAN-BOUND DEVICES</span></div>
+        <p class="eyebrow mono">SECURITY POSTURE</p>
+        <h2>PRIVATE BY DEFAULT.</h2>
+        <p>Remote management travels through Tailscale. The lab exposes no public management ports. Local printing remains local. Cloud agents are identified as cloud machines, not blurred into the physical network.</p>
+        <div class="security-facts">
+          <span>NO EXPOSED PORTS</span>
+          <span>TAILSCALE-ONLY REMOTE</span>
+          <span>LAN-BOUND DEVICES</span>
+        </div>
       </div>
     </section>
 
-    <section id="paper" class="section-shell paper">
-      <div class="paper-title"><p class="eyebrow">WHITE PAPER</p><h2>FROM HUMAN 1.0 TO HUMAN 2.0</h2><p class="subtitle">A practical transition from app operator to agent-system operator — with the claims, boundaries, and open questions made explicit.</p></div>
+    <!-- ═══════════════ PART I: THE TRANSITION ═══════════════ -->
+    <section id="ch1" class="section-shell paper">
+      <div class="part-divider">
+        <p class="eyebrow mono">PART I — THE TRANSITION</p>
+        <h2>FROM HUMAN 1.0 TO HUMAN 2.0</h2>
+        <p class="subtitle hand">A practical transition from app operator to agent-system operator.</p>
+      </div>
+
+      <div class="exec-summary">
+        <p class="eyebrow mono">BOTTOM LINE</p>
+        <p>The human operator is no longer the bottleneck — the operating model is. Human 1.0 runs one foreground thread. Human 2.0 runs a named, countable fleet of agents with explicit boundaries, parallel lanes and a supervisor who remains accountable. The lab described here is operational: four physical agents, two cloud agents, one human. The architecture is accessible now. The discipline is not.</p>
+      </div>
+
       <article class="paper-body">
-        <section><span class="chapter">01</span><div><h3>THE LIMIT OF HUMAN 1.0</h3><p>The first digital transformation gave people faster tools but left the operating model unchanged. Email replaced mail. Dashboards replaced binders. Cloud apps replaced desktop software. The human still became the integration layer: copying information, deciding what mattered, moving it between systems and carrying unfinished work in memory.</p><p>That model scales poorly. More software creates more interfaces. More data creates more checking. Every new capability competes for the same finite attention. Human 1.0 is powerful, but throughput remains tied to how many contexts one person can safely hold.</p></div></section>
-        <section><span class="chapter">02</span><div><h3>THE AGENT SHIFT</h3><p>An agent is more than a chat window. It is a unit of delegated execution with context, tools, a computing environment and a reporting path. Once agents have durable places to run, the architecture changes. The question is no longer “Which app should I open?” It becomes “Which agent should own this outcome, and what evidence should it return?”</p><p>This is the bridge to Human 2.0: intention stays centralized while execution becomes distributed. The human defines direction, reviews consequential choices and remains accountable. The network carries research, monitoring, production and routine follow-through.</p><p class="source-note">The broader direction echoes questions raised in Yuval Noah Harari's writing on information, agency, and the future of human decision-making, and in Max Tegmark's <em>Life 3.0</em> on the consequences of increasingly capable machine intelligence. This paper makes no claim that those authors endorse this implementation.</p></div></section>
-        <section><span class="chapter">03</span><div><h3>WHY HYBRID WINS</h3><p>Physical and cloud agents solve different problems. Local devices give the system a stable foothold near private networks, peripherals and long-running processes. Cloud computers give agents reach, availability and independence from any one room. The hybrid model uses both instead of forcing one environment to do everything.</p><p>In this lab, the physical plane is concrete: three LAN-connected mini PCs plus a custom PC running agent four. The cloud plane is equally explicit: Instinct and Muse each occupy an independent cloud computer. The iPhone and MacBook are access controllers, not agent hosts. That distinction matters because a system is easier to secure and operate when every node has a name, purpose and boundary.</p></div></section>
-        <section><span class="chapter">04</span><div><h3>THE NEW HUMAN JOB</h3><p>Human 2.0 is less about typing faster and more about operating well. The core skills become framing outcomes, assigning ownership, setting limits, resolving ambiguity and judging evidence. The person moves up one level, from doing every step to designing and supervising the flow.</p><p>This does not remove craft. It concentrates craft where it matters: the definition of done, the quality bar, the decision under uncertainty and the final responsibility to other people. Agents increase surface area. Human judgment keeps that surface area coherent.</p></div></section>
-        <section><span class="chapter">05</span><div><h3>OPERATIONS, NOT THEATER</h3><p>A multi-agent lab only matters if it is dependable. That requires named roles, clear handoffs, current-state checks, private networking, visible failure modes and an audit trail of what changed. A polished response is not proof of work. Reliable operation means the user does not have to discover a silent miss or clean up a plausible mistake.</p><p>The lab's physical details reinforce this discipline. One switch defines the wired core. One router defines local access. One HDMI selector makes three mini PCs inspectable through one monitor. Tailscale provides remote reach without opening management ports to the public internet. The design is deliberately countable and testable.</p><p class="source-note">The open questions are practical: what is the cost per completed outcome, how often do agents fail, what does human review actually take, and when is one stronger machine the better choice? Those are measurements to publish, not assumptions to hide.</p></div></section>
-        <section><span class="chapter">06</span><div><h3>THE COMPOUNDING ADVANTAGE</h3><p>The immediate gain is parallelism: six agents can hold more active lanes than one person working serially. The deeper gain is continuity. When agents retain operating context, recurring work becomes easier to restart, monitor and improve. A useful decision made once can inform the next job instead of disappearing into a forgotten tab.</p><p>Over time the human gains a personal institution: a small, directed network that remembers standards, watches for change and turns intent into finished artifacts. This is the economic logic of Human 2.0. Capability is no longer limited to hours at the keyboard. It compounds through systems, memory and delegated execution.</p><p class="source-note">The test is empirical. This paper should eventually publish representative tasks, completion time, intervention rate, error rate, operating cost, and examples where a simpler single-machine setup was the better decision.</p></div></section>
+
+        <section>
+          <span class="chapter mono">01</span>
+          <div>
+            <h3>THE LIMIT OF HUMAN 1.0</h3>
+            <p>The first digital transformation gave people faster tools but left the operating model unchanged. Email replaced mail. Dashboards replaced binders. Cloud apps replaced desktop software. The human still became the integration layer: copying information, deciding what mattered, moving it between systems and carrying unfinished work in memory.</p>
+            <p>That model scales poorly. More software creates more interfaces. More data creates more checking. Every new capability competes for the same finite attention. Human 1.0 is powerful, but throughput remains tied to how many contexts one person can safely hold.</p>
+            <p>Yuval Noah Harari has argued that what makes humans distinctive is not raw computation but the ability to cooperate flexibly in large numbers through shared fictions — laws, money, institutions. The operating system of civilization is narrative. The problem is that the individual human operator is still running on a legacy kernel: one foreground thread, one active context window, one queue. The tools have accelerated. The coordination model has not.</p>
+          </div>
+        </section>
+
+        <section>
+          <span class="chapter mono">02</span>
+          <div>
+            <h3>THE AGENT SHIFT</h3>
+            <p>An agent is more than a chat window. It is a unit of delegated execution with context, tools, a computing environment and a reporting path. Once agents have durable places to run, the architecture changes. The question is no longer "Which app should I open?" It becomes "Which agent should own this outcome, and what evidence should it return?"</p>
+            <p>This is the bridge to Human 2.0: intention stays centralized while execution becomes distributed. The human defines direction, reviews consequential choices and remains accountable. The network carries research, monitoring, production and routine follow-through.</p>
+            <p>Max Tegmark has written about the coming wave of AI systems that will not just answer questions but take actions in the world. The operative word is <em>actions</em>. A system that can act — that can persist, observe results and retry — is not a tool you use. It is a process you supervise. That distinction is the entire story.</p>
+          </div>
+        </section>
+
+        <section>
+          <span class="chapter mono">03</span>
+          <div>
+            <h3>WHY HYBRID WINS</h3>
+            <p>Physical and cloud agents solve different problems. Local devices give the system a stable foothold near private networks, peripherals and long-running processes. Cloud computers give agents reach, availability and independence from any one room. The hybrid model uses both instead of forcing one environment to do everything.</p>
+            <p>In this lab, the physical plane is concrete: three LAN-connected mini PCs plus a custom PC running agent four. The cloud plane is equally explicit: Instinct and Muse each occupy an independent cloud computer. The iPhone and MacBook are access controllers, not agent hosts. That distinction matters because a system is easier to secure and operate when every node has a name, purpose and boundary.</p>
+            <p>The hybrid architecture is also an argument about trust. A pure cloud model makes every action remote and every datum potentially observable by a third party. A pure local model limits reach and availability. The hybrid keeps sensitive work near the operator's physical perimeter while using the cloud for what it is good at: durable, reachable, parallel capacity.</p>
+          </div>
+        </section>
+
+        <section>
+          <span class="chapter mono">04</span>
+          <div>
+            <h3>THE NEW HUMAN JOB</h3>
+            <p>Human 2.0 is less about typing faster and more about operating well. The core skills become framing outcomes, assigning ownership, setting limits, resolving ambiguity and judging evidence. The person moves up one level, from doing every step to designing and supervising the flow.</p>
+            <p>This does not remove craft. It concentrates craft where it matters: the definition of done, the quality bar, the decision under uncertainty and the final responsibility to other people. Agents increase surface area. Human judgment keeps that surface area coherent.</p>
+            <p>The skeptical view is that this is just a speedup — that six agents are six fingers on the same hand. That is wrong. The gain is not only parallelism. It is the separation of concerns: each agent owns a lane, records state independently and returns evidence rather than requiring the human to hold the thread. The human stops being the integration layer and starts being the architect and auditor.</p>
+          </div>
+        </section>
+
+        <section>
+          <span class="chapter mono">05</span>
+          <div>
+            <h3>OPERATIONS, NOT THEATER</h3>
+            <p>A multi-agent lab only matters if it is dependable. That requires named roles, clear handoffs, current-state checks, private networking, visible failure modes and an audit trail of what changed. A polished response is not proof of work. Reliable operation means the user does not have to discover a silent miss or clean up a plausible mistake.</p>
+            <p>The lab's physical details reinforce this discipline. One switch defines the wired core. One router defines local access. One HDMI selector makes three mini PCs inspectable through one monitor. Tailscale provides remote reach without opening management ports to the public internet. The design is deliberately countable and testable.</p>
+            <p>This is also where the "six agents" number stops being arbitrary. A countable, named fleet is auditable. An unnamed swarm is not. If you cannot say how many agents you have, what they are doing and where they run, you do not have a system. You have a vibe. The lab is built to be countable.</p>
+          </div>
+        </section>
+
+        <section>
+          <span class="chapter mono">06</span>
+          <div>
+            <h3>THE COMPOUNDING ADVANTAGE</h3>
+            <p>The immediate gain is parallelism: six agents can hold more active lanes than one person working serially. The deeper gain is continuity. When agents retain operating context, recurring work becomes easier to restart, monitor and improve. A useful decision made once can inform the next job instead of disappearing into a forgotten tab.</p>
+            <p>Over time the human gains a personal institution: a small, directed network that remembers standards, watches for change and turns intent into finished artifacts. This is the economic logic of Human 2.0. Capability is no longer limited to hours at the keyboard. It compounds through systems, memory and delegated execution.</p>
+            <p>The long-term question is not whether one person can do more. It is what becomes possible when one person can sustain a small organization's worth of active, supervised processes — and remains the accountable mind at the center of them. Harari's shared fictions built civilizations. The next step is smaller: a shared operating context built around one person and the network that carries their intent.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>OBJECTIONS HANDLED</h3>
+            <p><strong>Isn't this just using more software?</strong> The distinction is execution, not interface. An app waits for a human to drive it. An agent owns an outcome, runs in its own environment and returns evidence. The human stopped being the app operator and became the system operator.</p>
+            <p><strong>Why not just use one big agent?</strong> A single general agent that does everything inherits every problem: context confusion, accountability diffusion and no principled boundary between local and remote work. A named fleet with explicit roles is auditable. A general agent pretending to do everything is not.</p>
+            <p><strong>Is this production-ready or a science project?</strong> The lab is operational. The physical hardware exists, the network topology is real, Tailscale is in place and the cloud agents are running. This is not a diagram of something planned. It is a report on something running.</p>
+            <p><strong>What is the cost?</strong> Four physical computers on one LAN, two cloud machines with independent providers, one Tailscale account. The point is that the architecture is accessible now, not theoretical. The cost of the hardware is secondary to the cost of the discipline: naming, boundary-setting and verification.</p>
+            <p><strong>What problem does this actually solve?</strong> It solves the bottleneck of one human being the integration layer for every task. The throughput gain is real but secondary. The primary gain is that the human stops being the serial executor and becomes the parallel supervisor — with accountability intact.</p>
+          </div>
+        </section>
+
       </article>
     </section>
 
-    <section class="section-shell conclusion">
-      <span class="big-number">02</span><div><p class="eyebrow">THE DESTINATION</p><h2>ONE HUMAN.<br>SIX AGENTS.<br>A BIGGER OPERATING RANGE.</h2><p>Human 2.0 is not a science-fiction identity. It is an operating discipline available now: map the network, define the boundaries, assign the work, verify the result and keep the human in command. The claim is intentionally modest: not that agents replace judgment, but that a person can supervise more useful work when execution has structure.</p></div>
+    <!-- ═══════════════ TABLE OF CONTENTS ═══════════════ -->
+    <section id="toc" class="section-shell toc-section">
+      <p class="eyebrow mono">THE BOOK</p>
+      <h2>WHAT COMES NEXT.</h2>
+      <p class="section-intro">Part I made the argument. The chapters below are the raw material — the concepts people are actually arguing about, explained on their own terms. Each one is a unit of delegated execution with its own context, tools and reporting path.</p>
+
+      <div class="toc-grid">
+        <div class="toc-group">
+          <p class="toc-group-label mono">How models think</p>
+          <div class="toc-entry"><a href="#ch2" data-chapter="02">02 — Tokens and Tokenization</a></div>
+          <div class="toc-entry"><a href="#ch3" data-chapter="03">03 — Embeddings: Meaning as Numbers</a></div>
+          <div class="toc-entry"><a href="#ch4" data-chapter="04">04 — Attention</a></div>
+          <div class="toc-entry"><a href="#ch5" data-chapter="05">05 — The Transformer</a></div>
+          <div class="toc-entry"><a href="#ch6" data-chapter="06">06 — Context Window and the Dumb Zone</a></div>
+          <div class="toc-entry"><a href="#ch7" data-chapter="07">07 — Next-Token Prediction</a></div>
+          <div class="toc-entry"><a href="#ch8" data-chapter="08">08 — Temperature and Sampling</a></div>
+          <div class="toc-entry"><a href="#ch9" data-chapter="09">09 — Hallucinations</a></div>
+          <div class="toc-entry"><a href="#ch10" data-chapter="10">10 — Context Engineering</a></div>
+        </div>
+
+        <div class="toc-group">
+          <p class="toc-group-label mono">How we use them</p>
+          <div class="toc-entry"><a href="#ch11" data-chapter="11">11 — Prompt Engineering</a></div>
+          <div class="toc-entry"><a href="#ch12" data-chapter="12">12 — RAG</a></div>
+          <div class="toc-entry"><a href="#ch13" data-chapter="13">13 — Fine-Tuning vs. Prompting vs. RAG</a></div>
+          <div class="toc-entry"><a href="#ch14" data-chapter="14">14 — LoRA, QLoRA, and Parameter-Efficient Tuning</a></div>
+          <div class="toc-entry"><a href="#ch15" data-chapter="15">15 — Quantization</a></div>
+          <div class="toc-entry"><a href="#ch16" data-chapter="16">16 — Function Calling and Tool Use</a></div>
+          <div class="toc-entry"><a href="#ch17" data-chapter="17">17 — Vector Databases</a></div>
+        </div>
+
+        <div class="toc-group">
+          <p class="toc-group-label mono">The agentic turn</p>
+          <div class="toc-entry"><a href="#ch18" data-chapter="18">18 — AI Agents and Agentic Systems</a></div>
+          <div class="toc-entry"><a href="#ch19" data-chapter="19">19 — Multi-Agent Setups</a></div>
+          <div class="toc-entry"><a href="#ch20" data-chapter="20">20 — Coding Agents and Automation Harnesses</a></div>
+          <div class="toc-entry"><a href="#ch21" data-chapter="21">21 — Vibe Coding and What Comes After</a></div>
+          <div class="toc-entry"><a href="#ch22" data-chapter="22">22 — Memory in Agents</a></div>
+          <div class="toc-entry"><a href="#ch23" data-chapter="23">23 — The Verification Gap</a></div>
+          <div class="toc-entry"><a href="#ch24" data-chapter="24">24 — Orchestration and Horizontal Agents</a></div>
+        </div>
+
+        <div class="toc-group">
+          <p class="toc-group-label mono">What still matters</p>
+          <div class="toc-entry"><a href="#ch25" data-chapter="25">25 — Big O and Why It Still Matters</a></div>
+          <div class="toc-entry"><a href="#ch26" data-chapter="26">26 — Data Structures for the Agent Age</a></div>
+          <div class="toc-entry"><a href="#ch27" data-chapter="27">27 — Git and the Persistence of Intent</a></div>
+          <div class="toc-entry"><a href="#ch28" data-chapter="28">28 — Testing Under Uncertainty</a></div>
+          <div class="toc-entry"><a href="#ch29" data-chapter="29">29 — GPUs, CUDA, and the Hardware Behind the Magic</a></div>
+          <div class="toc-entry"><a href="#ch30" data-chapter="30">30 — Mixture of Experts</a></div>
+          <div class="toc-entry"><a href="#ch31" data-chapter="31">31 — Scaling Laws</a></div>
+        </div>
+
+        <div class="toc-group">
+          <p class="toc-group-label mono">The bigger questions</p>
+          <div class="toc-entry"><a href="#ch32" data-chapter="32">32 — World Models and Yann LeCun's Bet</a></div>
+          <div class="toc-entry"><a href="#ch33" data-chapter="33">33 — Alignment and Agentic Misalignment</a></div>
+          <div class="toc-entry"><a href="#ch34" data-chapter="34">34 — Open vs. Closed and the Economics of AI</a></div>
+          <div class="toc-entry"><a href="#ch35" data-chapter="35">35 — Evals: How We Know If Agents Are Good</a></div>
+        </div>
+      </div>
     </section>
+
+    <!-- ═══════════════ PART II: FIELD NOTES ═══════════════ -->
+    <section id="part2" class="section-shell part-header-section">
+      <div class="part-divider">
+        <p class="eyebrow mono">PART II — FIELD NOTES</p>
+        <h2>WHAT ACTUALLY HAPPENED</h2>
+        <p class="subtitle hand">The concepts are the syllabus. These are the days.</p>
+      </div>
+      <p class="section-intro">The chapters in Part I are reference. The chapters in Part II are report. They are written from a specific desk, with specific machines, during a specific season of unemployment, job applications, and shipping code that had to stay up. The names are real. The failures are real. The point is that the operating model in Part I is not a thought experiment. It is a record.</p>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 01: I DON'T CODE ANYMORE. I VIBE. ═══════════════ -->
+    <section id="ch-p2-01" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 01</p>
+        <h2>I DON'T CODE ANYMORE. I VIBE.</h2>
+        <p class="section-intro">Coding used to mean typing. Now it means directing. The difference between prompting for demos and prompting for things that have to stay up.</p>
+      </div>
+
+      <article class="paper-body">
+        <section>
+          <span class="chapter mono">01</span>
+          <div>
+            <h3>WHAT VIBE CODING ACTUALLY LOOKS LIKE</h3>
+            <p>There is a hype version of vibe coding and a real one. The hype version is "I said one sentence and a whole app appeared." The real version is more like conducting. You set the direction. You correct the drift. You catch the places where the agent optimized for something you did not ask for. You do less typing than you used to, but you do more reading, more judging, and more deciding what to reject.</p>
+            <p>The day-to-day is not impressive to watch. It looks like a person staring at a screen, reading diffs, asking for changes, accepting some, rejecting others, and slowly steering a piece of software toward a standard it can survive in the wild. The speed is real. The supervision is realer.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>"SHIPPED FAST" STOPPED BEING A MOAT</h3>
+            <p>For years, the impressive thing was how fast one person could produce something that worked. That stopped being impressive the moment the model could produce something that worked in minutes. Fast is the baseline now. The new scarce resource is judgment: knowing what to build, what to cut, what to leave out, and what to go back and fix after the demo passes.</p>
+            <p>A demo that runs once in a conversation is not a product. A thing that survives deployment, edge cases, and a user who does something the agent never anticipated is a product. The gap between those two things is where the work moved.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>PROMPTING FOR DEMOS VS. PROMPTING FOR STABILITY</h3>
+            <p>Prompting for a demo is easy. The model has seen every demo pattern in its training data. It knows the happy path. It can produce something visually correct in a few shots. Prompting for something that has to stay up, handle abuse, deal with missing data, survive a deployment at 2 a.m., and not leak credentials — that is a different conversation.</p>
+            <p>The difference is that stability requires decisions the model is not naturally motivated to make. It will not volunteer to add the error handling, the input validation, the rate limit, the audit log, or the thing that makes the system boring in the way that makes it safe. You have to ask for those things explicitly, and you have to review whether they landed.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>WHY YOU STILL HAVE TO KNOW ENOUGH TO CATCH THE LIE</h3>
+            <p>The hardest part of vibe coding is not the prompting. It is the reviewing. The agent will sometimes sound confident about something that is wrong. It will generate code that looks right and fails in a way that is easy to miss if you are not paying attention. The more you rely on the agent, the more important it becomes that you can catch the moment it is lying to you.</p>
+            <p>This is not about having the model do less. It is about having the human do a different job. The human is the auditor, the taste-maker, the person who says "this looks right but it is not" and then proves it. If you cannot do that, you are not vibe coding. You are trusting.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>"Vibe coding" is a real shift in what the human does, but it is not a replacement for competence. The person who can only prompt and not review will ship garbage faster than ever. The person who can prompt and review will ship better things faster than ever. The difference is not the tool. The difference is the human's ability to tell the difference between a good result and a convincing result.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 02: THE SMALL FACTORY UNDER THE DESK ═══════════════ -->
+    <section id="ch-p2-02" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 02</p>
+        <h2>THE SMALL FACTORY UNDER THE DESK</h2>
+        <p class="section-intro">You don't need a data center. You need a few cheap machines and a standard.</p>
+      </div>
+
+      <article class="paper-body">
+
+        <section>
+          <span class="chapter mono">02</span>
+          <div>
+            <h3>THE MACHINES ARE CHEAP NOW</h3>
+            <p>The hardware story of the last few years is that capable small computers are cheap and available. Mini PCs, used office hardware, machines that are more than sufficient to run agents, host services, and keep local work moving — all of it is accessible at a price that does not require a budget review. The barrier is not money. The barrier is knowing what to buy, how to connect it, and how to keep it running when you are not there.</p>
+            <p>A small factory does not need a data center. It needs a standard. Three or four always-on machines on a LAN. One machine that can do the heavier work when it needs GPU. A network that lets them talk to each other and to the cloud agents without exposing anything to the public internet. The cost is the cost of a few computers and the discipline to keep them named, monitored, and repairable.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>OPENROUTER AS THE MODEL LAYER</h3>
+            <p>One of the practical decisions that makes a small operator durable is not marrying a single model provider. OpenRouter and similar abstraction layers let you route work to different models without rewriting the whole system every time a new model appears or a price changes. The agent architecture should be built around the idea that the model is a component you can swap, not an institution you belong to.</p>
+            <p>This is not about optimizing every prompt for the cheapest model. It is about not being trapped. When the model layer is replaceable, the rest of the system — the workflows, the memory, the verification steps, the review standards — becomes the valuable part. That is the part you keep.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>HOW THE SWARM DIVIDES WORK</h3>
+            <p>A swarm is not a single agent that does everything. It is a set of agents with different jobs. In a working setup, the division looks something like this: one agent does research — reading, searching, summarizing, finding the thing that needs to be done. One agent drafts — turning the research into a plan, a spec, or a first cut. One agent builds — implementing the plan in code or in a deliverable. One agent tests — checking that what was built actually works and meets the standard. One agent executes — running the thing in the environment where it has to live.</p>
+            <p>The division matters because each lane has a different failure mode. Research can hallucinate sources. Drafts can be plausible but wrong. Builds can pass the wrong tests. Execution can fail silently. When everything runs through one agent, all those failures arrive in the same output and have to be caught by the same reviewer. When the lanes are separate, the failures are separate, and the reviewing is easier.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>SMALL AND RELIABLE BEATS BIG AND THEATRICAL</h3>
+            <p>The tempting story is to build the biggest, smartest, most general system and let it do everything. The practical story is to build a small system that does a few things reliably, and then add lanes as the work demands them. The small system is easier to understand, easier to audit, easier to fix when it breaks, and easier to trust because you can actually see what it is doing.</p>
+            <p>Theatrical systems make good screenshots. Reliable systems make good days. The book is about the second kind.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>The hardware is cheap enough that a single person can run a real multi-agent setup without enterprise infrastructure. The constraint is not the machines. The constraint is the operating discipline: naming the agents, defining their lanes, verifying their output, and keeping the whole thing accountable to one human. That discipline is the book's subject.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 03: CLAUDE DREAMS. CODEX SHIPS. ═══════════════ -->
+    <section id="ch-p2-03" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 03</p>
+        <h2>CLAUDE DREAMS. CODEX SHIPS.</h2>
+        <p class="section-intro">Different models are good at different jobs. Stop using one for everything.</p>
+      </div>
+
+      <article class="paper-body">
+
+        <section>
+          <span class="chapter mono">03</span>
+          <div>
+            <h3>THE DREAMER AND THE IMPLEMENTER</h3>
+            <p>Some models are better at generating ideas, explaining strategy, writing the thing that describes what should be built. Others are better at producing the implementation — the code, the structured output, the deliverable that has to actually run. The mistake is using one model for both jobs because it is convenient.</p>
+            <p>The dreamer role is about breadth, framing, and explanation. The implementer role is about precision, structure, and correctness under constraints. A model that is excellent at one is not necessarily excellent at the other, and the workflow improves when you assign the work to the model that is actually good at that lane.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>"WHICH MODEL IS SMARTEST" IS THE WRONG QUESTION</h3>
+            <p>The question that wastes time is "which model is the smartest." The useful question is "which model is the right tool for this lane, at this cost, with this review standard." A model that is slightly less capable overall but dramatically better at the specific work you are delegating is the better choice for that work.</p>
+            <p>The swarm works because it treats models as specialists, not as a single genius you consult for everything. The human's job is to know which specialist to call for which job, and to review the output when it comes back.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>HOW YOU ACTUALLY SWITCH BETWEEN THEM</h3>
+            <p>In a real workflow, the switching is not dramatic. It is practical. You start with the dreamer to frame the problem and produce a spec. You take the spec to the implementer to produce the code or the deliverable. You use a third pass — sometimes the same model, sometimes a different one — to review the result against the spec. The switching happens at the lane boundaries, not in the middle of a sentence.</p>
+            <p>The discipline is to make the lane boundaries explicit. When the work moves from dream to build, the spec should be in a form the implementer can use. When the work moves from build to review, the standard should be in a form the reviewer can apply. The switching is only smooth when the handoff is clean.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>The model landscape is not converging on one winner. It is diversifying into specialists. The operators who win are the ones who stop asking which model is best and start asking which model is right for which lane. The swarm is not a single model with a bigger context window. It is a small set of specialists with a human who knows how to route work between them.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 04: MUSE, INSTINCT, AND THE REMOTE AGENT WARS ═══════════════ -->
+    <section id="ch-p2-04" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 04</p>
+        <h2>MUSE, INSTINCT, AND THE REMOTE AGENT WARS</h2>
+        <p class="section-intro">The interesting fight isn't vendor vs. vendor. It's which agent actually lives in your life.</p>
+      </div>
+
+      <article class="paper-body">
+
+        <section>
+          <span class="chapter mono">04</span>
+          <div>
+            <h3>WHICH AGENT LIVES IN YOUR LIFE</h3>
+            <p>The loudest conversations are about model capability, benchmark scores, and vendor rivalries. The conversation that matters to an operator is simpler: which agent do you actually use, day after day, for the things that matter to your life and work? A model can be impressive on a benchmark and useless in your workflow if it does not fit the way you work.</p>
+            <p>The agent that wins is the one you trust with a real task, the one you come back to, the one whose failures you understand and can work around. That is not decided by a benchmark. It is decided by use.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>TEXTING AN AGENT LIKE A FRIEND</h3>
+            <p>When an agent becomes usable, the interaction changes. You stop treating it like a tool you invoke and start treating it like something you talk to. You give it a job in the same form you would give a competent person. You expect it to report back. You expect it to ask for clarification when the job is ambiguous. You expect it to remember the context from the last conversation.</p>
+            <p>The agents that click are the ones that feel usable in that sense. The ones that stay impressive-but-frictionful are the ones you use once for a demo and then go back to doing the hard way.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>SCREENSHOTS DO NOT DECIDE WHICH TOOL WINS</h3>
+            <p>The Twitter wars are about screenshots, benchmarks, and hot takes. The real decision is made in private, over weeks, by a person who is trying to get real work done. The agent that survives that test is the one that is actually good at the work, not the one that generated the best promotional content.</p>
+            <p>This is why the operator's report matters more than the vendor's pitch. The proof is in the work that got done, the things that shipped, the jobs that were applied for, the repos that were reviewed. The screenshot is marketing. The shipping is evidence.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>The agent market is noisy and full of competing claims. The operator's job is to ignore the noise and find the agents that actually carry work. The decision is empirical. Try them on real jobs. See which one you come back to. That is the one that matters.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 05: AGENTS APPLIED TO MY JOB SEARCH ═══════════════ -->
+    <section id="ch-p2-05" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 05</p>
+        <h2>AGENTS APPLIED TO MY JOB SEARCH BEFORE I DID</h2>
+        <p class="section-intro">Staying unemployed is getting harder, and that's a feature. What happens when the agents apply before you do.</p>
+      </div>
+
+      <article class="paper-body">
+
+        <section>
+          <span class="chapter mono">05</span>
+          <div>
+            <h3>THE JOB SEARCH AS A TEST CASE</h3>
+            <p>Unemployment is the place where the agent model gets stress-tested in a way that is hard to fake. The job search has a clear outcome — you get the job or you do not — and it has real stakes. If the agents can apply, track, follow up, and surface the opportunities that matter, that is evidence that the model works on a real human problem.</p>
+            <p>The test is not "can the agent write a cover letter." The test is "can the agent run a search process that is better than the one the human would run alone, and can the human trust it enough to let it drive."</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>WHEN THE CONCEPT IS PROVEN</h3>
+            <p>The concept is proven when the outcome arrives. The agent applies. The human gets the interview. The human gets the offer. At that point, the question changes from "can this work" to "what do I do with a working system." Do you turn it off? Do you keep it running? Do you let it keep hunting for a better fit while you are employed?</p>
+            <p>The interesting question is the last one. A working agent system does not have to stop when the immediate problem is solved. It can keep watching, keep applying, keep surfacing better options. The human who built the system has to decide whether to use that capability and what it means to have a system that can outwork them in the background.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>WHAT THIS DOES TO "LOOKING FOR WORK"</h3>
+            <p>The traditional job search is a serial, solo, exhausting process. You find the listing. You write the application. You send it. You wait. You repeat. An agent-assisted search is a parallel process. Multiple applications can be prepared, tailored, and sent without the human doing every step. The human's job shifts from doing the repetitive work to setting the standard, reviewing the output, and deciding what to send.</p>
+            <p>This is not about cheating the search. It is about making the search a process a human can actually sustain. The market does not care how you applied. It cares whether you are a good fit. The agent is a tool for getting your fit in front of the right people without burning out in the process.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>The job market is going to be one of the first places where agent-assisted work becomes normal, because the work is repetitive, high-volume, and outcome-measurable. The people who figure out how to use agents well in their search will have an advantage. The people who treat agents as a gimmick will spend more energy on the repetitive parts and less on the parts that actually matter — fit, preparation, and performance in the interview.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 06: SOMEONE HAS TO OWN THE OUTCOME ═══════════════ -->
+    <section id="ch-p2-06" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 06</p>
+        <h2>SOMEONE HAS TO OWN THE OUTCOME</h2>
+        <p class="section-intro">Agents can run all night. They still don't get to be the boss.</p>
+      </div>
+
+      <article class="paper-body">
+
+        <section>
+          <span class="chapter mono">06</span>
+          <div>
+            <h3>THE HUMAN SETS THE STANDARD</h3>
+            <p>The agent can generate output all night. It cannot decide what counts as good enough. That is the human's job. The human sets the standard, reviews the work against it, and accepts or rejects the result. The agent is the worker. The human is the boss. The distinction is not symbolic. It is the thing that keeps the system from producing plausible garbage at scale.</p>
+            <p>The failure mode of full autonomy is not that the agent does nothing. It is that the agent does the wrong thing confidently and the human never catches it because the human abdicated the review. Autonomy without accountability is not freedom. It is negligence with a better UI.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>REVIEW IS THE REAL SKILL</h3>
+            <p>The skill that matters in an agent-operated workflow is review. Reading a diff and understanding whether it is right. Rejecting garbage without spending an hour re-prompting. Keeping taste — the sense of what is good, what is clean, what is worth keeping — when the agent is producing fast and in quantity. The human who can review well is the human who can actually use agents well.</p>
+            <p>This is not a secondary skill. It is the primary skill. The prompting gets easier over time. The reviewing stays hard, because the reviewing is where the judgment lives.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>THE FACTORY ONLY WORKS IF ONE PERSON IS ACCOUNTABLE</h3>
+            <p>A factory with no accountable human is a factory that produces whatever the machines produce, including the failures. A factory with one accountable human is a factory that produces what that human accepts. The accountability is what makes the output trustworthy. It is also what makes the system teachable — when something goes wrong, there is a person who owns the fix.</p>
+            <p>This is the through-line of the whole book. The agents expand the capacity. The human sets the standard and owns the result. The capacity is useless without the standard.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>The pressure toward full autonomy will keep coming. The answer is not to resist the tools. The answer is to resist the idea that the tools replace the human's responsibility. They do not. They amplify it. The human who understands that gets the advantage. The human who does not gets the mistake.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 07: VIBE-CODED APPS GET HACKED ═══════════════ -->
+    <section id="ch-p2-07" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 07</p>
+        <h2>VIBE-CODED APPS GET HACKED. THAT'S THE PRODUCT.</h2>
+        <p class="section-intro">Shipping fast is easy. Shipping something that doesn't leak credentials is the actual work.</p>
+      </div>
+
+      <article class="paper-body">
+
+        <section>
+          <span class="chapter mono">07</span>
+          <div>
+            <h3>THE SECURITY PROFILE OF FAST-SHIPPED CODE</h3>
+            <p>Vibe-coded apps have a predictable security profile. They are often sloppy about credentials, about authentication, about dependencies, about input validation, about the things that do not show up in the happy-path demo. The speed of generation makes it easy to produce a lot of code quickly, and the speed of generation makes it easy to miss the boring security details that matter when the app is exposed to the world.</p>
+            <p>This is not an argument against vibe coding. It is an argument for treating security as part of the loop, not as an afterthought. The app that ships fast and leaks a key is not a success. It is a failure with a faster timeline.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>CERBERUS: REVIEW THE REPO, TALK TO THE FINDINGS, PATCH, OPEN A REAL PR</h3>
+            <p>The security review in an agent workflow is not a PDF. It is a conversation. You run the review tool — Cerberus, in the lab's case — against the repo. The tool produces findings. You talk to the findings with the agent. You decide which ones matter. You patch the ones that do. You open a real PR that documents what changed and why. The review is a step in the workflow, not a separate audit that happens after the work is "done."</p>
+            <p>This is the new loop: generate, review, fix, merge. The security review is one of the review steps. It is not special. It is just the step where you check for the things that would make the app dangerous instead of just incomplete.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>SECURITY AS A CONVERSATION WITH THE AGENT</h3>
+            <p>The old model of security review was a gate at the end — a person in a different department goes through the code and writes a report. The new model is a conversation that happens during the build. The agent that wrote the code is the agent that patches it. The human reviews the findings and the patches and decides what to merge. The loop is tight, and the feedback is immediate.</p>
+            <p>This is better than the old model for one reason: the person who writes the code is the same context as the person who fixes it. The security review is not a handoff to a different team. It is a step the same agent-and-human pair runs before the work leaves the desk.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>The volume of agent-written code is going up. The security review has to keep up. The way to keep up is not to slower the build. It is to make the security review a standard step in the loop, run by the same agents that wrote the code, reviewed by the same human that owns the outcome. The apps that survive are the ones where security is part of the workflow, not a scramble after a leak.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 08: MY OFFICE IS A DESK, POWER, WI-FI, AND A SWARM ═══════════════ -->
+    <section id="ch-p2-08" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 08</p>
+        <h2>MY OFFICE IS A DESK, POWER, WI-FI, AND A SWARM</h2>
+        <p class="section-intro">Traveling between Chicago and St. Louis killed the idea that work needs a building.</p>
+      </div>
+
+      <article class="paper-body">
+
+        <section>
+          <span class="chapter mono">08</span>
+          <div>
+            <h3>WORK DOES NOT NEED A BUILDING</h3>
+            <p>The commute between Chicago and St. Louis makes the point directly. The work does not happen in the building. It happens on the machines, in the workflows, in the agents that keep running when you are not there. The desk is where you sit. The work is distributed across the fleet. The location is almost incidental.</p>
+            <p>This is not a remote-work argument. It is a distributed-work argument. The human can be in a coworking space, at home, at a desk in a different city, and the work continues because the work is not tied to the human's location. It is tied to the machines and the network and the standards.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>TAILSCALE AS THE BORING GLUE</h3>
+            <p>The reason the remote agents are usable is not that they are impressive. It is that the network connects them securely and boringly. Tailscale is the glue. It gives the machines a private network they can use regardless of where they are physically. It does not expose management ports. It does not require a VPN that breaks when you change locations. It just works, and that is the point.</p>
+            <p>The infrastructure that matters is the infrastructure you do not have to think about. Tailscale is in that category. When the network is boring, the work is not interrupted by the network.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>INFRASTRUCTURE OVER AESTHETICS</h3>
+            <p>The workstation setup is not about looking good on camera. It is about running reliably. The mini PCs, the switch, the display plane, the shared monitor, the LAN — all of it is chosen for function, not presentation. The system is inspectable because it has to be. The work is real because it has to survive the human walking away from the desk.</p>
+            <p>This is the aesthetic of the small factory. It is not beautiful in the way a clean desk photo is beautiful. It is beautiful in the way a working machine is beautiful — because it does the thing it was built to do, consistently, without drama.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>WHAT "GOING TO WORK" MEANS WHEN THE TEAM IS SOFTWARE</h3>
+            <p>When the team is software, going to work does not mean commuting to a building. It means connecting to the network, opening the control surface, and checking what the agents did while you were gone. The day starts with a review of the night's work, not with a commute. The human arrives at the work, not at a place.</p>
+            <p>This is the practical form of Human 2.0. The human is not less present. The human is present in a different way — as the supervisor, the reviewer, the person who sets the standard and signs off on the day's output.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>The geography of work is changing. The people who cling to the office-as-place model will pay for the machinery of commuting and presence. The people who treat the office as a set of machines, a network, and a standard will be able to work from wherever the desk and the power and the Wi-Fi are. The small factory travels.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 09: BUILD IN PUBLIC OR IT DIDN'T HAPPEN ═══════════════ -->
+    <section id="ch-p2-09" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 09</p>
+        <h2>BUILD IN PUBLIC OR IT DIDN'T HAPPEN</h2>
+        <p class="section-intro">If you can't show the repo, the dashboard, or the broken version, you're just talking.</p>
+      </div>
+
+      <article class="paper-body">
+
+        <section>
+          <span class="chapter mono">09</span>
+          <div>
+            <h3>THE WORK HAS TO EXIST BEFORE YOU CAN TALK ABOUT IT</h3>
+            <p>The argument for building in public is not about clout. It is about forcing the work to exist. If you cannot show the repo, you probably do not have the repo. If you cannot show the dashboard, the dashboard probably does not exist. If you cannot show the broken version, you probably skipped the part where the work was actually hard.</p>
+            <p>Building in public is a discipline. It is the commitment to make the work visible at every stage, including the stages where it is ugly and incomplete. That commitment is what separates the people who ship from the people who talk about shipping.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>AURABLOX AND SHIPPING UGLY EARLY</h3>
+            <p>AURABLOX is the record of the work being done in public. The name is on the site, on the repos, on the dashboards. The work is not hidden behind a pitch deck. It is visible in the form of the thing itself — the code, the architecture, the agent configurations, the days of output. The ugly early version is not hidden. It is the first draft of the public record.</p>
+            <p>This is not vanity. It is accountability. When the work is public, the standard is public. The human cannot pretend the work is further along than it is. The work is what it is, and the public record is the proof.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>GITHUB AS CURRICULUM, PORTFOLIO, AND CLASSROOM</h3>
+            <p>The repos are not just storage. They are curriculum. They are the things a student or a collaborator or a reviewer can actually look at. OpenTutor and the other public projects are classrooms in the sense that they show how the work is done, not just what the work produced. The stack — React, Firebase, Gemini, whatever is in the repo — matters because it is the evidence of the method.</p>
+            <p>The pitch is cheap. The stack is expensive. The pitch can be written by anyone. The stack is the record of the decisions, the trade-offs, the implementation. Show the stack. The pitch will follow.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>The agent age makes it easier to generate convincing talk. It does not make it easier to generate convincing work. The counter to the talk is the public record — the repos, the dashboards, the broken versions, the shipped things. Building in public is the way to prove that the work exists. In a noisy market, the proof is the advantage.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ═══════════════ CHAPTER 10: THE FIRST-TRY PROBLEM ═══════════════ -->
+    <section id="ch-p2-10" class="section-shell chapter-section">
+      <div class="chapter-header">
+        <p class="eyebrow mono">CHAPTER 10</p>
+        <h2>THE FIRST-TRY PROBLEM</h2>
+        <p class="section-intro">We have agents that can apply to jobs and review repos. We still sit there regenerating answers.</p>
+      </div>
+
+      <article class="paper-body">
+
+        <section>
+          <span class="chapter mono">10</span>
+          <div>
+            <h3>THE UX PROBLEM THAT HAS NOT BEEN SOLVED</h3>
+            <p>The current LLM experience still feels, in important ways, like fighting the tool. You prompt. You get an answer. The answer is almost right. You tweak the prompt. You get a new answer. You repeat. The friction is not always in the model's capability. It is in the interaction — the need to regenerate, to re-prompt, to nudge the model back onto the path you wanted.</p>
+            <p>This is the first-try problem. The tool should get it on the first try more often than it does. When it does not, the user pays the cost in time, attention, and patience. The cost is small in a one-off chat. The cost is large when the agent is running in a loop and every misstep requires a human correction.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>PROMPT TWEAKING AS WASTED MOTION</h3>
+            <p>Prompt tweaking is the visible form of the first-try problem. The user spends time adjusting the prompt instead of spending time on the work the prompt was supposed to enable. The tweaking is not always wasted — sometimes the refinement is the work — but often it is just the cost of a tool that has not yet learned to get it right the first time.</p>
+            <p>The measure of a good agent system is not whether it can be prompted to do the thing. It is whether it can do the thing with a prompt that is close to the first one you would naturally write. The gap between those two things is the UX gap that still needs to close.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>WHY THIS MATTERS MORE IN LOOPS</h3>
+            <p>In a one-off chat, the first-try problem is an annoyance. In a loop — an agent that runs, checks, retries, and reports — the first-try problem is a throughput problem. Every time the agent does not get it on the first try, the human has to intervene, or the agent has to retry, or the workflow has to absorb the cost of the miss. The loop amplifies the cost of every miss.</p>
+            <p>This is why the first-try problem is not a minor UX issue. It is one of the things that determines whether an agent system is actually useful in sustained operation or only impressive in a demo. The demo hides the misses. The loop exposes them.</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h3>WHAT "JUST GETS IT ON THE FIRST TRY" REQUIRES</h3>
+            <p>The first-try standard requires better models, better prompts, better context, and better standards for what "right" means. It requires the agent to understand the intent well enough to produce a usable result without a conversation. It requires the human to be able to trust the first result enough to not need to double-check every step. It requires the system to be reliable enough that the first try is usually enough.</p>
+            <p>This is the hard problem. The agents can do a lot. They do not yet get it on the first try often enough. Closing that gap is one of the things that will determine how useful the agent age actually is.</p>
+          </div>
+        </section>
+
+        <section class="paper-footer-note">
+          <span class="chapter mono">—</span>
+          <div>
+            <h3>WHY THIS MATTERS IN 2026</h3>
+            <p>The first-try problem is the gap between the demo and the daily use. The demo is one prompt, one result, one wow. The daily use is many prompts, many results, many corrections, and a human who has to decide whether the tool is saving time or costing it. The tools that close the first-try gap will be the ones that move from impressive to indispensable.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
   </main>
-  <footer><span>AURABLOX / HUMAN 2.0</span><span>SEPTEMBER 2026</span></footer>
+
+  <footer>
+    <span>AURABLOX / HUMAN 2.0</span>
+    <span>SEPTEMBER 2026</span>
+  </footer>
+
 </body>
 </html>
