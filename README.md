@@ -1,63 +1,28 @@
-# Multi-Agent Apps
+# Human 2.0 — Agent Systems Book
 
-Welcome to **Multi-Agent Apps** – a collection of examples showcasing creative ways to use **Microsoft Autogen** for building AI-powered applications or performing complex AI-driven tasks. Whether you're a developer exploring multi-agent collaboration or looking for inspiration for your next AI project, this repository offers structured, reusable templates for multi-agent systems.
+This repository now serves the Human 2.0 book and editorial site. The current book draft lives at the repository root so GitHub Pages and a direct static preview can serve it without a nested path.
 
----
+## Current book site
 
-## Features
+- `index.html` — current editorial/book draft
+- `styles.css` — notebook-paper visual system
+- `network-map-sketch.jpeg` — supplied hand-drawn network map
+- `network-map-clean.jpeg` — clean-view copy of the map
 
-- **Multi-Agent Collaboration:** Examples demonstrate agents specializing in tasks, collaborating effectively to achieve goals.
-- **Custom Termination Conditions:** Define when tasks or projects are marked as complete using termination triggers.
-- **Dynamic Teams:** Organize agents into flexible groups like round-robin chats or task-specific collaborations.
-- **Integration with Microsoft Autogen:** Leveraging the powerful `autogen` framework to build modular, scalable AI systems.
-- **Interactive Console UI:** Observe real-time collaboration and task updates through a simple UI.
+## Archive
 
----
+`archive/original-multi-agent-apps/` contains the original repository files preserved before the book became the current project.
 
-## Example: Building a Financial Budgeting Website
+`archive/human-2.0-book/` contains the earlier archived copy of the book draft and its asset bundle.
 
-This example demonstrates how multiple agents collaborate to create a fully functional financial budgeting website with six pages:
+## Editorial direction
 
-- **Index Page**
-- **User Intake Questionnaire**
-- **Income Tracking**
-- **Monthly Budget**
-- **Net Worth Calculator**
-- **Financial Health Assessment**
+The book combines practical AI systems writing with personal field essays. It treats the six-agent lab as a working proof case, not a claim that six hosts are optimal. Each future chapter should include a plain-language explanation, a working example, a failure mode, and a section titled **Why this matters in 2026**.
 
-### Code Snippet
+## Local preview
 
-```python
-from autogen_agentchat.agents import AssistantAgent
-from autogen_agentchat.conditions import TextMentionTermination
-from autogen_agentchat.teams import RoundRobinGroupChat
-from autogen_agentchat.ui import Console
-from autogen_ext.models.openai import OpenAIChatCompletionClient
+```bash
+python -m http.server 8080
+```
 
-# Define the Planner/Moderator Agent
-planner_agent = AssistantAgent(
-    "planner",
-    model_client=OpenAIChatCompletionClient(model="gpt-4", api_key="your_api_key_here"),
-    system_message="You are the Planner and Moderator...",
-)
-
-# Example: Index Agent
-index_agent = AssistantAgent(
-    "index_agent",
-    model_client=model_client,
-    system_message="You are responsible for creating the Index page..."
-)
-
-# Team and Termination Setup
-termination_condition = TextMentionTermination("PROJECT COMPLETED")
-team = RoundRobinGroupChat(
-    [planner_agent, index_agent],
-    termination_condition=termination_condition
-)
-
-# Async Function to Run the Task
-async def main():
-    await Console(team.run_stream(task="Develop the financial budgeting website..."))
-
-if __name__ == "__main__":
-    asyncio.run(main())
+Then open `http://localhost:8080`.
