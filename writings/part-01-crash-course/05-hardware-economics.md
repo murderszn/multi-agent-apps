@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Hardware, Models, and the Cost of Intelligence
 
 > **Status:** Outline
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Part:** part-01-crash-course
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/47
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+GPUs, CUDA, TPUs, mixture of experts, scaling laws, local versus cloud, open versus closed models, and model economics determine what can run and who controls it.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+Choose an environment by workload, evidence, and cost — not by prestige.
 
 ## Measurable test
 

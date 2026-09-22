@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Learn, Measure, and Adopt Carefully
 
 > **Status:** Outline
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Part:** part-03-running-the-day
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/61
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Memory, operating context, intervention rate, cost, failure rate, and the one-agent-first adoption path turn principles into an operating manual.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+Start with one agent, one recurring workflow, and one verifier; scale only on evidence.
 
 ## Measurable test
 

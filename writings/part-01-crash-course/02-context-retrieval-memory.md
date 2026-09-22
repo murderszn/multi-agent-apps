@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Context, Retrieval, and Memory
 
 > **Status:** Outline
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Part:** part-01-crash-course
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/44
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Context windows, lost-in-the-middle, context engineering, RAG, vector databases, prompting, fine-tuning, LoRA, quantization, and inference economics belong together because usefulness depends on what the system can access at the moment it acts.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+Context is a design decision, not a dumping ground.
 
 ## Measurable test
 

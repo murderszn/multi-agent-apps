@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# My Office Is a Desk, Power, Wi-Fi, and a Swarm
 
 > **Status:** Outline
 > **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/55
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Chicago, St. Louis, coworking, Tailscale, documented workflows, and machines that keep moving when the operator is gone redefine the office.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+Infrastructure is the office; aesthetics are optional.
 
 ## Measurable test
 

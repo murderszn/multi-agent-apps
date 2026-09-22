@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Muse, Instinct, and the Remote Agent Wars
 
 > **Status:** Outline
 > **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/52
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+The useful comparison is not personalities or Twitter wars; it is which remote agent becomes usable in a real life and real workflow.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+Compare agents by completed jobs, intervention rate, and trust.
 
 ## Measurable test
 

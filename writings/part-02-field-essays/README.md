@@ -1,5 +1,5 @@
 # PART II — HUMAN 2.0 IN THE WILD
 
-The lived practices: how a person uses these tools in real work, at home, and in public.
+The lived proof case: what the system changes in work, security, mobility, and public building.
 
-Each chapter starts as a template. Keep the outline visible while drafting. Do not remove the QA checklist; move completed work into the draft and retain evidence in the issue.
+These are the canonical book chapters. The former 41-chapter outline is preserved under `writings/archive/41-chapter-outline/`.

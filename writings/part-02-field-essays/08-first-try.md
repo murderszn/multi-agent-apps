@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# The First-Try Problem
 
 > **Status:** Outline
 > **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/56
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Agents can apply to jobs and review repos, yet people still regenerate answers. The chapter asks what first-try quality would require when systems run in loops.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+The best prompt is the one that makes the next correction unnecessary.
 
 ## Measurable test
 

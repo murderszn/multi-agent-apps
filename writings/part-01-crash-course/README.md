@@ -1,5 +1,5 @@
 # PART I — CRASH COURSE
 
-The concepts that explain where modern AI came from and how the machinery works.
+Enough mechanics to operate agents intelligently. Each chapter clusters concepts and ends with an operator rule.
 
-Each chapter starts as a template. Keep the outline visible while drafting. Do not remove the QA checklist; move completed work into the draft and retain evidence in the issue.
+These are the canonical book chapters. The former 41-chapter outline is preserved under `writings/archive/41-chapter-outline/`.

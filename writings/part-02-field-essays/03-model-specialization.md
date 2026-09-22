@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Claude Dreams. Codex Ships.
 
 > **Status:** Outline
 > **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/51
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Different models are good at different jobs. Compare them by the work they complete, not by screenshots or leaderboard arguments.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+Ask which model is right for this job, not which model is smartest.
 
 ## Measurable test
 

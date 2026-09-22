@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Human 1.0: The Baseline Before the Lab
 
 > **Status:** Outline
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Part:** part-03-running-the-day
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/57
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Before distributed execution, one person carried every queue, context switch, and unfinished task. Establish the measurable before-state.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+Do not claim an upgrade without recording the baseline.
 
 ## Measurable test
 

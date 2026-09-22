@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Models Represent and Predict
 
 > **Status:** Outline
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Part:** part-01-crash-course
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/43
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Tokens, embeddings, attention, transformers, next-token prediction, temperature, and hallucination are enough to explain what the machine is doing — and where the metaphor breaks.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+Use the smallest complete explanation that lets the reader make a better decision.
 
 ## Measurable test
 

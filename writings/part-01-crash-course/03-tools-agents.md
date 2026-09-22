@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Tools Turn Models into Workers
 
 > **Status:** Outline
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Part:** part-01-crash-course
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/45
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Function calling, MCP, tool use, agents, coding agents, harnesses, and memory explain the shift from a model that speaks to a system that can act.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+An agent is only as trustworthy as its tools, boundaries, and reporting path.
 
 ## Measurable test
 

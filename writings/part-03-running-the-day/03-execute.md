@@ -2,20 +2,23 @@
 
 > **Status:** Outline
 > **Part:** part-03-running-the-day
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/35
-> **Target length:** 1,500–3,000 words
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/59
+> **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Focused lanes create capacity only when they are genuinely independent.
+Focused lanes create capacity only when they are genuinely independent. Carry one end-to-end request through research, drafting, building, testing, and execution.
 
 ## Chapter promise
 
-What should a reader understand, feel, or be able to do by the end?
+By the end, the reader should understand:
+
+- 
+- 
 
 ## Opening scene
 
-A concrete moment, image, failure, conversation, or observation that earns the reader's attention.
+Open with a lived moment, artifact, failure, or result. Do not start with a definition unless the definition is earned by the scene.
 
 ## Core argument
 
@@ -25,11 +28,11 @@ A concrete moment, image, failure, conversation, or observation that earns the r
 
 ## Concepts and terms
 
-Define the technical terms in plain language. Explain what the system is doing, not only what it is called.
+Explain only the mechanics the reader needs. Define terms in plain language and distinguish what is known from what is inferred.
 
-## Working example
+## Working example / proof case
 
-Describe one real workflow, code sample, system, or experiment. Include inputs, tools, steps, outputs, and the human decision points.
+Use a real workflow, artifact, measurement, conversation, code sample, or system event. Include inputs, tools, outputs, human decision points, and what failed.
 
 ## What can go wrong
 
@@ -40,29 +43,44 @@ Describe one real workflow, code sample, system, or experiment. Include inputs, 
 
 ## Why this matters in 2026
 
-Connect the chapter to current practice, cost, work, education, security, or human agency. Avoid prediction without a stated assumption.
+Connect the chapter to current practice, work, cost, education, security, or human agency. Avoid prediction without assumptions.
 
 ## Counterargument / skeptical reader
 
-What would a technically informed critic say? Answer directly and name what remains uncertain.
+What would a technically informed critic say? Answer directly. Name what remains uncertain.
 
-## Evidence to collect
+## Operator rule
 
-- Links, papers, repositories, screenshots, logs, measurements, or first-person observations:
-- Claim that requires verification:
+Parallelize tasks, not responsibility.
+
+## Measurable test
+
+What number, observation, artifact, or before/after comparison would tell us whether this chapter's rule works?
+
+## Evidence ledger
+
+- Claim:
+  - Source / artifact:
+  - Last checked:
+- Number, date, price, or product behavior:
+  - First-party source:
+  - Last checked:
 
 ## Closing image
 
-Return to the opening scene with a sharper understanding, unresolved question, or useful rule.
+Return to the opening scene with a sharper rule or unresolved question.
 
 ## QA checklist
 
-- [ ] Plain-language explanation
-- [ ] Working example included
-- [ ] Failure mode included
+- [ ] Opens with a lived scene or proof case
+- [ ] Plain-language mechanics only
+- [ ] Working example includes human decision points
+- [ ] Failure mode and response included
 - [ ] “Why this matters in 2026” included
-- [ ] Claims separated from measurements
-- [ ] Sources/evidence captured
-- [ ] Human responsibility and limits are clear
-- [ ] Copy edited for clarity and rhythm
-- [ ] Technical review completed
+- [ ] Counterargument addressed
+- [ ] Operator rule stated
+- [ ] Measurable test stated
+- [ ] Claim/evidence ledger completed
+- [ ] No invented experience, number, date, price, or product behavior
+- [ ] Copy edit completed
+- [ ] Technical QA completed

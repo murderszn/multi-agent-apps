@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Verify and Review
 
 > **Status:** Outline
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Part:** part-03-running-the-day
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/60
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Reading diffs, checking artifacts, rejecting garbage, protecting private information, and proving that work landed are the real human skills.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+A finished-looking answer is not a finished outcome.
 
 ## Measurable test
 

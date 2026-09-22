@@ -1,5 +1,5 @@
 # PART III — RUNNING THE DAY
 
-The operating model: how a human directs, reviews, and improves an agent system.
+A practical operating manual organized around Direct, Route, Execute, Verify, Learn.
 
-Each chapter starts as a template. Keep the outline visible while drafting. Do not remove the QA checklist; move completed work into the draft and retain evidence in the issue.
+These are the canonical book chapters. The former 41-chapter outline is preserved under `writings/archive/41-chapter-outline/`.

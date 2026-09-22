@@ -1,13 +1,13 @@
-# The Small Factory Under the Desk
+# Direct and Route
 
 > **Status:** Outline
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
+> **Part:** part-03-running-the-day
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/58
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
 
-Mini PCs, a controller with a GPU, OpenRouter, and a standard turn an inexpensive desk into a small distributed factory.
+Intent starts with the human, then work goes to the right environment. Follow one request through constraints, routing, ownership, and handoff.
 
 ## Chapter promise
 
@@ -51,7 +51,7 @@ What would a technically informed critic say? Answer directly. Name what remains
 
 ## Operator rule
 
-Small and reliable beats big and theatrical.
+Route by workload, sensitivity, persistence, and evidence.
 
 ## Measurable test
 
