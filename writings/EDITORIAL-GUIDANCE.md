@@ -20,6 +20,7 @@ Writing agents should take these issues and leave the rest alone. Housekeeping g
 | [#85](https://github.com/murderszn/multi-agent-apps/issues/85) | Promote load-bearing numbers to primary sources. |
 | [#86](https://github.com/murderszn/multi-agent-apps/issues/86) | Office chapter assumes the factory chapter. |
 | [#88](https://github.com/murderszn/multi-agent-apps/issues/88) | Add the LoRA decision as a section. Closes [#9](https://github.com/murderszn/multi-agent-apps/issues/9). |
+| [#90](https://github.com/murderszn/multi-agent-apps/issues/90) | Theme, not a new chapter: the models became a commodity. Home is the Claude / Codex chapter. |
 
 Issues #1–#8 and #10–#41 are closed. Their topics already live in the canonical chapters. #9 stays open until the section in #88 is on the page.
 
@@ -37,8 +38,8 @@ Only the mechanics needed to operate agents. Six chapters.
 | `part-01-crash-course/02-context-retrieval-memory.md` | Draft | #44 |
 | `part-01-crash-course/03-tools-agents.md` | Draft. Keep this voice. | #45 |
 | `part-01-crash-course/04-coordination-verification.md` | Draft | #46 |
-| `part-01-crash-course/05-hardware-economics.md` | Draft. Ledger pass, then a short LoRA section. | #47 |
-| `part-01-crash-course/06-alignment-programmers.md` | Draft | #48 |
+| `part-01-crash-course/05-hardware-economics.md` | Draft. Ledger pass, a short LoRA section, and a short section on the two model races. | #47 |
+| `part-01-crash-course/06-alignment-programmers.md` | Draft. Do not rewrite this into the commodity essay. | #48 |
 
 ### Part II — Human 2.0 in the wild
 
@@ -53,7 +54,7 @@ The eight that stay:
 | --- | --- | --- |
 | `part-02-field-essays/01-vibe-coding.md` | Draft. Needs a real diff and first person. | #49 |
 | `part-02-field-essays/02-small-factory.md` | Draft. Strong. Ledger pass. | #50 |
-| `part-02-field-essays/03-claude-dreams-codex-ships.md` | Draft | #51 |
+| `part-02-field-essays/03-claude-dreams-codex-ships.md` | Draft. Home for the commodity theme. Revise the thesis. Do not add a new file. | #51 |
 | `part-02-field-essays/04-muse-instinct.md` | Draft | #52 |
 | `part-02-field-essays/05-job-search.md` | Draft. Ethics are right. The week is missing. | #53 |
 | `part-02-field-essays/06-security-build-public.md` | Draft. Strong. Ledger pass. | #54 |
@@ -85,6 +86,25 @@ Do not flatten these back into a survey or a white paper.
 - The job-search chapter refuses to invent an offer. Keep that refusal.
 - The baseline chapter makes "faster" mean faster than a recorded Human 1.0 chain.
 - Direct and Route is in the first person and starts from the chores, not from a definition.
+
+## Theme: the models became a commodity
+
+This is a theme, not a twenty-first chapter. Its home is `part-02-field-essays/03-claude-dreams-codex-ships.md`. The hardware chapter carries one short section on the two races. No other chapter retells it.
+
+The author's position, which the home chapter has to make livable:
+
+- Anthropic's Opus 4.5 was the personal threshold. That was the moment the author, and people around the author, saw that a model could do real work. The scene is first person. It does not need a benchmark to be allowed on the page.
+- What made the work approachable was not a smarter chat box. It was tools, skills, and connectors: MCP servers, APIs, and the harness around the model. Point at the tools chapter. Do not explain function calling again.
+- After that threshold, another increment of raw model intelligence stopped being what the user was missing. The models were smart enough for most of the tasks in this lab. "Most tasks" means the tasks this book actually shows. It does not mean judgment, consent, or consequences. Those stay human, in Part III.
+- Two races are happening, and the reader is only in one of them. OpenAI, Anthropic, Google, xAI, and Meta are racing for the best model and for a claim on AGI as company property. Beside that, open-weight models, many of them from Chinese labs and then from a hive of human and agent fine-tunes and quantizations, close on the frontier in days. The author used to wait weeks or months between a flagship and a usable open alternative. That wait collapsed.
+- The author reads a lot of that open-weight wave as frontier work taken, tweaked, and quantized. The chapter may say that in the author's voice. It must also separate the charge from the record. Document release gaps, open weights, quantization, and derivative training. Allegations of theft or distillation get a named source and a date. Do not convict every open-weight lab in a sentence the ledger cannot support. The practical result is the point: waiting on the next American flagship is no longer the user's strategy.
+- The labs are now in a public argument about slowing capability down. That is an ethics conversation about building a smarter model, and it is a strange sentence to hear from firms whose business is the race. Quote the labs from primary sources, and if the public record is mixed, say it is mixed. The author's conclusion still stands: that argument is about the models. Harnesses, agents, and apps should keep pushing.
+- The mass reader should not answer this moment by learning to code, or by picking up a specialty the model already performs, or by trying to cowork the model's job. The labs need engineers to build the next model. A person using AI needs to comprehend the tools. Those are different jobs.
+- This does not cancel the alignment chapter. Smart enough to do the task is not the same as safe enough to own the consequence. "Programmers move up the stack" in that chapter means someone still stands at the fork. It must not be rewritten into "go become a software engineer." The commodity theme must not be rewritten into "nobody needs to understand the guess that deletes the database."
+
+Operator rule for the home chapter: once the model is smart enough, push the harness, not the leaderboard.
+
+The Claude-dreams chapter already says to use the right model for the lane. Keep that, narrowed. Specialization still pays rent when a lane fails. It does not pay rent as brand loyalty, and it does not pay rent as a reason to wait for the lab that claims it is closest to AGI. If the revised chapter would pass 4,000 words, cut the material this argument replaces. Do not append a second essay to the end.
 
 ## Rules for every chapter
 
