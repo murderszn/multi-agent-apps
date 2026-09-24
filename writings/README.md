@@ -1,8 +1,10 @@
 # Human 2.0 Book Writings
 
+Current editorial guidance, including the live drafting queue, is in `EDITORIAL-GUIDANCE.md`. Follow that file. Do not draft the archived 41-chapter outline or a root `book/` folder.
+
 ## Canonical structure
 
-The publisher review changed the book from a 41-chapter textbook outline into a tighter three-part manuscript. The old 41-chapter material is preserved under `archive/41-chapter-outline/`; these 18 chapters are the canonical drafting queue.
+The publisher review changed the book from a 41-chapter textbook outline into a tighter three-part manuscript. The old 41-chapter material is preserved under `archive/41-chapter-outline/`; these 20 chapters are the canonical drafting queue.
 
 1. `part-01-crash-course/` — six foundation chapters. Only the mechanics needed to operate agents intelligently; every chapter ends with an operator rule.
 2. `part-02-field-essays/` — eight personal proof-case chapters. These carry the book's voice, scenes, artifacts, numbers, consequences, and failures.
