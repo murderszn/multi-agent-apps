@@ -1,5 +1,7 @@
 # Human 2.0 Manuscript Architecture
 
+Current editorial guidance, including which files are drafts, which are still outlines, and which archived ideas stay out of the book, is in `EDITORIAL-GUIDANCE.md`.
+
 ## Canonical manuscript
 
 The publisher review changed the book from a 41-chapter textbook outline into a tighter three-part manuscript. The canonical queue is **20 chapters**:
