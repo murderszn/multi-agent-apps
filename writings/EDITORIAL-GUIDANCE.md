@@ -4,6 +4,25 @@ This is the current review of the Human 2.0 manuscript. Writing agents should fo
 
 The book is a field manual for someone meeting AI and the tools around it. The lab is the proof. Mechanism shows up when it explains a failure the reader has already felt.
 
+## Open queue
+
+Writing agents should take these issues and leave the rest alone. Housekeeping goes first so later edits hit the right files.
+
+| Issue | Work |
+| --- | --- |
+| [#87](https://github.com/murderszn/multi-agent-apps/issues/87) | Make the Part II folder match the eight canonical chapters. |
+| [#82](https://github.com/murderszn/multi-agent-apps/issues/82) | Draft Models Represent and Predict. #43 was closed while the file was still an outline. |
+| [#60](https://github.com/murderszn/multi-agent-apps/issues/60) | Draft Verify and Review. |
+| [#61](https://github.com/murderszn/multi-agent-apps/issues/61) | Draft Learn, Measure, and Adopt Carefully. |
+| [#62](https://github.com/murderszn/multi-agent-apps/issues/62) | Draft What Must Stay Human. |
+| [#83](https://github.com/murderszn/multi-agent-apps/issues/83) | Revise the job-search chapter with the real week. |
+| [#84](https://github.com/murderszn/multi-agent-apps/issues/84) | Revise vibe coding in the first person, with a real diff. |
+| [#85](https://github.com/murderszn/multi-agent-apps/issues/85) | Promote load-bearing numbers to primary sources. |
+| [#86](https://github.com/murderszn/multi-agent-apps/issues/86) | Office chapter assumes the factory chapter. |
+| [#88](https://github.com/murderszn/multi-agent-apps/issues/88) | Add the LoRA decision as a section. Closes [#9](https://github.com/murderszn/multi-agent-apps/issues/9). |
+
+Issues #1–#8 and #10–#41 are closed. Their topics already live in the canonical chapters. #9 stays open until the section in #88 is on the page.
+
 ## Canonical book
 
 Twenty chapters. Do not add a twenty-first. Do not revive an archived chapter as its own file.
