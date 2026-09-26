@@ -13,13 +13,13 @@ An issue said what the chapter needed. The repository had a place for it. The br
 
 That is the trap.
 
-The first attempt is often the most dangerous version of the work because it is coherent enough to create relief. It has headings. It has sentences that sound like the right sentences. It may even contain a conclusion. The artifact gives the operator the feeling that the hard part is over before the operator has checked whether the artifact answers the actual question.
+The first attempt is often the most dangerous version of the work because it is coherent enough to create relief. It has headings. It has sentences that sound like the right sentences. It may even contain a conclusion. The artifact gives me the feeling that the hard part is over before I've checked whether the artifact answers the actual question.
 
 This chapter began with a small proof of that problem. The repository's canonical issue for this chapter did not point to a blank page. It pointed to an archived outline. The current queue had moved on from the old 41-chapter structure, but the matching file named in the new issue did not yet exist in the canonical directory. The issue was current; the template was historical. The first response to that mismatch could have been to draft into the old file and preserve the old shape by accident.
 
 Instead, the mismatch became the work. Inspect the issue. Inspect the architecture. Pull the current branch. Compare the archive with the new book rules. Find the gap. Only then write.
 
-That sequence is less dramatic than “the agent wrote a chapter.” It is also closer to what reliable work looks like. The first try is not the deliverable. It is a probe. It tells us what the system understood, what it missed, and what the human must decide before another attempt.
+Less dramatic than “the agent wrote a chapter.” Closer to what reliable work looks like. The first try is not the deliverable. It is a probe. It tells me what the system understood, what it missed, and what I must decide before another attempt.
 
 ## Chapter promise
 
@@ -33,7 +33,7 @@ The core argument is simple: **do not ask whether the agent got it right on the 
 
 A language model is optimized to produce a plausible continuation. An agent wrapped around a language model can also read files, call tools, edit a branch, and report completion. None of that changes the basic operational fact: a polished output can be wrong in ways that are difficult to notice from the output alone.
 
-The failure is not always a hallucinated fact. It can be a wrong target, a missing constraint, a stale template, an untested assumption, or an answer that satisfies the words of the request while missing its purpose.
+The failure can be a wrong target, a missing constraint, a stale template, an untested assumption, or an answer that satisfies the words of the request while missing its purpose — not just a hallucinated fact.
 
 In this book repository, the relevant constraints were not all in one place. The issue specified the canonical chapter, its location, and a target length. The architecture document said the book had been tightened into three parts and that every chapter should end with an operator rule and measurable test. The guide required current research, a claim ledger, failure reporting, and no invented personal experience. The archived outline supplied useful editorial prompts but belonged to the old structure.
 
@@ -41,13 +41,13 @@ A first try that read only the archived outline could be fluent and still be wro
 
 The first failure, then, is often an information-architecture failure. The agent does not know which instruction outranks which other instruction. It does not know which file is canonical. It cannot infer lived evidence that was never supplied. It may not know whether a number is a measured result, a vendor claim, or an illustrative example.
 
-The human's first job is not to praise or punish the prose. It is to make the target legible.
+My first job is making the target legible — not praising or punishing the prose.
 
 ### A retry is not a method
 
-Many workflows treat regeneration as quality control. The operator reads an answer, dislikes a paragraph, and asks for a better version. The model produces another answer. The operator compares the two by feel. If the second sounds more confident, it wins.
+Many workflows treat regeneration as quality control. I read an answer, dislike a paragraph, and ask for a better version. The model produces another answer. I compare the two by feel. If the second sounds more confident, it wins.
 
-That is not iteration. It is aesthetic drift.
+That's aesthetic drift, not iteration.
 
 A useful retry changes one of four things:
 
@@ -56,21 +56,21 @@ A useful retry changes one of four things:
 3. **The procedure:** change the order of research, drafting, execution, and review.
 4. **The evaluator:** introduce a check that can reject the output for a reason other than “I do not like it.”
 
-If none of those changes, the second attempt is mostly another sample from the same uncertainty. It may be better. It may be worse. The operator has learned little either way.
+If none of those changes, the second attempt is mostly another sample from the same uncertainty. It may be better. It may be worse. I've learned little either way.
 
 This is why “try again” is a weak instruction. “Try again, using the canonical architecture rather than the archived outline; cite each technical claim; label repository evidence separately from personal evidence; and end with a measurable test” is a method. It changes the conditions under which the output is made and the standard by which it will be judged.
 
 ### The first attempt should be designed to fail visibly
 
-A good workflow does not try to eliminate every early failure. It makes failures small and observable.
+A good workflow makes failures small and observable instead of trying to eliminate every early failure.
 
 For writing, that means drafting on a branch, preserving the source files, keeping an evidence ledger, and using headings that expose missing sections. For code, it means a failing test, a small diff, and a command that can be rerun. For research, it means recording the source, claim, date checked, and the distinction between a primary result and public discussion.
 
-Visibility matters because an agent's own completion statement is not an independent verifier. “Done” means the agent reached the end of its procedure. It does not mean the artifact meets the human's purpose.
+Visibility matters because an agent's own completion statement is not an independent verifier. “Done” means the agent reached the end of its procedure. Whether the artifact meets my purpose is a separate question.
 
-The repository made that visible in a mundane way. The expected file was absent from the current canonical tree. The archive contained the older outline and several older drafts. GitHub contained the current issue queue. Those facts were not interchangeable. The missing file was a signal to inspect, not permission to invent a history for the chapter.
+The repository made that visible in a mundane way. The expected file was absent from the current canonical tree. The archive contained the older outline and several older drafts. GitHub contained the current issue queue. Those facts were not interchangeable. The missing file was a signal to inspect — not permission to invent a history for the chapter.
 
-The operator should want the first try to answer questions such as:
+I want the first try to answer questions such as:
 
 - Did the agent use the current target or a stale one?
 - Which sources shaped the claim?
@@ -100,11 +100,11 @@ An evaluation is a repeatable check against examples or criteria. It can be a te
 
 ### Grounding
 
-Grounding is the discipline of tying a claim to an available source or artifact. A repository file, issue, command result, official documentation page, paper, or clearly attributed public discussion can ground a statement. Grounding does not make a claim automatically true. It makes the path to checking the claim visible.
+Grounding is the discipline of tying a claim to an available source or artifact. A repository file, issue, command result, official documentation page, paper, or clearly attributed public discussion can ground a statement. Grounding makes the path to checking the claim visible; it doesn't certify the claim as true.
 
 ## Working example: one chapter, four passes
 
-The first pass was not “write 3,000 words.” It was reconnaissance.
+The first pass was reconnaissance, not “write 3,000 words.”
 
 **Pass one: establish the target.** The issue identified “The First-Try Problem” as the lowest-numbered open canonical chapter issue. Its definition of done required a lived scene or proof case, a 2,500–4,000-word draft, plain-language mechanics, a working example, failure analysis, a section titled “Why this matters in 2026,” a claim/evidence ledger, an operator rule, a measurable test, and QA. The architecture document added the larger manuscript rules: use the lab and lived result as the spine, distinguish the current 20-chapter queue from the archived 41-chapter outline, and do not invent experiences or outcomes.
 
@@ -114,9 +114,9 @@ The first pass was not “write 3,000 words.” It was reconnaissance.
 
 That distinction is the whole point. A source can establish what a benchmark measured. It cannot establish what happened in our run unless our run produced the artifact and measurement.
 
-**Pass four: draft and inspect.** The chapter was written on a branch. It names the repository discovery as repository evidence, not as Josh's personal memory. It does not claim that an agent completed a job application, fixed a bug, or improved a metric unless an artifact demonstrates that outcome. It makes the failure boundary explicit: an agent can follow a stale template with confidence; a human must resolve the conflict between local instructions and current architecture.
+**Pass four: draft and inspect.** The chapter was written on a branch. It names the repository discovery as repository evidence, not as my personal memory. It does not claim that an agent completed a job application, fixed a bug, or improved a metric unless an artifact demonstrates that outcome. It makes the failure boundary explicit: an agent can follow a stale template with confidence; a human must resolve the conflict between local instructions and current architecture.
 
-This is not a glamorous workflow. It is reproducible. Another operator can inspect the issue, the architecture file, the archive, the branch, and the sources. They can disagree with the argument without having to guess what happened.
+It's a reproducible workflow, even if it isn't glamorous. The workflow is inspectable: the issue, the architecture file, the archive, the branch, and the sources are all there. Anyone who disagrees with the argument can check the work without having to guess what happened.
 
 ## What can go wrong
 
@@ -126,7 +126,7 @@ This is not a glamorous workflow. It is reproducible. Another operator can inspe
   - **How the human responds:** stop drafting, establish precedence, and record the mismatch as part of the evidence.
 
 - **Failure mode: regeneration changes tone but not truth.**
-  - **Why it happens:** the operator gives a stylistic instruction—“make it sharper”—when the real problem is missing evidence or a wrong target.
+  - **Why it happens:** I give a stylistic instruction—“make it sharper”—when the real problem is missing evidence or a wrong target.
   - **How to detect it:** compare claims and sources, not adjectives. If the unsupported claim remains, the retry did not solve the problem.
   - **How the human responds:** change the input, constraint, procedure, or evaluator.
 
@@ -155,7 +155,7 @@ It also changes the meaning of speed. Speed is not the time until the model stop
 
 The pressure to regenerate will increase because the interface makes retrying frictionless. That convenience is useful for low-stakes drafting. It is dangerous for decisions, code, research, security, hiring, finance, and any work where a plausible error can travel farther than its correction.
 
-The answer is not to stop using agents. It is to give every attempt a boundary: what it may change, what it must show, and what causes a human rejection.
+So I give every attempt a boundary — what it may change, what it must show, and what causes my rejection — instead of stopping using agents.
 
 ## Counterargument / skeptical reader
 
@@ -163,9 +163,9 @@ A technically informed critic may say that this is over-process. If the model is
 
 But stronger generation does not remove the need to define the target. It may make wrong work more persuasive. It may also move the failure from obvious nonsense to a subtle unsupported claim, a security boundary nobody tested, or a requirement that was omitted because it was not in the prompt.
 
-The critic may also say that not every task needs a ledger and a branch. Correct. The discipline should scale with consequence. A disposable paragraph does not need the same controls as a production migration or a manuscript claim. The principle is not “turn every thought into bureaucracy.” The principle is “make the cost of being wrong proportional to the harm.”
+The critic may also say that not every task needs a ledger and a branch. Correct. The discipline should scale with consequence. A disposable paragraph does not need the same controls as a production migration or a manuscript claim. The principle is “make the cost of being wrong proportional to the harm” — not “turn every thought into bureaucracy.”
 
-There is uncertainty here. We do not have a universal retry formula. We should not pretend that four passes always beat one. The measurable question is whether a stated workflow improves the rate at which the operator detects and corrects important errors before acceptance. That is an empirical question, not a slogan.
+There is uncertainty here. We do not have a universal retry formula. We should not pretend that four passes always beat one. The measurable question is whether a stated workflow improves the rate at which I detect and correct important errors before acceptance. That is an empirical question, not a slogan.
 
 ## Operator rule
 
@@ -211,11 +211,11 @@ A useful workflow should make the defect visible sooner. If retries keep produci
 
 The first attempt is still on the branch. It is not a failure waiting to be hidden. It is a map of the uncertainty that remains.
 
-The operator reads the issue again. The operator checks the path. The operator opens the archive, then the architecture. One instruction is current; another is historical. The difference is small on the screen and decisive in the work.
+I read the issue again. I check the path. I open the archive, then the architecture. One instruction is current; another is historical. The difference is small on the screen and decisive in the work.
 
 Only now is another attempt worth making.
 
-The machine can produce the next draft. The human decides what the next draft must learn.
+The machine can produce the next draft. I decide what the next draft must learn.
 
 ## QA checklist
 
