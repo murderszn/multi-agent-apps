@@ -7,19 +7,19 @@
 
 The diff looked finished.
 
-The headings were in place. The prose was smooth. The links were formatted. The checklist at the bottom had green boxes all the way down. It was the kind of file that invites the human to nod, commit, and move on.
+The headings were in place. The prose was smooth. The links were formatted. The checklist at the bottom had green boxes all the way down. It was the kind of file that invites me to nod, commit, and move on.
 
-I did not have a verified chapter. I had a plausible artifact.
+I had a plausible artifact — not a verified chapter.
 
 That distinction is easy to miss when an agent has done the visible work. The agent has read the issue, inspected the repository, gathered sources, and returned a clean-looking document. The temptation is to treat review as a ceremony after the real work. Read the diff quickly. Confirm that nothing looks absurd. Click approve.
 
-But review is not the last polite step before shipping. Review is where the requested work becomes an accountable result. It is where I ask whether the artifact says what the request required, whether its claims can be supported, whether the tests actually exercise the change, and whether anything outside the intended boundary moved with it.
+Review is where the requested work becomes an accountable result — not the last polite step before shipping. It is where I ask whether the artifact says what the request required, whether its claims can be supported, whether the tests actually exercise the change, and whether anything outside the intended boundary moved with it.
 
 A finished-looking answer is not a finished outcome.
 
 ## The difference between plausible and proved
 
-Verification is not a mood. It is a comparison between a claim and evidence.
+Verification is a comparison between a claim and evidence — not a mood.
 
 A generated chapter claims that it answered the issue. The issue and template are the evidence to compare against.
 
@@ -42,7 +42,7 @@ Those questions are slower than approval. They are cheaper than discovering the 
 
 ## Review begins with the request
 
-The first review surface is not the output. It is the request.
+The first review surface is the request — not the output.
 
 In this repository, the request for this chapter names a canonical file, a target length, a proof case, plain-language mechanics, failure modes, a section called “Why this matters in 2026,” a skeptical-reader response, an evidence ledger, an operator rule, a measurable test, and quality checks. Those requirements are acceptance criteria. They are not suggestions to remember after the prose is written.
 
@@ -88,7 +88,7 @@ For prose, the equivalent of an accidental file change is an accidental argument
 
 The most useful review is not a list of abstract principles. It is a replay of one work item.
 
-For this chapter, the work item is visible in the repository. The input is the canonical issue and Markdown template. The surrounding inputs are the editorial guidance, the manuscript architecture, adjacent chapters, and first-party documentation about reviewing and diffs. The output is this chapter on a branch, with a commit and a proposed pull request. The human decision points are scope, evidence, voice, what not to repeat, and whether the closing test can actually be run.
+For this chapter, the work item is visible in the repository. The input is the canonical issue and Markdown template. The surrounding inputs are the editorial guidance, the manuscript architecture, adjacent chapters, and first-party documentation about reviewing and diffs. The output is this chapter on a branch, with a commit and a proposed pull request. My decision points are scope, evidence, voice, what not to repeat, and whether the closing test can actually be run.
 
 That replay gives me a path through the artifact:
 
@@ -103,7 +103,7 @@ If I cannot answer those questions from the artifact and its sources, the chapte
 
 The same replay works for an application, a code change, or a financial workflow. Start with the input. Trace the transformations. Identify the point where a human authorized a consequential action. Find the external evidence that says the action occurred. Then compare the final state with the requested state.
 
-A reviewer is not merely looking for defects. A reviewer is reconstructing causality.
+A reviewer is reconstructing causality — not merely looking for defects.
 
 ## What to check when the output looks right
 
@@ -115,7 +115,7 @@ Was the worker allowed to do this? Did it touch only the requested files, accoun
 
 A clean diff can still have the wrong boundary. A secret pasted into a Markdown example may be formatted perfectly. A pull request can change the intended function and also weaken an authorization check in a nearby file. A research paragraph can include a real person’s detail that the assignment never needed.
 
-Boundary review is not distrust of the worker. It is recognition that workers optimize for completion unless the limits are explicit and enforced.
+Boundary review recognizes that workers optimize for completion unless the limits are explicit and enforced — it isn't distrust of the worker.
 
 ### Check the claim
 
@@ -141,7 +141,7 @@ A system that reports success after partial completion is not verified. It is hi
 
 ### Check the receipt
 
-The worker’s own report is evidence about what it believes happened. It is not independent proof.
+The worker’s own report is evidence about what it believes happened — not independent proof.
 
 For a code change, the receipt might be a passing check tied to the exact commit, plus a readable diff. For a publication, it might be the rendered page. For an application, it might be the employer’s confirmation. For this workflow, it includes the branch, commit, pull-request URL, and issue link. The receipt has to come from the system of record or from a check that can be rerun—not only from the agent’s final paragraph.
 
@@ -157,7 +157,7 @@ The signal is a review with no questions, no stated acceptance criteria, and no 
 
 A worker writes a test that confirms the behavior it implemented. The test passes. Nobody asks whether that behavior is the one the user needed.
 
-Detect this by restating the acceptance criteria independently of the implementation. If the test cannot be explained in those terms, it is weak evidence. The human responds by adding an example from the request, a regression case, or an end-to-end check.
+Detect this by restating the acceptance criteria independently of the implementation. If the test cannot be explained in those terms, it is weak evidence. I respond by adding an example from the request, a regression case, or an end-to-end check.
 
 **The evidence is adjacent but insufficient.**
 
@@ -187,13 +187,13 @@ The result is a new kind of operational literacy. A person does not need to beco
 
 That literacy matters beyond code. A generated report can affect a hiring decision. A prepared email can expose private information. A suggested financial action can move money. A polished summary can become the only version executives read. In each case, the human question is the same: what evidence lets me accept this, and what would tell me that I should not?
 
-The answer should be concrete enough for another person to reproduce. If it depends on trusting the agent’s confidence, it is not a verification method.
+The answer should be concrete enough for another person to reproduce. If it depends on trusting the agent’s confidence, it isn't a verification method.
 
 ## The skeptical reader
 
-A technically informed reader may object that this is just bureaucracy. If the model is good enough and the tests pass, why burden the operator with another review layer?
+A technically informed reader may object that this is just bureaucracy. If the model is good enough and the tests pass, why add another review layer?
 
-Sometimes the objection is correct. A review can cost more than the risk it reduces. A tiny, reversible change with a deterministic check may not need a long human inspection. The answer is not maximum process. It is proportional evidence.
+Sometimes the objection is correct. A review can cost more than the risk it reduces. A tiny, reversible change with a deterministic check may not need a long human inspection. The answer is proportional evidence — not maximum process.
 
 But “the model is good enough” is not a boundary. Good enough for what input, under what permissions, with what failure cost? “The tests pass” is not a boundary either. Which tests, against which commit, and which behavior is still outside them?
 
@@ -246,11 +246,11 @@ Keep the workflow only if the accepted-result time is stable or lower, post-acce
 
 The green checklist is still useful. It is just not the proof.
 
-The proof is the request beside the changed artifact, the claim beside the source, the test beside the behavior it covers, and the receipt beside the action that mattered. It is the human being able to say not only “this looks finished,” but “I know what finished means here, and I can show why I believe it.”
+The proof is the request beside the changed artifact, the claim beside the source, the test beside the behavior it covers, and the receipt beside the action that mattered. It's me being able to say not only “this looks finished,” but “I know what finished means here, and I can show why I believe it.”
 
 Agents can produce the first answer. They can also prepare much of the evidence. The acceptance decision still belongs to the person who owns the consequence.
 
-A finished-looking answer is not a finished outcome. The work is finished when the result, the record, and the evidence agree.
+The work is finished when the result, the record, and the evidence agree — not when the answer merely looks finished.
 
 ## QA checklist
 
