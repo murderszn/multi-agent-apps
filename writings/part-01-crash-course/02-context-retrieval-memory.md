@@ -5,15 +5,15 @@
 > **Issue:** https://github.com/murderszn/multi-agent-apps/issues/44
 > **Target length:** 2,500–4,000 words
 
-## The empty chair in the lab
+## The file that remembers me
 
-At the start of this chapter's lab run, the repository contained the assignment, the template, and a clean working branch. It did not contain the chapter. The worker had the instruction to write about context, retrieval, and memory, but no personal memory of the project, no reliable knowledge of which files mattered, and no permission to treat the whole repository as equally relevant.
+My agents know things about me that I don't want them guessing. Not the way a chatbot "remembers" your name for the length of a session — in a file. I keep a YAML document in my resume repo with my legal name, my address, my work authorization status, my salary band, and a standing rule for the gaps: when an application asks for employment months and only years are known, January for starts, December for ends. Below that, a list of screening answers I've dictated once so I never have to dictate them again. Not a veteran. U.S. citizen. Authorized to work, no sponsorship needed. Fine relocating to California.
 
-That is the ordinary condition of an agent. It is not a blank mind waiting for a clever prompt. It is a worker arriving at a desk with a task, a pile of possible documents, a set of tools, and a human who will eventually have to live with the result.
+When a form asks something the file doesn't answer, the worker stops and asks me. It never guesses a salary number, never invents a work-authorization status, never creates an account in my name without asking. That pause — the machine reaching the edge of what it actually knows and refusing to fill the gap with confidence — is the whole subject of this chapter.
 
-The first useful act was not writing. It was narrowing the field. The worker read the book guide, pulled `main`, inspected the open GitHub queue, ignored the archived outline tickets, selected the lowest-numbered open canonical chapter, and read the matching template. Only then did research begin. The template supplied the shape of the work. The repository supplied local context. The papers supplied outside evidence. Git supplied a reversible record of what changed.
+Because here's the thing most people get backwards about AI systems: the model was never the hard part. The hard part is what you put in front of it. I can hand my agent the entire internet and it will still fail if the one paragraph that matters — the salary band, the don't-guess rule — isn't in front of it at the moment of the decision. And I can hand it a single page and watch it succeed, if that page is the right page.
 
-That sequence is the chapter in miniature. A model can generate language without any of it. A useful system cannot. Context is the material placed in front of the model now. Retrieval is the deliberate act of finding the material that belongs there. Memory is the material a system carries forward between moments. These are related, but they are not interchangeable, and confusing them is how people build systems that sound informed while quietly losing the plot.
+That page has three names depending on what job it's doing. Context is the material placed in front of the model right now. Retrieval is the deliberate act of finding the material that belongs there. Memory is the material the system carries forward between moments — like my YAML file. They're related, but they're not interchangeable, and confusing them is how people build systems that sound informed while quietly losing the plot.
 
 ## The promise of this chapter
 
@@ -28,71 +28,73 @@ The core argument is simple: **context is a design decision, not a dumping groun
 
 ## Context is the desk, not the mind
 
-A language model receives a sequence of tokens and predicts a continuation. In an application, the sequence may include a system instruction, a user request, retrieved passages, tool results, conversation history, examples, and formatting requirements. People call the whole package “context.” That word can make the system sound more coherent than it is.
+Here's the part people gloss over. A language model receives a sequence of tokens and predicts a continuation. In an application, that sequence might include a system instruction, a user request, retrieved passages, tool results, conversation history, examples, and formatting requirements. I call the whole package "context" — and that word can make the system sound more coherent than it is.
 
 Context is not a human-like understanding of a situation. It is the working material supplied to the model for one act of generation. Some of it may be highly relevant. Some may be stale. Some may conflict. Some may be malicious. The model is asked to respond to all of it through the same channel.
 
-This distinction matters because a larger context window changes what can be supplied, not what will be used correctly. The paper *Lost in the Middle: How Language Models Use Long Contexts* tested long-context models on question answering and key-value retrieval. Its authors reported that performance could degrade when relevant information moved into the middle of a long input, with stronger performance often near the beginning or end. The result is not a universal law for every model or application. It is a warning against the lazy equation of capacity with attention.
+This distinction matters because a larger context window changes what can be supplied, not what will be used correctly. The paper *Lost in the Middle: How Language Models Use Long Contexts* tested long-context models on question answering and key-value retrieval. Its authors reported that performance could degrade when relevant information moved into the middle of a long input, with stronger performance often near the beginning or end. I read that as a warning, not a law: it argues against the lazy equation of capacity with attention, but it doesn't establish a universal rule for every model or application.
 
 A context window is like the size of a desk. A larger desk lets you spread out more papers. It does not force you to read the right one, notice a contradiction, or throw away last year's version. If the desk is covered in irrelevant material, adding another document may reduce practical clarity even when the system accepts it technically.
 
-The first engineering question is therefore not “How much context can this model take?” It is “What decision is the model making, and what evidence does that decision require?” A support answer may need the current account policy and the user's case. A code change may need the issue, the relevant module, tests, and project conventions. A research draft may need the template, the local manuscript, and primary sources. The rest may be noise.
+So the first question I ask isn't "How much context can this model take?" It's "What decision is the model making, and what evidence does that decision require?" A support answer may need the current account policy and the user's case. A code change may need the issue, the relevant module, tests, and project conventions. A research draft may need the template, the local manuscript, and primary sources. The rest may be noise.
 
 ## Retrieval is selection with receipts
 
-Retrieval is the process of finding candidate information from a larger body of material and placing selected pieces into the working context. It can be as plain as searching filenames and reading a few documents. It can use keyword search, metadata filters, a database query, or embeddings. An embedding turns text into a numerical representation intended to capture some semantic relationships; a vector index can then find passages that are near a query in that representation.
+Retrieval is how my YAML file gets into the room at the moment it matters. It's the process of finding candidate information from a larger body of material and placing selected pieces into the working context. It can be as plain as searching filenames and reading a few documents. It can use keyword search, metadata filters, a database query, or embeddings. An embedding turns text into a numerical representation intended to capture some semantic relationships; a vector index can then find passages that are near a query in that representation.
 
-The mechanism is less important than the boundary. Retrieval is a selection system. It chooses what the model gets to see. It is not a truth machine.
+The mechanism is less important than the boundary, and the boundary is the part I want you to remember: retrieval is a selection system. It chooses what the model gets to see. It is not a truth machine.
 
 The foundational RAG paper by Lewis and colleagues describes retrieval-augmented generation as combining a model's learned, parametric memory with an explicit non-parametric memory accessed through a retriever. The paper's motivation is practical: model parameters are limited as a precise and updateable store of knowledge, and retrieved evidence can provide access to external material and provenance. The paper reports gains on knowledge-intensive tasks in its evaluated setup. That does not mean every retrieval system improves every task. It means the architecture gives us a way to expose evidence that is outside the model's weights.
 
-A retrieval result needs a receipt. At minimum, preserve the source identifier, the passage or file location, the retrieval time, and enough surrounding text to check the interpretation. If the source is a changing product document, preserve the URL and the date checked. If it is a local file, preserve the commit or branch. If it is a conversation, preserve who said what and when. Without that trail, the system can produce an answer that appears sourced while making verification unnecessarily expensive.
+A retrieval result needs a receipt. At minimum, I want the source identifier, the passage or file location, the retrieval time, and enough surrounding text to check the interpretation. If the source is a changing product document, I keep the URL and the date checked. If it is a local file, the commit or branch. If it is a conversation, who said what and when. Without that trail, the system can produce an answer that appears sourced while making verification unnecessarily expensive.
 
-There are two common retrieval mistakes.
+There are two common retrieval mistakes, and I've watched both happen.
 
-The first is semantic confidence. A passage can be close to the query and still be wrong for the task. A document about “memory” may describe database persistence, human recollection, or a model's context state. Similar words are not sufficient evidence.
+The first is semantic confidence. A passage can be close to the query and still be wrong for the task. A document about "memory" may describe database persistence, human recollection, or a model's context state. Similar words are not sufficient evidence.
 
 The second is retrieval completeness. A returned passage can be accurate and still omit the exception, date, scope, or neighboring paragraph that changes the conclusion. Retrieval finds candidates. The human or a verification step must establish whether those candidates support the claim being made.
 
 ## Memory is not one thing
 
-When people say an agent “remembers,” they may mean several different systems.
+When I say an agent "remembers," I might mean four different systems, and I try to be specific about which one.
 
 **Working memory** is the current context: instructions, recent turns, retrieved passages, and tool results. It is temporary and task-specific. It should be easy to replace.
 
 **Conversation memory** is a selected record of prior interactions. It might include preferences, unresolved tasks, or previous decisions. It is useful only if the record is accurate, relevant, and allowed to persist.
 
-**External memory** is information kept in files, databases, issue trackers, or other systems. It can outlive a model call and be inspected by people. This is often the most accountable form because it has an owner and an audit trail.
+**External memory** is information kept in files, databases, issue trackers, or other systems — like my YAML profile. It can outlive a model call and be inspected by people. This is usually the most accountable form because it has an owner and an audit trail.
 
 **Parametric memory** is what the model has encoded in its learned parameters. It is not a searchable notebook with a visible citation for every fact. It can be broad and useful, but it is difficult to update at the level of one claim and difficult to inspect directly.
 
-These layers have different failure modes. Working memory can be overloaded. Conversation memory can preserve a misunderstanding. External memory can become stale or permission-sensitive. Parametric memory can be confidently wrong or out of date. Calling all of them memory hides the controls each one needs.
+These layers fail differently, which is why I don't let myself call them all "memory" without thinking. Working memory can be overloaded. Conversation memory can preserve a misunderstanding. External memory can become stale or permission-sensitive. Parametric memory can be confidently wrong or out of date. Calling all of them memory hides the controls each one needs.
 
-The practical rule is to store decisions and durable facts outside the model when they matter, and to make the model retrieve them when needed. Do not ask an opaque generation call to be the sole system of record. If a decision cannot be reconstructed from an artifact, a source, or a human owner, it is not yet operational memory. It is a sentence that happened.
+The practical rule I run on: store decisions and durable facts outside the model when they matter, and make the model retrieve them when needed. Don't ask an opaque generation call to be the sole system of record. If a decision can't be reconstructed from an artifact, a source, or a human owner, it isn't operational memory yet. It's a sentence that happened.
 
 ## The working example: a chapter worker
 
-The repository run gives us a small but honest proof case. The assignment was not “write something interesting about AI.” It specified a canonical queue, a target range, a voice, a template, research boundaries, a claim ledger, a measurable operator test, and a GitHub workflow. The worker had to act inside those constraints.
+Let me show you the same three ideas running inside the system that drafted this chapter — I set it up this way on purpose, so the example is honest.
 
-The input set was assembled in stages:
+The assignment I gave it wasn't "write something interesting about AI." It specified a canonical queue, a target range, a voice, a template, research boundaries, a claim ledger, a measurable operator test, and a GitHub workflow. The worker had to act inside those constraints — constraints I defined, because the human decision points were mine to keep.
+
+The input set got assembled in stages, and the staging is the whole point:
 
 1. The book guide defined the editorial standard and prohibited invented experiences, metrics, tool behavior, and outcomes.
-2. GitHub issue inspection identified issue 44 as the lowest-numbered open canonical chapter ticket after archived mapping issues were excluded.
+2. GitHub issue inspection identified issue 44 as the lowest-numbered open canonical chapter ticket after archived outline issues were excluded.
 3. The matching Markdown template defined the required sections.
 4. The repository state, including neighboring chapter outlines, supplied local structure and tone.
 5. Primary research supplied evidence about long-context behavior and retrieval-augmented generation.
 
-The important decision was what not to include. The worker did not load every issue, every historical chapter, or the entire repository into one prompt. It used the queue to choose the task and the template to choose the shape. It used targeted reads to understand the local manuscript. It used source pages for specific technical claims. This is context engineering in its least glamorous and most useful form: selecting the smallest complete set of material that allows the next decision.
+The important decision was what not to include. The worker didn't load every issue, every historical chapter, or the entire repository into one prompt. It used the queue to choose the task and the template to choose the shape. It used targeted reads to understand the local manuscript. It used source pages for specific technical claims. This is context engineering in its least glamorous and most useful form: selecting the smallest complete set of material that allows the next decision.
 
-There was also a failure. The first web research route was unavailable because the configured web-search service lacked credentials. The worker did not turn that failure into a fabricated citation or pretend the search had succeeded. It diagnosed the external blocker and used a narrower, inspectable route: direct retrieval of the arXiv records and official documentation pages through `curl`. That workaround did not make every source equally strong. It did make the evidence path visible.
+There was also a failure, and I kept it in because the failure is instructive. The first web research route was unavailable — the configured web-search service lacked credentials. The worker didn't turn that failure into a fabricated citation or pretend the search had succeeded. It diagnosed the external blocker and used a narrower, inspectable route: direct retrieval of the arXiv records and official documentation pages through `curl`. That workaround didn't make every source equally strong. It did make the evidence path visible.
 
-The human decision points remain clear. A human defined the book's voice and boundaries. The worker selected a canonical ticket according to the stated queue rule. The worker chose which local files and sources were relevant. The human must still review whether the drafted interpretation is faithful, whether the sources really support the claims, and whether the chapter belongs in the manuscript. The system accelerated selection and composition. It did not transfer authorship or accountability.
+The human checkpoints stayed where I put them. I defined the book's voice and boundaries. The worker selected a canonical ticket according to the stated queue rule and chose which local files and sources were relevant. I still have to review whether the drafted interpretation is faithful, whether the sources really support the claims, and whether the chapter belongs in the manuscript. The system accelerated selection and composition. It didn't transfer authorship or accountability — those are still mine.
 
 ## What can go wrong
 
 ### Failure mode: the context dump
 
-**Why it happens:** Long context feels safe. The builder fears leaving something out, so every document, prior turn, and tool output is appended.
+**Why it happens:** Long context feels safe. The builder fears leaving something out, so every document, prior turn, and tool output gets appended. I've felt the pull myself — when in doubt, include it.
 
 **How to detect it:** Ask the system to list the sources it actually used and compare that list with the supplied material. Look for stale instructions, repeated text, contradictory versions, and answers that cite a document without addressing its exception.
 
@@ -108,7 +110,7 @@ The human decision points remain clear. A human defined the book's voice and bou
 
 ### Failure mode: memory preserves a mistake
 
-**Why it happens:** A summary is written once and later treated as fact. The original uncertainty disappears while the compressed statement survives.
+**Why it happens:** A summary is written once and later treated as fact. The original uncertainty disappears while the compressed statement survives. My YAML file has this failure mode too — if I ever let a guessed answer into it, every future application inherits the guess.
 
 **How to detect it:** Attach provenance and confidence to durable memories. Periodically sample memories and compare them with their source artifacts. Mark disputed, expired, and superseded records instead of silently overwriting them.
 
@@ -118,7 +120,7 @@ The human decision points remain clear. A human defined the book's voice and bou
 
 **Why it happens:** Retrieved text, a web page, a file, or a tool response may contain instructions addressed to the agent. The system confuses data with authority.
 
-**How to detect it:** Label untrusted material as data. Test documents containing commands such as “ignore the system instruction.” Confirm that the agent quotes or summarizes the content without obeying it.
+**How to detect it:** Label untrusted material as data. Test documents containing commands such as "ignore the system instruction." Confirm that the agent quotes or summarizes the content without obeying it.
 
 **How the human responds:** Separate instructions from evidence in the prompt and in the software interface. Restrict tools by permission. Require confirmation before external side effects. A retrieved document should not gain authority merely because a retriever found it.
 
@@ -128,29 +130,33 @@ The human decision points remain clear. A human defined the book's voice and bou
 
 **How to detect it:** Use a claim ledger. For every number, date, price, product behavior, and consequential factual assertion, require a source or label it as uncertain. Check whether the cited passage entails the claim rather than merely mentioning its topic.
 
-**How the human responds:** Narrow the claim, retrieve better evidence, or leave the question open. “I do not have support for that” is a successful output when the alternative is an invented fact.
+**How the human responds:** Narrow the claim, retrieve better evidence, or leave the question open. "I do not have support for that" is a successful output when the alternative is an invented fact.
 
 ## Why this matters in 2026
 
-In 2026, the practical constraint is not access to generated text. It is the quality of the system surrounding the text. Models are being placed in coding workflows, research pipelines, support operations, document systems, and personal knowledge tools. In each setting, the cost of a wrong answer depends on what the system can access and what it is allowed to do next.
+In 2026, the practical constraint isn't access to generated text. It's the quality of the system surrounding the text. Models are being placed in coding workflows, research pipelines, support operations, document systems, and personal knowledge tools. In each setting, the cost of a wrong answer depends on what the system can access and what it's allowed to do next — which is exactly what this chapter is about.
 
-Longer context makes demos easier. It also makes it easier to hide poor selection, stale material, and conflicting authority behind a capable model. Retrieval makes current documents available. It also creates a new attack and failure surface: the system must decide which document is current, trustworthy, permitted, and relevant. Memory makes continuity possible. It also turns yesterday's mistake into tomorrow's premise if no one maintains it.
+Longer context makes demos easier. It also makes it easier to hide poor selection, stale material, and conflicting authority behind a capable model. Retrieval makes current documents available. It also creates a new attack and failure surface: the system has to decide which document is current, trustworthy, permitted, and relevant. Memory makes continuity possible. It also turns yesterday's mistake into tomorrow's premise if nobody maintains it.
 
-The response is not to reject context, retrieval, or memory. It is to make them observable. Show the sources. Record the version. Preserve the human checkpoint. Test with known cases and near-misses. Measure whether the system reaches the right evidence and whether a reviewer can understand why it acted.
+My response isn't to reject context, retrieval, or memory. It's to make them observable. Show the sources. Record the version. Preserve the human checkpoint. Test with known cases and near-misses. Measure whether the system reaches the right evidence and whether a reviewer can understand why it acted.
 
-This is also a human-agency issue. The more a system remembers and retrieves, the more it can appear to know the person or organization using it. That appearance can encourage delegation beyond the evidence. A memory system should make a person more able to inspect and correct a decision, not less able to tell where the decision came from.
+This is also a human-agency issue, and it's the one I care about most. The more a system remembers and retrieves, the more it can appear to know the person or organization using it. That appearance encourages delegation beyond the evidence. A memory system should make a person more able to inspect and correct a decision, not less able to tell where the decision came from. My YAML file works because I can read it. Any memory I can't read is a liability wearing a feature's clothes.
 
 ## The skeptical reader
 
-A technically informed critic may say: modern models have enormous context windows, retrieval quality is improving, and simple prompting is enough for many tasks. Why burden a workflow with ledgers, source labels, and review?
+I can hear the technically informed reader, because I've been that reader.
 
-The critic is right about one thing: not every task deserves a research apparatus. If the task is low-stakes brainstorming, a loose context may be fine. Retrieval can also hurt when chunking is poor, the index is noisy, or the answer is already clear without external material. More process is not automatically more reliable.
+*"Modern models have enormous context windows, retrieval quality is improving, and simple prompting is enough for many tasks. Why burden a workflow with ledgers, source labels, and review?"*
 
-But that argument supports proportional controls, not no controls. The test is whether the cost of verification is lower than the cost of being wrong. For a disposable draft, light review may be enough. For a production change, a policy answer, a financial decision, or a manuscript claim, source visibility and change history are cheap compared with an invisible error.
+You're right about one thing: not every task deserves a research apparatus. If the task is low-stakes brainstorming, a loose context may be fine. Retrieval can also hurt when chunking is poor, the index is noisy, or the answer is already clear without external material. More process isn't automatically more reliable — I've watched heavyweight pipelines lose to a well-chosen paragraph.
 
-The uncertain part is generalization. A result from one model, corpus, retriever, or task does not establish performance for another. The long-context research identifies a risk, not a universal ranking of systems. The RAG research establishes an evaluated architecture and reported results, not a guarantee for a local index. Good operators keep those boundaries visible.
+But that argument supports proportional controls, not no controls. The test I use is whether the cost of verification is lower than the cost of being wrong. For a disposable draft, light review may be enough. For a production change, a policy answer, a financial decision, or a manuscript claim, source visibility and change history are cheap compared with an invisible error.
+
+The uncertain part is generalization, and I'll state it plainly: a result from one model, corpus, retriever, or task doesn't establish performance for another. The long-context research identifies a risk, not a universal ranking of systems. The RAG research establishes an evaluated architecture and reported results, not a guarantee for a local index. Good operators keep those boundaries visible — including me.
 
 ## Operator rule
+
+Here's the rule I run on:
 
 **Context is a design decision, not a dumping ground.** Give the model the smallest complete packet for the decision: the goal, the constraints, the authoritative evidence, the known uncertainty, and the required output. Keep durable memory in inspectable artifacts with provenance. Treat retrieval as selection, not truth.
 
@@ -164,7 +170,7 @@ For a representative task set, compare a context-dump workflow with a curated co
 - whether a reviewer can reconstruct the decision from the saved artifacts;
 - how often the system obeys instructions embedded in untrusted retrieved text.
 
-The curated workflow passes only if it improves source-supported correctness and reviewability without creating an unacceptable increase in omissions. Run the test on known cases, contradictory cases, and cases where the correct answer is “insufficient evidence.” The number of trials, threshold, and task mix must be specified by the operator before measurement; they are not supplied by this chapter.
+The curated workflow passes only if it improves source-supported correctness and reviewability without creating an unacceptable increase in omissions. Run the test on known cases, contradictory cases, and cases where the correct answer is "insufficient evidence." You specify the number of trials, the threshold, and the task mix before measurement — the chapter doesn't supply them for you.
 
 ## Evidence ledger
 
@@ -192,9 +198,9 @@ The curated workflow passes only if it improves source-supported correctness and
 
 ## Closing image
 
-The empty chair in the lab was never the problem. A model did not need a human-shaped memory before it could begin. It needed a bounded assignment, the right papers, a visible record of what it used, and someone who could still say, “That is not supported.”
+That YAML file doesn't make my agents smart. It does something more useful: it draws a visible line between what the system knows and what it's guessing. Everything on the inspectable side — the salary band, the veteran status, the January/December rule — is memory doing its job. Everything past the line is a pause, a flag, a human.
 
-A good context does not make the system omniscient. It makes the next decision inspectable. That is enough to build on—and enough to stop when the evidence runs out.
+A good context doesn't make the system omniscient. It makes the next decision inspectable. That is enough to build on — and enough to stop when the evidence runs out.
 
 ## QA checklist
 
