@@ -11,7 +11,7 @@ At 9:00, the workday looks available. The document is open. The code editor is o
 
 This is the baseline we usually skip. We say an agent made us faster, but we cannot say faster than what. We say a swarm gave us leverage, but we did not record how long the old workflow took, where it broke, or what “done” meant before the machinery arrived.
 
-Before Human 2.0, there is Human 1.0: one accountable person carrying intent, context, prioritization, execution, verification, and memory in one head and one calendar. It is not an insult. It is the starting measurement.
+Before Human 2.0, there is Human 1.0: one accountable person carrying intent, context, prioritization, execution, verification, and memory in one head and one calendar. That's the starting measurement, not an insult.
 
 ## Chapter promise
 
@@ -27,11 +27,11 @@ The promise is deliberately modest. This chapter will not tell you that an agent
 
 The artifact is usually not a dashboard. It is a half-finished thing.
 
-A pull request with a polite title and a red check. A memo with three versions in its filename. A spreadsheet whose owner has gone home but whose assumptions live only in a chat thread. A folder full of screenshots because nobody knows which state is current. The operator remembers why the work began, what changed halfway through, and which shortcut is unsafe. The artifact remembers none of that.
+A pull request with a polite title and a red check. A memo with three versions in its filename. A spreadsheet whose owner has gone home but whose assumptions live only in a chat thread. A folder full of screenshots because nobody knows which state is current. I remember why the work began, what changed halfway through, and which shortcut is unsafe. The artifact remembers none of that.
 
 I have learned to treat the end of a workday as evidence. Not as a verdict on discipline, and not as a personality test. Look at what remains open. Count the handoffs. Find the decisions that were made without being written down. Notice where the same question was answered twice because the answer was stored in a person's working memory instead of in the work itself.
 
-The old workflow is not “a human types into a computer.” It is a chain:
+The old workflow is a chain — not “a human types into a computer”:
 
 1. Someone states an outcome, often imperfectly.
 2. One person interprets the request and decides what it includes.
@@ -49,9 +49,9 @@ The first useful question is therefore not “Which agent should I use?” It is
 
 The baseline is part of the product.
 
-If you do not record the before-state, you cannot distinguish improvement from novelty. A new tool can make a task feel easier while adding review work later. It can reduce drafting time while increasing the number of plausible mistakes. It can produce more output while making the operator less certain about which output deserves trust.
+If I don't record the before-state, I can't distinguish improvement from novelty. A new tool can make a task feel easier while adding review work later. It can reduce drafting time while increasing the number of plausible mistakes. It can produce more output while making me less certain about which output deserves trust.
 
-A baseline also protects human judgment. When the human is the only worker, responsibility is obvious but the process is often blurry. When agents enter, the process becomes distributed, and blurry responsibility becomes dangerous. You need to know which decisions were yours before you decide which decisions may be delegated.
+A baseline also protects human judgment. When the human is the only worker, responsibility is obvious but the process is often blurry. When agents enter, the process becomes distributed, and blurry responsibility becomes dangerous. I need to know which decisions were mine before I decide which decisions may be delegated.
 
 The practical unit is a bounded work item: a request with an owner, an input, an acceptance test, and an artifact. “Improve the launch” is not a unit. “Turn these five customer notes into a one-page brief, preserve direct quotes, link each recommendation to a note, and get the owner’s approval” is a unit. It can be timed. It can fail visibly. It can be reviewed.
 
@@ -59,13 +59,13 @@ The practical unit is a bounded work item: a request with an owner, an input, an
 
 ### Baseline
 
-A baseline is a recorded description of the current workflow before a change. It is not one magic number. For a work item, record elapsed time, active work time if you can estimate it honestly, interruptions, waiting, decisions, handoffs, rework, and defects found in review.
+A baseline is a recorded description of the current workflow before a change. It's a recorded description, not one magic number. For a work item, record elapsed time, active work time if you can estimate it honestly, interruptions, waiting, decisions, handoffs, rework, and defects found in review.
 
 Do not pretend these measures are cleaner than they are. “Active work time” is often an estimate. Mark it as an estimate. If you cannot measure it consistently, use elapsed time and record the conditions around it.
 
 ### Context
 
-Context is the information needed to make a decision: source files, prior decisions, constraints, examples, credentials, definitions, and the reason the work matters. Context is not the same as volume. A long transcript can contain less usable context than a short acceptance checklist.
+Context is the information needed to make a decision: source files, prior decisions, constraints, examples, credentials, definitions, and the reason the work matters. A long transcript can contain less usable context than a short acceptance checklist — context isn't the same as volume.
 
 ### Acceptance test
 
@@ -77,7 +77,7 @@ Rework is effort spent correcting or redoing a result because it missed the requ
 
 ### Decision load
 
-Decision load is the number and difficulty of choices the operator must make to move the item forward. It includes scope decisions, tradeoffs, exceptions, and calls about whether a result is safe to accept. Agents may reduce mechanical effort while leaving decision load untouched. That is not failure. It is information.
+Decision load is the number and difficulty of choices I must make to move the item forward. It includes scope decisions, tradeoffs, exceptions, and calls about whether a result is safe to accept. Agents may reduce mechanical effort while leaving decision load untouched. That's information, not failure.
 
 ## Working example / proof case
 
@@ -103,9 +103,9 @@ This log changes the work before any agent is added. It turns a vague chore into
 
 The first attempt will not be clean. The writer may discover that the template says 2,500–4,000 words while the repository guide says 1,500–3,000. That conflict is itself a baseline finding. It must be surfaced and resolved by the responsible human; an agent should not silently pick the more convenient instruction. A source may describe a survey rather than a measurement. A product page may describe capability rather than behavior under your conditions. A generated paragraph may sound personal even though nobody lived it. Those are not small editorial defects. They are boundary failures.
 
-What failed, then? The fantasy that the work begins with writing. It begins with interpretation. It also fails when the operator records only the final duration and omits waiting, review, and corrections. Finally, it fails when the person treats a polished artifact as proof that the process was sound.
+What failed, then? The fantasy that the work begins with writing. It begins with interpretation. It also fails when I record only the final duration and omit waiting, review, and corrections. Finally, it fails when the person treats a polished artifact as proof that the process was sound.
 
-The human response is to keep the item bounded, write down the acceptance test, and stop when the evidence runs out. A baseline is not bureaucracy added around the work. It is the work's first safety rail.
+My response is to keep the item bounded, write down the acceptance test, and stop when the evidence runs out. A baseline is the work's first safety rail — not bureaucracy added around it.
 
 ## What can go wrong
 
@@ -115,12 +115,12 @@ The human response is to keep the item bounded, write down the acceptance test, 
   **How the human responds:** report both, and include defects discovered after the draft.
 
 - **Failure mode: making the baseline too elaborate to maintain.**
-  **Why it happens:** the operator tries to measure everything before learning what matters.
+  **Why it happens:** I try to measure everything before learning what matters.
   **How to detect it:** the log takes longer than the work item or is filled in from memory.
   **How the human responds:** keep five fields for the next run—elapsed time, interruptions, decisions, rework, and acceptance result.
 
 - **Failure mode: treating personal memory as shared context.**
-  **Why it happens:** the original operator can fill gaps quickly.
+  **Why it happens:** the person who did the work can fill gaps quickly.
   **How to detect it:** another person cannot reproduce the decision from the artifact.
   **How the human responds:** write the constraint and the reason into the work item.
 
@@ -142,7 +142,7 @@ In that environment, an agent can be valuable simply by protecting a boundary: c
 
 The current moment also rewards claims that are narrower than the marketing. GitHub’s published Copilot research described a controlled experiment in which developers using Copilot completed a specified coding task faster than the control group. That is evidence about that task and study design; it is not proof that every developer, repository, or software problem becomes faster. The transferable lesson is methodological: name the task, the comparison, and the acceptance condition.
 
-A baseline is how an operator keeps 2026’s abundance of tools from becoming an abundance of unverified output. It is also how a small team can decide whether to adopt a tool without confusing adoption with value.
+A baseline is how I keep 2026’s abundance of tools from becoming an abundance of unverified output. It is also how a small team can decide whether to adopt a tool without confusing adoption with value.
 
 ## Counterargument / skeptical reader
 
@@ -168,9 +168,9 @@ Call the change an improvement only if all of the following are true:
 
 1. accepted-result time falls or stays within the previous range;
 2. first-review defects do not increase; and
-3. the operator can explain the result and reproduce the acceptance decision from the artifact.
+3. I can explain the result and reproduce the acceptance decision from the artifact.
 
-If any condition fails, the result is not “the agent failed” or “the human resisted.” It is a signal to inspect the boundary: scope, context, permissions, review, or measurement.
+If any condition fails, treat it as a signal to inspect the boundary — scope, context, permissions, review, or measurement — not as “the agent failed” or “the human resisted.”
 
 ## Evidence ledger
 
@@ -194,7 +194,7 @@ If any condition fails, the result is not “the agent failed” or “the human
 
 At the end of the day, the half-finished artifact is still on the desk. The difference is that it now has a timestamp, an owner, a stated test, and a note about what remains unknown. That is not yet an agent. It is something more basic: a human system that can be observed.
 
-Only after that can the machine earn a place in the chain. Not because it produced a faster sentence, and not because the dashboard turned green, but because the operator can point to the old cost, the new result, and the evidence between them.
+Only after that can the machine earn a place in the chain: when I can point to the old cost, the new result, and the evidence between them — not to a faster sentence or a green dashboard.
 
 ## QA checklist
 
