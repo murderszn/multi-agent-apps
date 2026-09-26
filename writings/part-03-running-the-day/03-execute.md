@@ -13,11 +13,11 @@ The proof is not a diagram. It is a branch.
 
 The repository gave us a queue of canonical issues, a clean `main` branch, and a single request: write **Execute in Parallel**. The first useful move was not to ask six agents for six versions of the same chapter. It was to separate the work into lanes that could be checked independently: inspect the queue, pull the current branch, read the canonical template, verify the manuscript architecture, research the mechanics, then draft against the evidence.
 
-That sounds less dramatic than an agent swarm. It is also closer to what makes a swarm useful.
+Less dramatic than an agent swarm. Closer to what makes a swarm useful.
 
 In this repository, the canonical issue for this chapter says the outline has been replaced by a tighter 20-chapter queue. Its template names the required artifacts: opening proof case, working example, failure modes, “Why this matters in 2026,” skeptical reader response, evidence ledger, operator rule, and measurable test. The surrounding manuscript architecture says the same thing in a different way: Human judgment remains accountable; agents are tools, workers, or systems—not authorities.
 
-Those constraints are not decoration. They are the work. Once the constraints are explicit, some tasks can happen at the same time. Other tasks cannot. Research can proceed beside repository inspection. Copy editing can proceed beside link checking after a draft exists. But nobody should draft from a template they have not read, and nobody should declare a chapter complete while another process is still changing the claims underneath it.
+Those constraints are the work — not decoration. Once the constraints are explicit, some tasks can happen at the same time. Other tasks cannot. Research can proceed beside repository inspection. Copy editing can proceed beside link checking after a draft exists. But nobody should draft from a template they have not read, and nobody should declare a chapter complete while another process is still changing the claims underneath it.
 
 The useful distinction is simple: **parallelize independent work; serialize decisions and shared state.**
 
@@ -40,9 +40,9 @@ First, **independence is a property of inputs and outputs, not of job titles**. 
 
 Second, **a lane needs a contract**. The contract says what the worker receives, what it may change, what it must return, and how failure is reported. Without that contract, parallel work creates a pile of prose and code with no clear merge rule.
 
-Third, **the human stays on the critical path where judgment lives**. A worker can collect sources. A worker can run a test. A worker can propose three structures. The human still decides which claim belongs in the manuscript, which test is adequate, and whether the result is safe to publish or ship.
+Third, **I stay on the critical path where judgment lives**. A worker can collect sources. A worker can run a test. A worker can propose three structures. I still decide which claim belongs in the manuscript, which test is adequate, and whether the result is safe to publish or ship.
 
-Parallelism reduces waiting. It does not remove responsibility.
+Parallelism reduces waiting. Responsibility stays with the human.
 
 ## Concepts and terms
 
@@ -56,7 +56,7 @@ A good lane is narrow enough that another person can inspect it without reconstr
 
 Task B depends on task A when B cannot produce a trustworthy result without A’s output. The dependency can be technical—one build must finish before integration—or editorial—an argument must be selected before a copy editor can check its consistency.
 
-The mistake is to treat all time as dependency. Some work can begin with a stated assumption. For example, a researcher can investigate official documentation while the repository inspector maps the current files. The draft still waits for the human to reconcile the two results, but the investigation itself need not wait.
+The mistake is to treat all time as dependency. Some work can begin with a stated assumption. For example, a researcher can investigate official documentation while the repository inspector maps the current files. The draft still waits for me to reconcile the two results, but the investigation itself need not wait.
 
 ### Shared state is where parallel work gets dangerous
 
@@ -64,7 +64,7 @@ Shared state is anything multiple workers can change or rely on: a branch, a wor
 
 Git gives us a useful physical metaphor. `git worktree` supports multiple working trees attached to one repository, so separate branches can be checked out in separate directories. That arrangement can reduce accidental file overwrites. It does not resolve conflicting decisions. Two workers can still make incompatible changes in two clean worktrees.
 
-The clean worktree solves one class of problem: collision. It does not solve another: judgment.
+The clean worktree solves collision — not judgment.
 
 ### A barrier is a deliberate handoff
 
@@ -109,7 +109,7 @@ research mechanics ──┘             │
 
 The diagram contains parallel work, but it is not a race. It is a set of short lanes converging on named barriers.
 
-The human decision points are visible:
+My decision points are visible:
 
 - Is this issue canonical, or is it historical outline material?
 - Does the requested word count conflict with the repository guide’s local standard?
@@ -118,7 +118,7 @@ The human decision points are visible:
 - Does the working example prove the rule, or only illustrate it?
 - Is the branch ready to publish, or does it still contain unresolved uncertainty?
 
-An agent can make recommendations at each point. It cannot turn an ambiguous decision into a fact by writing confidently.
+An agent can make recommendations at each point, but no amount of confident writing turns an ambiguous decision into a fact.
 
 ## What can go wrong
 
@@ -176,7 +176,7 @@ A parallel group returns five successful outputs and one timeout. The coordinato
 
 Agents make it cheap to start work and cheap to start too much work. That changes the bottleneck. The scarce resource is often no longer a first draft or a first search. It is coordination: deciding what is relevant, reconciling contradictory outputs, protecting private inputs, and proving that the final artifact corresponds to the requested change.
 
-The practical opportunity is real. A human can ask one worker to inspect a repository while another reads official documentation and a third prepares a test plan. A coding workflow can run independent checks across a matrix of environments. A Git repository can hold isolated branches or worktrees. These patterns let waiting happen beside useful work.
+The practical opportunity is real. I can ask one worker to inspect a repository while another reads official documentation and a third prepares a test plan. A coding workflow can run independent checks across a matrix of environments. A Git repository can hold isolated branches or worktrees. These patterns let waiting happen beside useful work.
 
 The danger is equally real. More workers produce more surfaces for unsupported claims, inconsistent assumptions, secret exposure, and unreviewed side effects. Parallel execution therefore makes governance more important, not less. Every lane needs a boundary. Every external action needs an owner. Every result needs enough provenance to be checked.
 
@@ -230,9 +230,9 @@ Compare the parallel workflow with the previous serial baseline. Keep the parall
 
 The branch is still the proof.
 
-A dozen workers can search, outline, test, and comment while the human holds the boundary of the work. At the end, there must be one artifact that someone can inspect: one chapter, one patch, one result, one explanation of what failed. If the outputs cannot be brought back to that artifact without guesswork, the system did not execute in parallel. It merely produced noise in parallel.
+A dozen workers can search, outline, test, and comment while I hold the boundary of the work. At the end, there must be one artifact that someone can inspect: one chapter, one patch, one result, one explanation of what failed. If the outputs cannot be brought back to that artifact without guesswork, the system did not execute in parallel. It merely produced noise in parallel.
 
-The operator’s job is not to make every process run at once. It is to make sure that, when they do, they are still moving toward the same accountable result.
+My job is making sure that, when processes run at once, they're still moving toward the same accountable result — not making every process run at once.
 
 ## QA checklist
 

@@ -7,17 +7,17 @@
 
 ## The handoff is the product
 
-The most useful artifact in this repository is not a clever prompt. It is the handoff.
+The most useful artifact in this repository is the handoff — not a clever prompt.
 
-The book has a queue of canonical chapter issues, a prescribed Markdown template, a branch, a review step, and a pull request that must exist before the work is considered complete. That is not administrative decoration. It is the smallest visible version of a multi-agent system: intent enters through an issue, work is routed to a file, a worker changes the file, a reviewer checks the result, and a human decides whether the change belongs on `main`.
+The book has a queue of canonical chapter issues, a prescribed Markdown template, a branch, a review step, and a pull request that must exist before the work is considered complete. That queue-and-review machinery is the smallest visible version of a multi-agent system I actually run: intent enters through an issue, work is routed to a file, a worker changes the file, a reviewer checks the result, and a human — me — decides whether the change belongs on `main`.
 
 The model can help with each stage. It does not own the stage.
 
-That distinction is easy to miss when the work happens in a chat window. A model writes a convincing paragraph, then another model writes code, then a third model reports that the code is good. The prose is smooth. The filenames are plausible. The confidence is high. Yet nothing has been proved until a person can trace the result back to the request, inspect the artifact, run the relevant checks, and decide what happens next.
+That distinction is easy to miss when the work happens in a chat window. A model writes a convincing paragraph, then another model writes code, then a third model reports that the code is good. The prose is smooth. The filenames are plausible. The confidence is high. Yet nothing has been proved until I can trace the result back to the request, inspect the artifact, run the relevant checks, and decide what happens next.
 
-This is why I prefer the blunt title: Claude dreams. Codex ships. The names are shorthand, not a universal product ranking. They describe lanes. One system may be better for framing a problem, challenging assumptions, or turning a vague intention into a plan. Another may be better at making a constrained change in a real repository. A third may be useful as a hostile reviewer. The useful question is not which model is smartest. It is which worker is appropriate for this lane, under this review standard, at this cost and risk.
+This is why I prefer the blunt title: Claude dreams. Codex ships. The names are shorthand, not a universal product ranking. They describe lanes. One system may be better for framing a problem, challenging assumptions, or turning a vague intention into a plan. Another may be better at making a constrained change in a real repository. A third may be useful as a hostile reviewer. The useful question is which worker is appropriate for this lane, under this review standard, at this cost and risk — not which model is smartest.
 
-The human is the routing layer and the accountable owner.
+I'm the routing layer and the accountable owner.
 
 ## The chapter promise
 
@@ -45,11 +45,11 @@ A useful dreamer output might contain:
 - a proposed sequence of work; and
 - a definition of “done.”
 
-That is not a finished product. It is a decision aid and a contract for the next lane.
+It's a decision aid and a contract for the next lane — not a finished product.
 
-The implementer has a different job. It must take the contract seriously. It must inspect the actual environment, make the change, preserve what should not change, and leave an artifact that can be run or reviewed. It is not rewarded for adding five elegant possibilities when the request called for one working path. It is rewarded for bounded, testable progress.
+The implementer has a different job. It must take the contract seriously. It must inspect the actual environment, make the change, preserve what should not change, and leave an artifact that can be run or reviewed. Adding five elegant possibilities when the request called for one working path earns it nothing; bounded, testable progress is the job.
 
-The reviewer has a third job. A reviewer does not merely ask whether the output looks good. It asks whether the output answers the request, whether it changed anything it was not allowed to change, whether the evidence supports the claims, and whether the result survives contact with the environment. A reviewer should be willing to reject a polished answer.
+The reviewer has a third job. A reviewer doesn't stop at whether the output looks good; it asks whether the output answers the request, whether it changed anything it was not allowed to change, whether the evidence supports the claims, and whether the result survives contact with the environment. A reviewer should be willing to reject a polished answer.
 
 Those lanes overlap, but they are not identical. Asking one worker to brainstorm, implement, and approve its own work creates a conflict even when the model is capable. The system that generated the answer is also the system most likely to inherit its assumptions. A separate pass does not guarantee correctness, but it creates a deliberate opportunity to break the story.
 
@@ -77,7 +77,7 @@ Known uncertainty: claims, dependencies, or behavior not verified.
 Stop condition: pause and report if the requested change requires a new assumption.
 ```
 
-The point is not the formatting. The point is to move context from memory into an inspectable object. In this book repository, the canonical issue names the chapter, points to the template, lists the definition of done, and says not to use the archived outline. Those details constrain the worker. They prevent a plausible but wrong chapter from being drafted against a historical structure.
+Forget the formatting; the point is moving context from memory into an inspectable object. In this book repository, the canonical issue names the chapter, points to the template, lists the definition of done, and says not to use the archived outline. Those details constrain the worker. They prevent a plausible but wrong chapter from being drafted against a historical structure.
 
 The receiving worker should be able to repeat the assignment in its own words before it acts. If it cannot, the handoff is not ready. If the implementer discovers that the specification and the repository disagree, it should stop at that boundary rather than silently choosing the interpretation it likes.
 
@@ -89,11 +89,11 @@ Consider the chapter task represented by issue #51 in this repository. The reque
 
 That is the input lane.
 
-A framing worker can turn those materials into an editorial plan: open with the lab and a real artifact, explain specialization without claiming a universal winner, show a handoff, name where agents fail, and finish with a test. The human then checks whether the plan has quietly invented a personal story or an outcome. In this case, the safe proof case is the repository workflow itself: issue to template, template to branch, branch to draft, draft to checks, branch to review. It is real and inspectable. It does not require pretending that a particular model saved a measured number of hours.
+A framing worker can turn those materials into an editorial plan: open with the lab and a real artifact, explain specialization without claiming a universal winner, show a handoff, name where agents fail, and finish with a test. I then check whether the plan has quietly invented a personal story or an outcome. In this case, the safe proof case is the repository workflow itself: issue to template, template to branch, branch to draft, draft to checks, branch to review. It's real and inspectable, and it doesn't ask anyone to pretend a particular model saved a measured number of hours.
 
 An implementation worker then writes the chapter into the named file. It should not redesign the manuscript architecture, draft against the archived template, or turn a general argument into a product advertisement. It should preserve the issue link and the checklist because those are part of the artifact’s traceability.
 
-The human review is not a ceremonial final read. It is a comparison across boundaries:
+My review is not a ceremonial final read. It is a comparison across boundaries:
 
 1. **Issue to outline:** Does the outline answer the canonical request?
 2. **Outline to manuscript:** Did the draft keep the promised argument and evidence standard?
@@ -117,7 +117,7 @@ A worker implements a request without inspecting the current branch. It reports 
 
 A reviewer asks the same model to evaluate its own output using the same assumptions. The second answer sounds independent because the prompt says “be critical.” It may not be independent at all.
 
-These failures happen because language is cheap. A model can make an unresolved decision look resolved. The human response is to force the decision back into the workflow:
+These failures happen because language is cheap. A model can make an unresolved decision look resolved. My response is to force the decision back into the workflow:
 
 - mark an assertion as **verified**, **inferred**, **proposed**, or **unknown**;
 - require a source or artifact for every concrete claim;
@@ -125,7 +125,7 @@ These failures happen because language is cheap. A model can make an unresolved 
 - run checks rather than accept a report that checks were run; and
 - reject work that cannot show its path from intent to result.
 
-This is also where a multi-model workflow can fail. Specialization increases the number of handoffs. Every handoff can lose context, distort a constraint, or introduce a new interpretation. More workers do not automatically produce more intelligence. They can produce more places for responsibility to disappear.
+This is also where a multi-model workflow can fail. Specialization increases the number of handoffs. Every handoff can lose context, distort a constraint, or introduce a new interpretation. More workers can just produce more places for responsibility to disappear.
 
 ## Choosing a specialist without worshipping a benchmark
 
@@ -143,7 +143,7 @@ Keep the scoring boring. A five-point scale is enough if the criteria are stable
 
 Do not turn those numbers into a universal leaderboard. They are local operating evidence. A worker can be excellent at drafting a plan and poor at editing a live codebase. Another can be terse and reliable in implementation but unhelpful when the problem is still undefined. The correct choice can change as the repository, model, tools, or review standard changes.
 
-The comparison must include the baseline: one worker doing the whole job, or the current human-only process. If the specialized system takes three handoffs and produces the same quality with more management, it is not an upgrade. If it reduces rework while keeping the human’s review burden within an acceptable limit, it may be one.
+The comparison must include the baseline: one worker doing the whole job, or the current human-only process. If the specialized system takes three handoffs and produces the same quality with more management, it is not an upgrade. If it reduces rework while keeping my review burden within an acceptable limit, it may be one.
 
 ## Why this matters in 2026
 
@@ -151,9 +151,9 @@ In 2026, the practical problem is no longer whether a model can produce a plausi
 
 Public governance work is moving in the same direction. NIST’s AI Risk Management Framework describes risk management as a continuous process organized around governing, mapping, measuring, and managing risk. The European Union’s AI Act includes human-oversight requirements for high-risk systems, including the ability for people to understand limitations, monitor operation, and intervene when appropriate. Anthropic’s Responsible Scaling Policy describes technical and organizational protocols for managing risk as model capabilities increase. These sources do not prove that a particular two-model workflow is safe. They do support a narrower point: capability is not the whole operating question. Governance, monitoring, intervention, and accountability are part of the system.
 
-The timing matters because the cost of a wrong handoff is falling into ordinary work. An incorrect implementation can become a pull request. An invented research claim can become a published page. A model can route itself through tools, files, and external systems faster than a person can reconstruct what happened from a chat transcript. The human needs artifacts that make the path visible.
+The timing matters because the cost of a wrong handoff is falling into ordinary work. An incorrect implementation can become a pull request. An invented research claim can become a published page. A model can route itself through tools, files, and external systems faster than a person can reconstruct what happened from a chat transcript. I need artifacts that make the path visible.
 
-The answer is not to refuse every delegation. It is to delegate bounded execution while keeping the decisions that carry authority, consent, taste, and consequence with a person who can be named.
+So I delegate bounded execution — and keep the decisions that carry authority, consent, taste, and consequence with a person who can be named. Me.
 
 ## The skeptical reader is right about switching costs
 
@@ -165,7 +165,7 @@ The critic is also right that model boundaries are unstable. A model that is str
 
 The response is not to defend “Claude” or “Codex” as permanent roles. Replace the names with lane A and lane B. Keep the handoff, the acceptance checks, and the measurement. If one model becomes good enough to handle all three lanes at the required standard, use it. If the switching cost is larger than the reduction in errors or rework, collapse the workflow.
 
-What remains uncertain is the long-run economics of these systems. A local test can measure this repository’s work. It cannot establish a general law about every team, model, or domain. High-consequence work needs a stronger review standard than an editorial chapter or a small internal tool. “The model passed my test” is not a security guarantee, and “another model reviewed it” is not proof of independence.
+What remains uncertain is the long-run economics of these systems. A local test can measure this repository’s work; it can't establish a general law about every team, model, or domain. High-consequence work needs a stronger review standard than an editorial chapter or a small internal tool. “The model passed my test” is not a security guarantee, and “another model reviewed it” is not proof of independence.
 
 ## Operator rule
 
@@ -211,11 +211,11 @@ The specialized workflow earns its place only if it reduces defects or rework wi
 
 ## Closing image
 
-The useful picture is not a room full of autonomous geniuses. It is a desk with a request, a specification, a diff, a test result, and a person who has read the result closely enough to accept or reject it.
+The useful picture is a desk with a request, a specification, a diff, a test result, and a person who has read the result closely enough to accept or reject it — not a room full of autonomous geniuses.
 
 One worker helps name the work. Another makes the change. A reviewer tries to break the story. The human keeps the keys.
 
-That is the swarm when it is working: not a replacement for judgment, but a set of bounded workers moving through a visible chain of responsibility. Claude dreams. Codex ships. Someone still has to decide whether the ship should leave the harbor.
+That is the swarm when it is working: a set of bounded workers moving through a visible chain of responsibility, with judgment still sitting at the end of it. Claude dreams. Codex ships. Someone still has to decide whether the ship should leave the harbor.
 
 ## QA checklist
 
