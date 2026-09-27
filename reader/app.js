@@ -140,11 +140,15 @@ function speakAiFromCurrent() {
   audio.preload = 'auto';
   audio.playbackRate = voiceRate();
   audio.src = `audio/${encodeURIComponent(state.chapters[state.chapter].id)}/${segment.file}`;
+  const desiredTime = segment.times[state.index - segment.start] || 0;
+  let ready = false;
+  if (desiredTime) audio.currentTime = desiredTime;
   audio.onloadedmetadata = () => {
-    if (generation === state.voiceGeneration) audio.currentTime = segment.times[state.index - segment.start] || 0;
+    if (generation === state.voiceGeneration) { audio.currentTime = desiredTime; ready = true; }
   };
   const tick = () => {
     if (generation !== state.voiceGeneration || !state.playing) return;
+    if (!ready) { state.audioFrame = requestAnimationFrame(tick); return; }
     const times = segment.times;
     let low = 0;
     let high = times.length;
@@ -329,6 +333,13 @@ async function loadAiManifest(chapter, index) {
     if (!response.ok) return;
     const manifest = await response.json();
     if (index !== state.chapter || !manifest.complete || manifest.wordCount !== state.words.length || manifest.model !== 'x-ai/grok-tts') return;
+    if (!Array.isArray(manifest.segments) || !manifest.segments.length) return;
+    let covered = 0;
+    for (const segment of manifest.segments) {
+      if (segment.start !== covered || !Number.isFinite(segment.duration) || !Array.isArray(segment.times) || segment.times.length !== segment.end - segment.start) return;
+      covered = segment.end;
+    }
+    if (covered !== state.words.length) return;
     state.aiManifest = manifest;
     updateVoiceButton();
     display();

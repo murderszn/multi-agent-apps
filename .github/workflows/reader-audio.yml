@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Generate Grok narration and word timing
         run: |
-          python3 -m pip install --quiet requests
+          python3 -m pip install --quiet requests mutagen
           args=(--chapter "$CHAPTER")
           if [[ -n "$LIMIT_SEGMENTS" ]]; then args+=(--limit-segments "$LIMIT_SEGMENTS"); fi
           python3 reader/generate_audio.py "${args[@]}"

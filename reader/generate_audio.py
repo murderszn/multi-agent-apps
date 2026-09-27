@@ -10,7 +10,6 @@ import hashlib
 import io
 import json
 import os
-import subprocess
 import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
@@ -45,11 +44,9 @@ def split_words(words: list[list]) -> list[tuple[int, int]]:
 
 
 def mp3_duration(content: bytes) -> float:
-    probe = subprocess.run(
-        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", "pipe:0"],
-        input=content, capture_output=True, check=True,
-    )
-    return float(probe.stdout.decode().strip())
+    from mutagen.mp3 import MP3
+
+    return float(MP3(io.BytesIO(content)).info.length)
 
 
 def align_times(source: list[str], recognized: list[dict], duration: float) -> tuple[list[float], float]:
