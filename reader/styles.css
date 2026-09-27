@@ -7,7 +7,6 @@ button { cursor: pointer; }
 .chrome { transition: opacity .3s ease, transform .3s ease; }
 .app.playing:not(.show-chrome) .chrome { opacity: 0; pointer-events: none; }
 .app.playing:not(.show-chrome) .topbar, .app.playing:not(.show-chrome) .chapter-context { transform: translateY(-7px); }
-.app.playing:not(.show-chrome) .footer { transform: translateY(7px); }
 .app.playing:not(.show-chrome) .reader-controls { transform: translate(-50%, 7px); }
 .app.started .intro-hint { display: none; }
 
@@ -32,7 +31,7 @@ button { cursor: pointer; }
 .intro-hint { position: absolute; bottom: 21%; left: 0; right: 0; color: var(--dim); font-family: var(--mono); font-size: 9px; font-weight: 500; letter-spacing: .14em; text-align: center; }
 .intro-hint span { padding: 0 8px; color: var(--acid); }
 
-.reader-controls { position: absolute; z-index: 4; bottom: 7%; left: 50%; display: flex; align-items: center; gap: 58px; transform: translateX(-50%); }
+.reader-controls { position: absolute; z-index: 4; bottom: 7%; left: 50%; display: flex; align-items: center; gap: 42px; transform: translateX(-50%); }
 .transport { display: flex; align-items: center; gap: 24px; }
 .icon-button, .play-button { display: grid; place-items: center; padding: 0; border: 0; color: var(--white); }
 .icon-button { width: 42px; height: 42px; background: none; color: var(--soft); }
@@ -49,6 +48,10 @@ button { cursor: pointer; }
 .speed-control input::-moz-range-thumb { width: 12px; height: 12px; border: 0; border-radius: 0; background: var(--acid); }
 .speed-control output { min-width: 67px; color: var(--white); font-size: 13px; font-weight: 800; white-space: nowrap; }
 .speed-control output span { color: var(--dim); font-family: var(--mono); font-size: 9px; font-weight: 500; }
+.voice-button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 10px 0; border: 0; background: transparent; color: var(--dim); font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: .12em; white-space: nowrap; }
+.voice-button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.voice-button:hover, .voice-button[aria-pressed="true"] { color: var(--acid); }
+.voice-button:disabled { opacity: .4; cursor: default; }
 
 .footer { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; flex: none; height: 88px; margin: 0 clamp(23px, 5vw, 80px); border-top: 1px solid var(--rule); gap: 28px; }
 .chapter-button, .next-chapter { color: var(--soft); font-size: 12px; font-weight: 700; white-space: nowrap; }
@@ -56,10 +59,11 @@ button { cursor: pointer; }
 .chapter-button-star { margin-right: 8px; color: var(--acid); font-size: 16px; }
 .chevron { margin-left: 8px; color: var(--dim); font-size: 19px; }
 .next-chapter span { margin-left: 9px; color: var(--acid); font-size: 17px; }
-.progress-area { display: flex; align-items: center; gap: 15px; min-width: 160px; width: min(390px, 36vw); }
-.progress-track { position: relative; flex: 1; height: 2px; background: #3c4239; }
+.progress-area { display: flex; flex-direction: column; justify-content: center; gap: 10px; min-width: 160px; width: min(390px, 36vw); }
+.progress-meta { display: flex; justify-content: space-between; gap: 15px; color: var(--soft); font-family: var(--mono); font-size: 10px; white-space: nowrap; }
+.progress-meta span:last-child { color: var(--dim); }
+.progress-track { position: relative; width: 100%; height: 2px; background: #3c4239; }
 .progress-track div { width: 0; height: 100%; background: var(--acid); transition: width .2s linear; }
-.progress-area span { min-width: 32px; color: var(--dim); font-family: var(--mono); font-size: 10px; text-align: right; }
 
 dialog { width: min(650px, calc(100vw - 28px)); max-height: min(84svh, 850px); padding: 35px 38px 24px; overflow: auto; overscroll-behavior: contain; border: 1px solid #414740; border-radius: 0; background: var(--black-2); color: var(--white); box-shadow: 0 30px 90px rgba(0,0,0,.65); }
 dialog::backdrop { background: rgba(0,0,0,.80); backdrop-filter: blur(5px); }
@@ -92,7 +96,7 @@ dialog::backdrop { background: rgba(0,0,0,.80); backdrop-filter: blur(5px); }
   .stage { min-height: 420px; }
   .word-area { min-height: 180px; }
   .word { font-size: clamp(49px, 13vw, 78px); }
-  .reader-controls { bottom: 5%; flex-direction: column; width: 100%; gap: 17px; }
+  .reader-controls { bottom: 4%; flex-direction: column; width: 100%; gap: 12px; }
   .transport { gap: 27px; }
   .speed-control { justify-content: center; }
   .intro-hint { bottom: 29%; font-size: 8px; }

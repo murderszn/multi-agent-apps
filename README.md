@@ -12,7 +12,7 @@ This repository serves the Human 2.0 book site. The root is a landing page; `rea
 
 ## One-word reader
 
-`reader/` is a static website for reading the canonical manuscript one word at a time, silently, at an adjustable pace. The homepage links to each part by chapter ID. See `reader/README.md` for preview and update instructions.
+`reader/` is a static website for reading the canonical manuscript one word at a time at an adjustable pace, with optional browser-voice read-aloud playback. The homepage links to each part by chapter ID. See `reader/README.md` for preview and update instructions.
 
 ## Directory
 

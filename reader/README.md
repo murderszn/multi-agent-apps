@@ -1,6 +1,6 @@
 # Human 2.0 Reader
 
-A standalone, silent, one-word-at-a-time reader for the canonical *Human 2.0* manuscript. It lives alongside the existing book website.
+A standalone, one-word-at-a-time reader for the canonical *Human 2.0* manuscript. It lives alongside the existing book website.
 
 Each displayed word is centered as a whole. Two middle letters share one focus block for medium words, three for longer words, and one for short words. A single-letter word remains unmarked. The focus block preserves the exact type size and baseline of the rest of the word. It is a visual guide, not a model tokenizer.
 
@@ -23,7 +23,8 @@ Open `http://localhost:8080/reader/`. The reader is static and can be hosted und
 - Open **Chapters** to switch chapters. Reading position and speed save in this browser.
 - A link such as `reader/?chapter=01-vibe-coding` opens a specific chapter at its first word. The homepage uses these links for its three parts.
 - The player pauses when the tab becomes hidden and at the end of a chapter.
-- It makes no sound and uses no audio APIs.
+- Turn **Voice** on for read-aloud playback using the browser's speech engine. It starts only after you press Play, speaks the current chapter in short passages, and follows word-boundary events when the browser provides them. Where those events are unavailable, the visual word timing is an estimate. Voice is off by default.
+- The footer remains visible during playback with the current word count, a chapter progress bar, and approximate time remaining. The estimate follows the selected visual reading pace; actual speech duration depends on the browser voice.
 
 ## Updating the book
 
@@ -34,7 +35,7 @@ The reader uses the twenty canonical paths listed in `build.py`, following `writ
 - `index.html` — reader screen and chapter dialog.
 - `styles.css` — responsive matte-black reader with stark white type and neon-green focus blocks.
 - `../theme.css` — colors and typography shared with the homepage.
-- `app.js` — silent playback, pace, chapters, and saved progress.
+- `app.js` — visual and browser-voice playback, pace, chapters, progress, and saved position.
 - `build.py` — canonical manuscript to reader data conversion.
 - `book.json` — generated book data used by the static site.
 - `README.md` — preview and update instructions.

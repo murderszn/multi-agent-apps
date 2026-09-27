@@ -3,7 +3,19 @@ const $ = (id) => document.getElementById(id);
 const app = $('app');
 const wordEl = $('word');
 const dialog = $('chaptersDialog');
-const state = { chapters: [], chapter: 0, words: [], index: 0, speed: 240, playing: false, started: false, timer: null, chromeTimer: null };
+const state = { chapters: [], chapter: 0, words: [], index: 0, speed: 240, playing: false, started: false, voice: false, voiceGeneration: 0, timer: null, chromeTimer: null, remainingMs: [] };
+
+function formatTime(ms) {
+  const seconds = Math.max(0, Math.ceil(ms / 1000));
+  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+}
+
+function rebuildTiming() {
+  state.remainingMs = new Array(state.words.length + 1).fill(0);
+  for (let i = state.words.length - 1; i >= 0; i -= 1) {
+    state.remainingMs[i] = state.remainingMs[i + 1] + intervalFor(state.words[i]);
+  }
+}
 
 function loadSaved() {
   try {
@@ -65,7 +77,8 @@ function display() {
   }
   const percent = state.words.length ? Math.round(((state.index + 1) / state.words.length) * 100) : 0;
   $('progressFill').style.width = `${percent}%`;
-  $('progressText').textContent = `${percent}%`;
+  $('progressText').textContent = `${(state.index + 1).toLocaleString()} / ${state.words.length.toLocaleString()}`;
+  $('timeRemaining').textContent = `~${formatTime(state.remainingMs[state.index] || 0)}`;
   $('progressTrack').setAttribute('aria-valuenow', String(percent));
   $('nextChapterButton').disabled = state.chapter >= state.chapters.length - 1;
   $('nextChapterButton').style.visibility = state.chapter >= state.chapters.length - 1 ? 'hidden' : 'visible';
@@ -83,6 +96,84 @@ function intervalFor(item) {
 }
 
 function clearPlaybackTimer() { if (state.timer) clearTimeout(state.timer); state.timer = null; }
+
+function stopVoice() {
+  state.voiceGeneration += 1;
+  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+
+function speakFromCurrent() {
+  if (!state.playing || !state.voice || !state.words.length) return;
+  stopVoice();
+  clearPlaybackTimer();
+  const generation = state.voiceGeneration;
+  const start = state.index;
+  let end = Math.min(start + 32, state.words.length);
+  for (let i = start; i < end - 1; i += 1) {
+    if (state.words[i].paragraphEnd && i >= start + 5) { end = i + 1; break; }
+  }
+  const offsets = [];
+  let content = '';
+  for (let i = start; i < end; i += 1) {
+    offsets.push(content.length);
+    content += (content ? ' ' : '') + state.words[i].text;
+  }
+  // Offsets point to the first character of each displayed word.
+  for (let i = 1; i < offsets.length; i += 1) offsets[i] += 1;
+  const utterance = new SpeechSynthesisUtterance(content);
+  utterance.lang = 'en-US';
+  utterance.rate = Math.max(0.5, Math.min(3.5, state.speed / 240));
+  let boundaryCount = 0;
+  utterance.onboundary = (event) => {
+    if (generation !== state.voiceGeneration || !state.playing) return;
+    boundaryCount += 1;
+    let localIndex = 0;
+    while (localIndex + 1 < offsets.length && offsets[localIndex + 1] <= event.charIndex) localIndex += 1;
+    const nextIndex = start + localIndex;
+    if (nextIndex > state.index) { state.index = nextIndex; display(); }
+  };
+  utterance.onend = () => {
+    if (generation !== state.voiceGeneration || !state.playing) return;
+    clearPlaybackTimer();
+    if (end >= state.words.length) { state.index = state.words.length - 1; display(); pause(); return; }
+    state.index = end;
+    display();
+    speakFromCurrent();
+  };
+  utterance.onerror = (event) => {
+    if (generation !== state.voiceGeneration || !state.playing) return;
+    if (event.error === 'canceled' || event.error === 'interrupted') return;
+    state.voice = false;
+    updateVoiceButton();
+    scheduleNext();
+  };
+  window.speechSynthesis.speak(utterance);
+  // Some browsers do not emit word boundaries. Keep the visual reader moving.
+  const fallback = () => {
+    if (generation !== state.voiceGeneration || !state.playing || boundaryCount >= 2) return;
+    if (state.index < end - 1) { state.index += 1; display(); }
+    state.timer = setTimeout(fallback, intervalFor(state.words[state.index]));
+  };
+  state.timer = setTimeout(fallback, intervalFor(state.words[state.index]));
+}
+
+function updateVoiceButton() {
+  $('voiceButton').setAttribute('aria-pressed', String(state.voice));
+  $('voiceButton').setAttribute('aria-label', state.voice ? 'Turn voice off' : 'Turn voice on');
+  $('voiceLabel').textContent = state.voice ? 'VOICE ON' : 'VOICE OFF';
+}
+
+function toggleVoice() {
+  if (!('speechSynthesis' in window)) return;
+  state.voice = !state.voice;
+  updateVoiceButton();
+  if (state.playing) {
+    clearPlaybackTimer();
+    if (state.voice) speakFromCurrent();
+    else { stopVoice(); scheduleNext(); }
+  }
+  revealChrome();
+}
 
 function scheduleNext() {
   clearPlaybackTimer();
@@ -106,6 +197,7 @@ function revealChrome() {
 function pause() {
   state.playing = false;
   clearPlaybackTimer();
+  stopVoice();
   app.classList.remove('playing');
   app.classList.add('show-chrome');
   $('playButton').classList.remove('is-playing');
@@ -123,7 +215,8 @@ function play() {
   $('playButton').setAttribute('aria-label', 'Pause');
   $('playIcon').innerHTML = '<path d="M8 5v14M16 5v14"/>';
   display();
-  scheduleNext();
+  if (state.voice) speakFromCurrent();
+  else scheduleNext();
   revealChrome();
 }
 
@@ -133,7 +226,10 @@ function moveWord(amount) {
   if (!state.words.length) return;
   state.index = Math.max(0, Math.min(state.words.length - 1, state.index + amount));
   display();
-  if (state.playing) scheduleNext();
+  if (state.playing) {
+    if (state.voice) speakFromCurrent();
+    else scheduleNext();
+  }
   revealChrome();
 }
 
@@ -144,6 +240,7 @@ function chooseChapter(index, reset = true) {
   state.chapter = index;
   state.words = chapter.words.map(([text, paragraphEnd]) => ({ text, paragraphEnd: paragraphEnd === 1 }));
   state.index = reset ? 0 : Math.max(0, Math.min(state.index, state.words.length - 1));
+  rebuildTiming();
   display();
   renderChapters();
   if (dialog.open) dialog.close();
@@ -186,9 +283,14 @@ function setSpeed(value) {
   $('speedRange').value = String(state.speed);
   $('speedRange').style.setProperty('--range-progress', `${((state.speed - 120) / 780) * 100}%`);
   $('speedOutput').innerHTML = `${state.speed} <span>WPM</span>`;
+  rebuildTiming();
+  if (state.words.length) display();
   save();
   renderChapters();
-  if (state.playing) scheduleNext();
+  if (state.playing) {
+    if (state.voice) speakFromCurrent();
+    else scheduleNext();
+  }
 }
 
 function openChapters() { pause(); renderChapters(); dialog.showModal(); }
@@ -199,6 +301,7 @@ function bind() {
   $('previousButton').addEventListener('click', () => moveWord(-1));
   $('nextButton').addEventListener('click', () => moveWord(1));
   $('speedRange').addEventListener('input', (event) => setSpeed(event.target.value));
+  $('voiceButton').addEventListener('click', toggleVoice);
   $('chaptersButton').addEventListener('click', openChapters);
   $('homeButton').addEventListener('click', openChapters);
   $('closeDialog').addEventListener('click', () => dialog.close());
@@ -219,6 +322,7 @@ function bind() {
 async function init() {
   loadSaved();
   bind();
+  if (!('speechSynthesis' in window)) { $('voiceButton').disabled = true; $('voiceButton').title = 'Voice is unavailable in this browser'; }
   setSpeed(state.speed);
   try {
     const response = await fetch('book.json');
