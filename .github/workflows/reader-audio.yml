@@ -1,0 +1,49 @@
+name: Reader audio
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    env:
+      POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Grok speech and word timing
+        run: |
+          python3 -m pip install --quiet requests
+          python3 - <<'PY'
+          import io
+          import os
+          import requests
+
+          token = os.environ['POLLINATIONS_API_KEY']
+          base = 'https://gen.pollinations.ai/v1/audio'
+          speech = requests.post(
+              base + '/speech',
+              headers={'Authorization': f'Bearer {token}'},
+              json={'model': 'x-ai/grok-tts', 'input': 'Hello. This is the Human 2.0 reader.', 'voice': 'eve', 'response_format': 'mp3'},
+              timeout=120,
+          )
+          print('Speech status:', speech.status_code, 'type:', speech.headers.get('Content-Type'), 'bytes:', len(speech.content))
+          if not speech.ok:
+              print('Speech error:', speech.text[:500])
+              speech.raise_for_status()
+          transcript = requests.post(
+              base + '/transcriptions',
+              headers={'Authorization': f'Bearer {token}'},
+              files={'file': ('sample.mp3', io.BytesIO(speech.content), 'audio/mpeg')},
+              data={'model': 'x-ai/grok-transcribe', 'response_format': 'verbose_json', 'language': 'en'},
+              timeout=120,
+          )
+          print('Transcription status:', transcript.status_code, 'type:', transcript.headers.get('Content-Type'))
+          if not transcript.ok:
+              print('Transcription error:', transcript.text[:500])
+              transcript.raise_for_status()
+          data = transcript.json()
+          print('Result keys:', sorted(data))
+          for key in ('words', 'segments'):
+              if isinstance(data.get(key), list):
+                  print(key, 'count:', len(data[key]), 'sample keys:', sorted(data[key][0]) if data[key] else [])
+          PY
