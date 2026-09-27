@@ -1,10 +1,5 @@
 # Hardware, Models, and the Cost of Intelligence
 
-> **Status:** Draft
-> **Part:** part-01-crash-course
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/47
-> **Target length:** 2,500–4,000 words
-
 ## The lab has a power bill
 
 The first mistake I see in AI conversations is usually made before anyone opens a model. We talk about intelligence as if it floats above the machine: a disembodied capability you can purchase by the request, copy into a product, and scale without friction.
@@ -174,7 +169,7 @@ I repeat each configuration enough times to reveal ordinary variation, then calc
 
 The lab has a power bill. I put it in the experiment log.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** NVIDIA describes H100 tensor cores as supporting multiple precisions, including FP64, TF32, FP32, FP16, INT8, and FP8.
   - **Source:** NVIDIA, “NVIDIA H100 Tensor Core GPU,” https://www.nvidia.com/en-us/data-center/h100/
@@ -191,18 +186,3 @@ The lab has a power bill. I put it in the experiment log.
 - **Claim:** The cost equations in this chapter are planning models, not provider quotations.
   - **Source:** Author's analytical framework; no external measurement asserted.
   - **Last checked:** September 23, 2026.
-
-## QA checklist
-
-- [x] Opens with a lab/proof scene without inventing a personal event.
-- [x] Explains only necessary hardware and deployment mechanics in plain language.
-- [x] Includes a working example with human decision points.
-- [x] Includes failure modes, detection, and response.
-- [x] Includes “Why this matters in 2026.”
-- [x] Addresses skeptical readers and uncertainty.
-- [x] States operator rule and measurable test.
-- [x] Includes claim/evidence ledger with dates for current claims.
-- [x] Does not invent personal experiences, metrics, prices, or product outcomes.
-- [x] Copy edit completed.
-- [x] Technical QA completed.
-- [ ] Publisher review pass.
