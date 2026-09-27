@@ -21,7 +21,7 @@ jobs:
       POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
     steps:
       - uses: actions/checkout@v4
-      - name: Generate Grok narration and word timing
+      - name: Generate Gemini narration and word timing
         run: |
           python3 -m pip install --quiet requests mutagen imageio-ffmpeg
           args=(--chapter "$CHAPTER")

@@ -17,7 +17,7 @@ Open `http://localhost:8080/reader/`. The reader is static and can be hosted und
 
 ## Reading
 
-- Start at 240 WPM; change pace from 120 to 900 WPM. Longer words and punctuation get extra time, so actual reading time can be slower than the slider's nominal pace.
+- Start at 240 WPM; change visual pace from 120 to 900 WPM. Longer words and punctuation get extra time, so actual reading time can be slower than the slider's nominal pace. With generated AI narration on, the same slider shows an honest playback-rate multiplier instead of WPM.
 - Click the word or use the play button to play or pause. Space works when focus is outside the controls.
 - Use the arrow keys or transport buttons to move one word at a time.
 - Open **Chapters** to switch chapters. Reading position and speed save in this browser.

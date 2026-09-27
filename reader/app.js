@@ -95,7 +95,13 @@ function intervalFor(item) {
   return Math.round((60000 / state.speed) * multiplier);
 }
 
-function voiceRate() { return Math.max(0.5, Math.min(3.5, state.speed / 240)); }
+function voiceRate() { return Math.max(0.5, Math.min(3.75, state.speed / 240)); }
+
+function updateSpeedOutput() {
+  const aiVoice = state.voice && !!state.aiManifest;
+  $('speedRange').setAttribute('aria-label', aiVoice ? 'AI narration playback rate' : 'Reading speed in words per minute');
+  $('speedOutput').innerHTML = aiVoice ? `${voiceRate().toFixed(1)} <span>×</span>` : `${state.speed} <span>WPM</span>`;
+}
 
 function estimatedRemaining() {
   if (!state.voice || !state.aiManifest) return state.remainingMs[state.index] || 0;
@@ -239,6 +245,7 @@ function updateVoiceButton() {
   $('voiceButton').setAttribute('aria-label', state.voice ? 'Turn voice off' : 'Turn voice on');
   $('voiceButton').title = state.aiManifest ? 'AI-generated Gemini narration' : 'Read aloud with your browser voice';
   $('voiceLabel').textContent = state.voice ? (state.aiManifest ? 'GEMINI AI' : 'DEVICE VOICE') : 'VOICE OFF';
+  updateSpeedOutput();
 }
 
 function toggleVoice() {
@@ -383,7 +390,7 @@ function setSpeed(value) {
   state.speed = Math.max(120, Math.min(900, Number(value) || 240));
   $('speedRange').value = String(state.speed);
   $('speedRange').style.setProperty('--range-progress', `${((state.speed - 120) / 780) * 100}%`);
-  $('speedOutput').innerHTML = `${state.speed} <span>WPM</span>`;
+  updateSpeedOutput();
   rebuildTiming();
   if (state.words.length) display();
   save();
