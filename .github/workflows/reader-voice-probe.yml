@@ -1,0 +1,46 @@
+name: Reader voice samples
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    env:
+      POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate comparable voice samples
+        run: |
+          python3 -m pip install --quiet requests
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import requests
+
+          words = json.loads(Path('reader/book.json').read_text())['chapters'][0]['words']
+          text = ' '.join(word[0] for word in words[30:115])
+          samples = [
+              ('gemini-algieba', 'google/gemini-3.8-flash-tts', 'Algieba', 'wav'),
+              ('gemini-sulafat', 'google/gemini-3.8-flash-tts', 'Sulafat', 'wav'),
+              ('fish-sarah', 'fish-audio/s2.1-pro', 'sarah', 'mp3'),
+          ]
+          folder = Path('voice-samples')
+          folder.mkdir(exist_ok=True)
+          for name, model, voice, fmt in samples:
+              body = {'model': model, 'input': text, 'voice': voice, 'response_format': fmt}
+              if model.startswith('google/'):
+                  body['instructions'] = 'Warm, smooth, intimate audiobook narration. Natural pauses, clear but unforced diction, thoughtful and quietly expressive.'
+              response = requests.post('https://gen.pollinations.ai/v1/audio/speech', headers={'Authorization': 'Bearer ' + os.environ['POLLINATIONS_API_KEY']}, json=body, timeout=180)
+              print(name, response.status_code, response.headers.get('Content-Type'), len(response.content))
+              if response.ok and response.headers.get('Content-Type', '').startswith('audio/'):
+                  (folder / f'{name}.{fmt}').write_bytes(response.content)
+              else:
+                  print(response.text[:500])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reader-voice-samples
+          path: voice-samples/
