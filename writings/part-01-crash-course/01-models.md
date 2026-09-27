@@ -146,8 +146,6 @@ Here's the smallest complete explanation that let me make a better decision that
 - The "about three-quarters of a word per token" figure is the industry's standard rule of thumb for English, published in OpenAI's tokenizer guidance and repeated across 2026 explainers; my own measurement above lands in the same neighborhood. Treated here as an approximation, not a constant.
 - Mechanism descriptions (tokens, embeddings, attention, autoregressive generation, temperature) were cross-checked against practitioner references, including the "How LLMs Work" chapter of an open AI-engineering handbook (https://github.com/bschouha19/ai-engineering-handbook/blob/HEAD/chapters/chapter-02-how-llms-work.md) and an open course module on why LLMs hallucinate (https://github.com/baluragala/ethical_and_responsible_gen_ai/blob/HEAD/course_content/02_module2_why_llms_hallucinate.md). No load-bearing numbers were taken from these.
 
-## Evidence ledger
-
 - Claim: a language model's training objective is next-token prediction; generation is predict-append-repeat (autoregressive). Source: standard technical description, consistent with Vaswani et al. 2017 (architecture) and Kalai et al. 2025 (training/evaluation analysis). Last checked: 2026-09-25.
 - Claim: 230 words of English prose tokenized to 272 tokens. Source: first-party measurement with tiktoken, run 2026-09-25. Reproducible with the open-source library.
 - Claim: roughly three-quarters of a word per token in English. Source: industry rule of thumb (OpenAI tokenizer guidance, widely republished); consistent with the first-party measurement above. Labeled as an approximation. Last checked: 2026-09-25.
