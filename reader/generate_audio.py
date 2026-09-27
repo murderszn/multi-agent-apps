@@ -10,6 +10,7 @@ import hashlib
 import io
 import json
 import os
+import time
 import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
@@ -70,7 +71,7 @@ def align_times(source: list[str], recognized: list[dict], duration: float) -> t
 
 
 def synthesize(session: requests.Session, key: str, text: str) -> bytes:
-    response = session.post(
+    response = post_with_retries(session,
         API + "/speech",
         headers={"Authorization": f"Bearer {key}"},
         json={"model": MODEL, "input": text, "voice": VOICE, "response_format": "mp3"},
@@ -83,7 +84,7 @@ def synthesize(session: requests.Session, key: str, text: str) -> bytes:
 
 
 def transcribe(session: requests.Session, key: str, content: bytes) -> list[dict]:
-    response = session.post(
+    response = post_with_retries(session,
         API + "/transcriptions",
         headers={"Authorization": f"Bearer {key}"},
         files={"file": ("narration.mp3", io.BytesIO(content), "audio/mpeg")},
@@ -95,6 +96,23 @@ def transcribe(session: requests.Session, key: str, content: bytes) -> list[dict
     if not isinstance(words, list) or not words:
         raise ValueError("Pollinations did not return word timestamps")
     return words
+
+
+def post_with_retries(session: requests.Session, url: str, **kwargs):
+    import requests
+
+    for attempt in range(4):
+        for file_item in kwargs.get("files", {}).values():
+            file_item[1].seek(0)
+        try:
+            response = session.post(url, **kwargs)
+            if response.status_code not in {429, 500, 502, 503, 504} or attempt == 3:
+                return response
+        except requests.RequestException:
+            if attempt == 3:
+                raise
+        time.sleep(2 ** attempt)
+    raise RuntimeError("Pollinations request did not complete")
 
 
 def generate_chapter(session: requests.Session, key: str, chapter: dict, limit_segments: int | None) -> None:
