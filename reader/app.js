@@ -237,8 +237,8 @@ function updateVoiceButton() {
   $('voiceButton').disabled = !state.aiManifest && !('speechSynthesis' in window);
   $('voiceButton').setAttribute('aria-pressed', String(state.voice));
   $('voiceButton').setAttribute('aria-label', state.voice ? 'Turn voice off' : 'Turn voice on');
-  $('voiceButton').title = state.aiManifest ? 'AI-generated Grok narration' : 'Read aloud with your browser voice';
-  $('voiceLabel').textContent = state.voice ? (state.aiManifest ? 'GROK AI' : 'DEVICE VOICE') : 'VOICE OFF';
+  $('voiceButton').title = state.aiManifest ? 'AI-generated Gemini narration' : 'Read aloud with your browser voice';
+  $('voiceLabel').textContent = state.voice ? (state.aiManifest ? 'GEMINI AI' : 'DEVICE VOICE') : 'VOICE OFF';
 }
 
 function toggleVoice() {
@@ -332,7 +332,7 @@ async function loadAiManifest(chapter, index) {
     const response = await fetch(`audio/${encodeURIComponent(chapter.id)}/manifest.json`);
     if (!response.ok) return;
     const manifest = await response.json();
-    if (index !== state.chapter || !manifest.complete || manifest.wordCount !== state.words.length || manifest.model !== 'x-ai/grok-tts') return;
+    if (index !== state.chapter || !manifest.complete || manifest.wordCount !== state.words.length || manifest.model !== 'google/gemini-3.8-flash-tts') return;
     if (!Array.isArray(manifest.segments) || !manifest.segments.length) return;
     let covered = 0;
     for (const segment of manifest.segments) {

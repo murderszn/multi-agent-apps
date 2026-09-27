@@ -10,6 +10,8 @@ import hashlib
 import io
 import json
 import os
+import shutil
+import subprocess
 import time
 import unicodedata
 from difflib import SequenceMatcher
@@ -19,8 +21,9 @@ HERE = Path(__file__).resolve().parent
 BOOK = HERE / "book.json"
 OUT = HERE / "audio"
 API = "https://gen.pollinations.ai/v1/audio"
-MODEL = "x-ai/grok-tts"
-VOICE = "eve"
+MODEL = "google/gemini-3.8-flash-tts"
+VOICE = "Algieba"
+STYLE = "Warm, smooth, intimate audiobook narration. Natural pauses, clear but unforced diction, thoughtful and quietly expressive."
 MAX_WORDS = 220
 MIN_WORDS = 145
 
@@ -50,6 +53,19 @@ def mp3_duration(content: bytes) -> float:
     return float(MP3(io.BytesIO(content)).info.length)
 
 
+def to_mp3(wav: bytes) -> bytes:
+    executable = shutil.which("ffmpeg")
+    if not executable:
+        from imageio_ffmpeg import get_ffmpeg_exe
+
+        executable = get_ffmpeg_exe()
+    result = subprocess.run(
+        [executable, "-hide_banner", "-loglevel", "error", "-i", "pipe:0", "-ac", "1", "-codec:a", "libmp3lame", "-b:a", "96k", "-f", "mp3", "pipe:1"],
+        input=wav, capture_output=True, check=True,
+    )
+    return result.stdout
+
+
 def align_times(source: list[str], recognized: list[dict], duration: float) -> tuple[list[float], float]:
     source_tokens = [normalize(word) for word in source]
     heard_tokens = [normalize(str(word.get("word", ""))) for word in recognized]
@@ -74,13 +90,13 @@ def synthesize(session: requests.Session, key: str, text: str) -> bytes:
     response = post_with_retries(session,
         API + "/speech",
         headers={"Authorization": f"Bearer {key}"},
-        json={"model": MODEL, "input": text, "voice": VOICE, "response_format": "mp3"},
+        json={"model": MODEL, "input": text, "voice": VOICE, "response_format": "wav", "instructions": STYLE},
         timeout=180,
     )
     response.raise_for_status()
     if not response.headers.get("Content-Type", "").startswith("audio/") or len(response.content) < 1000:
         raise ValueError("Pollinations did not return usable audio")
-    return response.content
+    return to_mp3(response.content)
 
 
 def transcribe(session: requests.Session, key: str, content: bytes) -> list[dict]:
@@ -123,7 +139,7 @@ def generate_chapter(session: requests.Session, key: str, chapter: dict, limit_s
     source_hash = hashlib.sha256(json.dumps(words, ensure_ascii=False).encode()).hexdigest()
     old_path = folder / "manifest.json"
     old = json.loads(old_path.read_text()) if old_path.exists() else {}
-    if old.get("sourceHash") != source_hash or old.get("model") != MODEL or old.get("voice") != VOICE:
+    if old.get("sourceHash") != source_hash or old.get("model") != MODEL or old.get("voice") != VOICE or old.get("style") != STYLE:
         old = {}
     old_segments = {segment["start"]: segment for segment in old.get("segments", [])}
     segments = []
@@ -146,9 +162,9 @@ def generate_chapter(session: requests.Session, key: str, chapter: dict, limit_s
         path.write_bytes(content)
         segments.append({"file": name, "start": start, "end": end, "duration": round(duration, 3), "times": times})
         print(f"{chapter['id']} {number + 1}/{len(spans)}: {end - start} words, {duration:.1f}s, {confidence:.0%} aligned")
-        old_path.write_text(json.dumps({"sourceHash": source_hash, "model": MODEL, "voice": VOICE, "wordCount": len(words), "complete": False, "segments": segments}, separators=(",", ":")))
+        old_path.write_text(json.dumps({"sourceHash": source_hash, "model": MODEL, "voice": VOICE, "style": STYLE, "wordCount": len(words), "complete": False, "segments": segments}, separators=(",", ":")))
     complete = len(segments) == len(spans)
-    old_path.write_text(json.dumps({"sourceHash": source_hash, "model": MODEL, "voice": VOICE, "wordCount": len(words), "complete": complete, "segments": segments}, separators=(",", ":")))
+    old_path.write_text(json.dumps({"sourceHash": source_hash, "model": MODEL, "voice": VOICE, "style": STYLE, "wordCount": len(words), "complete": complete, "segments": segments}, separators=(",", ":")))
     print(f"{chapter['id']}: {'complete' if complete else 'partial'} ({len(segments)}/{len(spans)} clips)")
 
 
