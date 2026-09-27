@@ -1,10 +1,5 @@
 # Verify and Review
 
-> **Status:** Draft for review
-> **Part:** part-03-running-the-day
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/60
-> **Target length:** 2,500–4,000 words
-
 The diff looked finished.
 
 The headings were in place. The prose was smooth. The links were formatted. The checklist at the bottom had green boxes all the way down. It was the kind of file that invites me to nod, commit, and move on.
@@ -220,7 +215,7 @@ For the next five comparable agent-assisted work items, record:
 
 Keep the workflow only if the accepted-result time is stable or lower, post-acceptance defects do not increase, and every consequential item has a receipt that is not merely the agent’s own report. If review takes longer, inspect whether the problem is excessive scope, weak acceptance criteria, missing automation, or a genuinely high-risk task. Do not call a faster approval an improvement if the defects moved downstream.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** The canonical issue requires a proof case, failure modes, a 2026 section, a skeptical-reader response, an evidence ledger, an operator rule, and a measurable test.
   - **Source / artifact:** Repository issue #60 and `writings/part-03-running-the-day/04-verify-review.md` template.
@@ -251,18 +246,3 @@ The proof is the request beside the changed artifact, the claim beside the sourc
 Agents can produce the first answer. They can also prepare much of the evidence. The acceptance decision still belongs to the person who owns the consequence.
 
 The work is finished when the result, the record, and the evidence agree — not when the answer merely looks finished.
-
-## QA checklist
-
-- [x] Opens with a lived scene or proof case
-- [x] Plain-language mechanics only
-- [x] Working example includes human decision points
-- [x] Failure mode and response included
-- [x] “Why this matters in 2026” included
-- [x] Counterargument addressed
-- [x] Operator rule stated
-- [x] Measurable test stated
-- [x] Claim/evidence ledger completed
-- [x] No invented experience, number, date, price, or product behavior
-- [x] Copy edit completed
-- [x] Technical QA completed
