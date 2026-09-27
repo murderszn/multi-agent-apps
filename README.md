@@ -1,13 +1,25 @@
 # Human 2.0 — Agent Systems Book
 
-This repository now serves the Human 2.0 book and editorial site. The current book draft lives at the repository root so GitHub Pages and a direct static preview can serve it without a nested path.
+This repository serves the Human 2.0 book site. The root is a landing page; `reader/` contains the full canonical manuscript in a one-word-at-a-time reader.
 
-## Current book site
+## Website
 
-- `index.html` — current editorial/book draft
-- `styles.css` — notebook-paper visual system
-- `network-map-sketch.jpeg` — supplied hand-drawn network map
-- `network-map-clean.jpeg` — clean-view copy of the map
+- `index.html` — book landing page, overview, and entry points into the reader.
+- `styles.css` — responsive violet, pink, and coral design shared in spirit with the reader.
+- GitHub Pages: https://murderszn.github.io/multi-agent-apps/
+
+## One-word reader
+
+`reader/` is a static website for reading the canonical manuscript one word at a time, silently, at an adjustable pace. The homepage links to each part by chapter ID. See `reader/README.md` for preview and update instructions.
+
+## Directory
+
+- `index.html` — book landing page.
+- `styles.css` — landing page styles.
+- `network-diagram-map.png` — preserved network illustration from the earlier root page.
+- `reader/` — one-word reader website and manuscript build script.
+- `writings/` — canonical manuscript and editorial guidance.
+- `archive/` — preserved earlier versions of the project.
 
 ## Archive
 
@@ -15,9 +27,9 @@ This repository now serves the Human 2.0 book and editorial site. The current bo
 
 `archive/human-2.0-book/` contains the earlier archived copy of the book draft and its asset bundle.
 
-## Editorial direction
+## Editorial source
 
-The book combines practical AI systems writing with personal field essays. It treats the six-agent lab as a working proof case, not a claim that six hosts are optimal. Each future chapter should include a plain-language explanation, a working example, a failure mode, and a section titled **Why this matters in 2026**.
+The canonical chapters live in `writings/`. Run `python3 reader/build.py` after manuscript changes to update `reader/book.json`.
 
 ## Local preview
 
