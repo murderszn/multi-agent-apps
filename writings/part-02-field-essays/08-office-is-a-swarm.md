@@ -1,14 +1,5 @@
 # My Office Is a Desk, Power, Wi-Fi, and a Swarm
 
-> **Status:** Draft — publisher review pass requested
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/55
-> **Target length:** 2,500–4,000 words
-
-## Editorial hook
-
-Traveling between Chicago and St. Louis killed the idea that work needs a building. The work lives on machines, in workflows, and in the standards that decide whether an output is ready. The desk is where the operator sits. It is not necessarily where the work lives.
-
 ## Opening scene
 
 The useful morning does not begin with a commute.
@@ -25,20 +16,7 @@ This is not a manifesto for remote work. It is a narrower observation: when the 
 
 The office is a desk, power, Wi-Fi, and a swarm. The swarm is not magic. It is a collection of small processes with names, permissions, schedules, and failure modes. The human is still there as the person who defines the work, reviews the evidence, and accepts the result.
 
-## Chapter promise
-
-By the end, the reader should understand:
-
-- why a distributed system changes the meaning of going to work;
-- what a private network contributes, and what it does not guarantee;
-- why boring infrastructure is a productivity feature;
-- how to divide agent work without creating an unreviewable tangle;
-- what failed in a real operating workflow and how the failure became visible;
-- how to test whether a small factory is actually location-independent.
-
-## Core argument
-
-### Work does not need a building. It needs a boundary.
+## Work does not need a building. It needs a boundary.
 
 A building gives work a physical boundary. People know where to go, what equipment is there, and who else is nearby. Distributed work has to replace that physical boundary with explicit ones.
 
@@ -56,7 +34,7 @@ Without those answers, distributed work is just scattered work. A laptop, a desk
 
 The office is therefore the boundary around work: the machines, network, credentials, artifacts, and standards that make work possible and reviewable. The operator can move because the boundary moves with the system.
 
-### The private network is boring glue
+## The private network is boring glue
 
 The remote agents are usable because the network is boring.
 
@@ -66,7 +44,7 @@ The distinction matters. A private network is not secure by magic. It is a conne
 
 The infrastructure that matters is infrastructure you do not have to think about every morning. The network should disappear from the workflow without disappearing from the threat model. When that happens, the operator spends attention on the work rather than rebuilding access whenever the desk changes.
 
-### The desk is a controller, not the factory
+## The desk is a controller, not the factory
 
 My laptop and phone are controllers. They are the screens through which I look in. They are not necessarily the engines doing the work.
 
@@ -78,7 +56,7 @@ The desk is where I ask, “What happened?” The system must answer with artifa
 
 When the desk is only a controller, the operator can change locations without moving the factory. When the desk is secretly the factory, every trip becomes an outage.
 
-### A swarm is a division of failure
+## A swarm is a division of failure
 
 “Swarm” can make a small system sound larger than it is. The useful meaning is simpler: separate jobs that fail differently.
 
@@ -187,7 +165,7 @@ Run a location-change drill:
 
 Record elapsed time, artifacts inspected, access failures, and any step that required being in the machine's room. Repeat after a meaningful infrastructure change. The system passes only if the operator can review work from the alternate location without guessing what happened or trusting an unverified completion message.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** The canonical workflow uses scheduled workers, GitHub issues, branches, pull requests, and human review as distinct handoffs.
   **Source / artifact:** Repository workflow and canonical issue #55; this chapter's working example.
@@ -214,21 +192,6 @@ Record elapsed time, artifacts inspected, access failures, and any step that req
   **Qualification:** This is a proposed control, not an externally measured standard.
 
 - **Numbers, dates, prices, and product behavior:** No performance, conversion, price, or guaranteed product-behavior claim is made. Tailscale behavior is limited to the first-party quickstart's public description and is not presented as a security guarantee.
-
-## QA checklist
-
-- [x] Opens with a lived scene or repository-grounded proof case.
-- [x] Explains only necessary mechanics in plain language.
-- [x] Includes a working example and what failed.
-- [x] Includes failure modes with detection and human response.
-- [x] Includes “Why this matters in 2026.”
-- [x] Addresses skeptical readers.
-- [x] Includes a claim/evidence ledger.
-- [x] States an operator rule and measurable test.
-- [x] Avoids invented personal experiences, metrics, prices, and outcomes.
-- [x] Copy edit completed.
-- [x] Technical QA completed.
-- [ ] Publisher review pass.
 
 ---
 
