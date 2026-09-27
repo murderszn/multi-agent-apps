@@ -1,10 +1,5 @@
 # Learn, Measure, and Adopt Carefully
 
-> **Status:** Draft for review
-> **Part:** part-03-running-the-day
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/61
-> **Target length:** 2,500–4,000 words
-
 ## The morning I said no
 
 At 8:30 on a weekday morning, my phone lights up with the same question it asks most weekdays: a post is staged, the caption is written, the art is done. Do I approve it?
@@ -112,21 +107,6 @@ One concrete tripwire, so this is not abstract: if you decline or edit more than
 - **Claim:** MIT's NANDA project reported that about 95 percent of enterprise generative-AI pilots showed no measurable P&L impact, attributing the gap to organizational learning and workflow fit rather than model quality. **Source:** *The GenAI Divide: State of AI in Business 2025* (July 2025), via widely consistent secondary coverage. Ledger note: the primary PDF (https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf) could not be opened during this drafting run; the number is presented as the report's widely reported headline finding and is flagged for the ledger pass. **Last checked:** September 24, 2026.
 - **Claim:** The Instagram series runs one staged post per weekday morning (~8:30 AM CT), requires the author's approval before anything publishes, follows a weekdays-only policy set September 19, 2026, and saw two failed mornings plus one declined approval September 23–24, 2026, with the posts remaining staged. **Source:** the author's own workflow records (queue at `workspace/aurablox/ig-series/queue.json`; scheduled job `aurablox-relaunch-daily-ig-post`; daily logs). First-person events; no external verification claimed. **Last checked:** September 24, 2026.
 - **Claim:** The book's own drafting pipeline runs one chapter per four-hour cycle with pull requests left open for the author's editorial review; the job-search pipeline runs an eight-hour cycle against a shared board with the author owning truth, fit, privacy, and submission. **Source:** the author's own operating records; first-person. **Last checked:** September 24, 2026.
-
-## QA checklist
-
-- [x] Opens with a lived scene or proof case
-- [x] Plain-language mechanics only
-- [x] Working example includes human decision points
-- [x] Failure mode and response included
-- [x] "Why this matters in 2026" included
-- [x] Counterargument addressed
-- [x] Operator rule stated
-- [x] Measurable test stated
-- [x] Claim/evidence ledger completed
-- [x] No invented experience, number, date, price, or product behavior
-- [x] Copy edit completed
-- [x] Technical QA completed
 
 ## Closing image
 
