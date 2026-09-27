@@ -1,10 +1,5 @@
 # Security, Cerberus, and Build in Public
 
-> **Status:** Draft
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/54
-> **Target length:** 2,500–4,000 words
-
 ## The code arrived at 2 a.m.
 
 The agents work while I sleep. That is the deal: the lab runs overnight, and I wake up to finished work. A shop of four humans that ships like a shop of forty.
@@ -130,7 +125,7 @@ Before any agent-built application touches real customer data, all five of the f
 
 Pass means all five, documented. Anything less means the app is not ready for real data, no matter how good the demo looks.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** Cerberus is an automated, zero-configuration security scanner and agent workbench for vibe-coded and rapid-deployment applications: a deterministic scanner (zero-dependency, identical in browser and CLI, no server/build/signup), a nine-persona agent CLI workbench (tool use, plan/accept-edits modes, session persistence, swarm fan-out), and a GitHub App with scan-grounded conversations, AI-generated diffs, and one-click draft pull requests.
   - **Source:** Cerberus repository README, https://github.com/murderszn/cerberus — last checked September 23, 2026. As published by the author; not independently audited.
@@ -163,19 +158,3 @@ Back to 2 a.m. The agents are running. Code is arriving. Somewhere in the pile t
 The scan runs before the merge, not after the incident. The findings arrive as a conversation. The personas argue, I decide, the draft becomes a pull request, and the merge button stays in human hands. Then the whole thing, the code, the findings, the fixes, the ugly commits, sits in a public repo where anyone can check my work.
 
 Speed got us here and is not going away. The question was never whether to slow down. It was whether the careful part could run as fast as the fast part, in the open, every single time. That is the loop. That is the product.
-
-## QA checklist
-
-- [x] Opens with a lived scene or proof case
-- [x] Plain-language mechanics only
-- [x] Working example includes human decision points
-- [x] Failure mode and response included
-- [x] "Why this matters in 2026" included
-- [x] Counterargument addressed
-- [x] Operator rule stated
-- [x] Measurable test stated
-- [x] Claim/evidence ledger completed
-- [x] No invented experience, number, date, price, or product behavior
-- [x] Copy edit completed
-- [x] Technical QA completed
-- [x] Publisher review pass
