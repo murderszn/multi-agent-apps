@@ -12,13 +12,41 @@ on:
         required: false
 
 jobs:
-  generate:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
-    permissions:
-      contents: write
+    outputs:
+      chapters: ${{ steps.select.outputs.chapters }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: select
+        env:
+          CHAPTER: ${{ inputs.chapter }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+
+          book = json.load(open('reader/book.json'))
+          selected = [chapter['id'] for chapter in book['chapters'] if chapter.get('available') and (os.environ['CHAPTER'] == 'all' or chapter['id'] == os.environ['CHAPTER'])]
+          if not selected:
+              raise SystemExit('No available chapter matched the requested ID')
+          print('chapters=' + json.dumps(selected, separators=(',', ':')))
+          PY
+
+  generate:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        chapter: ${{ fromJson(needs.plan.outputs.chapters) }}
     env:
       POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+      CHAPTER: ${{ matrix.chapter }}
+      LIMIT_SEGMENTS: ${{ inputs.limit_segments }}
+      PYTHONUNBUFFERED: '1'
     steps:
       - uses: actions/checkout@v4
       - name: Generate Gemini narration and word timing
@@ -27,11 +55,33 @@ jobs:
           args=(--chapter "$CHAPTER")
           if [[ -n "$LIMIT_SEGMENTS" ]]; then args+=(--limit-segments "$LIMIT_SEGMENTS"); fi
           python3 reader/generate_audio.py "${args[@]}"
-        env:
-          CHAPTER: ${{ inputs.chapter }}
-          LIMIT_SEGMENTS: ${{ inputs.limit_segments }}
-      - name: Publish generated audio
+      - name: Stage completed clips
         if: always()
+        run: |
+          mkdir -p staging
+          if [[ -d "reader/audio/$CHAPTER" ]]; then cp -R "reader/audio/$CHAPTER" staging/; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audio-${{ matrix.chapter }}
+          path: staging/
+          if-no-files-found: ignore
+          retention-days: 3
+
+  publish:
+    needs: [plan, generate]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: audio-*
+          path: reader/audio/
+          merge-multiple: true
+      - name: Publish generated audio
         run: |
           if [[ ! -d reader/audio ]]; then exit 0; fi
           git config user.name 'github-actions[bot]'
@@ -40,4 +90,3 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m 'Generate Gemini reader audio'
             git push origin HEAD:main
-          fi

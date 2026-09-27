@@ -1,4 +1,4 @@
-"""Build public Grok narration assets from book.json using a private Actions secret.
+"""Build public Gemini narration assets from book.json using a private Actions secret.
 
 Only run this in a trusted environment. The API key never enters generated files.
 """

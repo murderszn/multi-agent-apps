@@ -181,7 +181,12 @@ function speakAiFromCurrent() {
     speakDeviceFromCurrent();
   };
   audio.onerror = fallback;
-  audio.play().then(() => { if (generation === state.voiceGeneration) tick(); }).catch(fallback);
+  audio.play().then(() => {
+    if (generation !== state.voiceGeneration) return;
+    tick();
+    const next = state.aiManifest.segments.find(item => item.start === segment.end);
+    if (next) fetch(`audio/${encodeURIComponent(state.chapters[state.chapter].id)}/${next.file}`).then(response => response.ok ? response.arrayBuffer() : null).catch(() => {});
+  }).catch(fallback);
 }
 
 function speakDeviceFromCurrent() {
