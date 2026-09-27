@@ -5,7 +5,9 @@ This repository serves the Human 2.0 book site. The root is a landing page; `rea
 ## Website
 
 - `index.html` — book landing page, overview, and entry points into the reader.
-- `styles.css` — responsive violet, pink, and coral design shared in spirit with the reader.
+- `theme.css` — shared matte-black, white, and neon-green design tokens.
+- `styles.css` — responsive landing-page layout and typography.
+- `line-field.svg` — original fine-line artwork inspired by the grayscale reference.
 - GitHub Pages: https://murderszn.github.io/multi-agent-apps/
 
 ## One-word reader
@@ -15,7 +17,9 @@ This repository serves the Human 2.0 book site. The root is a landing page; `rea
 ## Directory
 
 - `index.html` — book landing page.
+- `theme.css` — shared color and type foundation for both pages.
 - `styles.css` — landing page styles.
+- `line-field.svg` — decorative line illustration for the homepage.
 - `network-diagram-map.png` — preserved network illustration from the earlier root page.
 - `reader/` — one-word reader website and manuscript build script.
 - `writings/` — canonical manuscript and editorial guidance.

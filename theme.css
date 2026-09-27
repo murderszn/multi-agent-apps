@@ -1,0 +1,22 @@
+:root {
+  color-scheme: dark;
+  --black: #050605;
+  --black-2: #090b09;
+  --black-3: #101210;
+  --white: #f3f5ef;
+  --soft: #b4bab0;
+  --dim: #7c847b;
+  --acid: #baff39;
+  --acid-strong: #c9ff53;
+  --rule: rgba(227, 235, 222, .17);
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--black); color: var(--white); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+button, input { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--acid); outline-offset: 5px; }
+::selection { background: var(--acid); color: var(--black); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

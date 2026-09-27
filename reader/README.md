@@ -32,8 +32,8 @@ The reader uses the twenty canonical paths listed in `build.py`, following `writ
 ## Directory
 
 - `index.html` — reader screen and chapter dialog.
-- `styles.css` — responsive sunset violet and rose design.
-- `ambient.js` — flowing WebGL aurora shader that settles during playback or reduced motion, with static CSS fallback.
+- `styles.css` — responsive matte-black reader with stark white type and neon-green focus blocks.
+- `../theme.css` — colors and typography shared with the homepage.
 - `app.js` — silent playback, pace, chapters, and saved progress.
 - `build.py` — canonical manuscript to reader data conversion.
 - `book.json` — generated book data used by the static site.
