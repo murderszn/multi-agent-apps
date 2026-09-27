@@ -10,14 +10,10 @@ import hashlib
 import io
 import json
 import os
-import re
 import subprocess
 import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
-
-import requests
-
 
 HERE = Path(__file__).resolve().parent
 BOOK = HERE / "book.json"
@@ -40,7 +36,7 @@ def split_words(words: list[list]) -> list[tuple[int, int]]:
     while start < len(words):
         end = min(start + MAX_WORDS, len(words))
         for candidate in range(end - 1, start + MIN_WORDS - 1, -1):
-            if words[candidate][1] == 1:
+            if len(words[candidate]) > 1 and words[candidate][1] == 1:
                 end = candidate + 1
                 break
         result.append((start, end))
@@ -142,6 +138,8 @@ def generate_chapter(session: requests.Session, key: str, chapter: dict, limit_s
 
 
 def main() -> None:
+    import requests
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--chapter", default="all", help="Chapter ID or all")
     parser.add_argument("--limit-segments", type=int, default=None)
