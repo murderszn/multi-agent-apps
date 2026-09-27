@@ -23,8 +23,14 @@ Open `http://localhost:8080/reader/`. The reader is static and can be hosted und
 - Open **Chapters** to switch chapters. Reading position and speed save in this browser.
 - A link such as `reader/?chapter=01-vibe-coding` opens a specific chapter at its first word. The homepage uses these links for its three parts.
 - The player pauses when the tab becomes hidden and at the end of a chapter.
-- Turn **Voice** on for read-aloud playback using the browser's speech engine. It starts only after you press Play, speaks the current chapter in short passages, and follows word-boundary events when the browser provides them. Where those events are unavailable, the visual word timing is an estimate. Voice is off by default.
-- The footer remains visible during playback with the current word count, a chapter progress bar, and approximate time remaining. The estimate follows the selected visual reading pace; actual speech duration depends on the browser voice.
+- Turn **Voice** on for read-aloud playback. Chapters with generated Grok narration show **Grok AI**; the displayed word follows timestamps from a separate transcription of the audio. Chapters without generated audio use the browser's speech engine, following word-boundary events where available. Voice is off by default.
+- The footer remains visible during playback with the current word count, a chapter progress bar, and approximate time remaining. Grok estimates use the actual clip durations and selected playback rate; browser-voice estimates follow the visual reading pace.
+
+## Generating Grok narration
+
+The public reader never receives the Pollinations secret key. The **Reader audio** GitHub Actions workflow reads `POLLINATIONS_API_KEY`, calls Pollinations `x-ai/grok-tts` with the `eve` voice, and uses `x-ai/grok-transcribe` to obtain word timestamps. It commits the resulting MP3 clips and `manifest.json` files under `audio/`. GitHub Pages serves these static files without an API call from visitors. The audio is AI generated.
+
+Run the workflow manually with `chapter=all`, or use a chapter ID (for example `01-models`). A segment limit is available for smoke tests. If a manuscript chapter changes, rebuild `book.json` and rerun that chapter; the generator checks a hash of the words before reusing audio. Chapter manifests become active in the reader only when every segment is present.
 
 ## Updating the book
 
@@ -36,6 +42,8 @@ The reader uses the twenty canonical paths listed in `build.py`, following `writ
 - `styles.css` — responsive matte-black reader with stark white type and neon-green focus blocks.
 - `../theme.css` — colors and typography shared with the homepage.
 - `app.js` — visual and browser-voice playback, pace, chapters, progress, and saved position.
+- `generate_audio.py` — Pollinations narration, transcription, and word alignment.
+- `audio/` — generated public MP3 clips and per-chapter timing manifests.
 - `build.py` — canonical manuscript to reader data conversion.
 - `book.json` — generated book data used by the static site.
 - `README.md` — preview and update instructions.

@@ -12,7 +12,7 @@ This repository serves the Human 2.0 book site. The root is a landing page; `rea
 
 ## One-word reader
 
-`reader/` is a static website for reading the canonical manuscript one word at a time at an adjustable pace, with optional browser-voice read-aloud playback. The homepage links to each part by chapter ID. See `reader/README.md` for preview and update instructions.
+`reader/` is a static website for reading the canonical manuscript one word at a time at an adjustable pace, with optional AI narration and browser-voice fallback. The homepage links to each part by chapter ID. See `reader/README.md` for preview and update instructions.
 
 ## Directory
 
@@ -22,6 +22,7 @@ This repository serves the Human 2.0 book site. The root is a landing page; `rea
 - `line-field.svg` — decorative line illustration for the homepage.
 - `network-diagram-map.png` — preserved network illustration from the earlier root page.
 - `reader/` — one-word reader website and manuscript build script.
+- `.github/workflows/reader-audio.yml` — secure GitHub Actions generation of Grok narration.
 - `writings/` — canonical manuscript and editorial guidance.
 - `archive/` — preserved earlier versions of the project.
 
