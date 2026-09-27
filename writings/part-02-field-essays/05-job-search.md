@@ -1,16 +1,5 @@
 # Agents Applied to My Job Search Before I Did
 
-> **Status:** Draft — publisher review pass requested
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/53
-> **Target length:** 2,500–4,000 words
-
-## Editorial hook
-
-The job search looks like a perfect place for an agent: repetitive, searchable, high-volume, and miserable when performed alone. That is exactly why it is dangerous. A system that can find and prepare applications can also multiply a bad judgment, expose private information, or turn a person into a pile of generic submissions.
-
-An agent can apply for a job — it can produce text. The useful question is whether a human can build a search process that increases useful coverage without surrendering authorship, privacy, or judgment.
-
 ## Opening scene
 
 The scene is the browser tab after an hour of searching — not a triumphant offer letter.
@@ -27,20 +16,7 @@ I don't disappear from the search — I move upstream. I define the search, prov
 
 That is the proof case available here. The repository's original outline describes an agent finding listings, preparing tailored applications, and helping the operator reach interviews and an offer. The current canonical issue asks for a stronger chapter: an honest account of the system, its boundaries, and the decisions that make an assisted search useful — not a victory story invented after the fact. The offer is not evidence I am allowed to fabricate. It is the question the workflow should be designed to answer.
 
-## Chapter promise
-
-By the end, the reader should understand:
-
-- why a job search is a serious test of agent-assisted work;
-- which parts of the search are good candidates for delegation and which are not;
-- how to build a reviewable pipeline from a human brief to a submitted application;
-- what can fail, including privacy, fabrication, discrimination, spam, and simple bad fit;
-- why the agent's job is to increase my coverage, not to impersonate me;
-- how to measure the system without pretending that applications or interviews are guaranteed outcomes.
-
-## Core argument
-
-### The job search is a useful test because it has stakes and a boundary
+## The job search is a useful test because it has stakes and a boundary
 
 A workflow is a good candidate for agent assistance when it contains repeated transformations: search results become a shortlist; a job description becomes a requirements map; a source résumé becomes a proposed, role-specific résumé; a decision becomes a logged next step. The job search contains all of these.
 
@@ -56,7 +32,7 @@ Forget “the agent wrote a cover letter.” A better definition of the success 
 
 Only the first three are visible before an employer responds. Interviews and offers are delayed, noisy outcomes. They are important, but they cannot be the only measure of the system.
 
-### The right unit is not the application. It is the decision record.
+## The right unit is not the application. It is the decision record.
 
 A naïve application agent is asked to maximize submissions. That is the wrong optimization target. It encourages volume, weakens review, and creates the appearance of progress while increasing my future burden.
 
@@ -76,7 +52,7 @@ This sounds bureaucratic until the first disagreement. Was the role remote or me
 
 It also makes failure useful. If every rejected role shared a missing qualification, the search brief may be wrong. If applications reach the review queue but are never approved, the drafts may be too generic or the bar may be undefined. If the system finds plenty of roles but none survive the fit screen, the bottleneck is discovery quality, not writing speed.
 
-### Delegate transformations, not accountability
+## Delegate transformations, not accountability
 
 Forget “the agent does easy work” — some easy work is consequential. The safe delegation line is whether the action can be reviewed against a source of truth before it creates an external commitment.
 
@@ -223,7 +199,7 @@ Run the workflow for a fixed review period and record, for every candidate role:
 
 Then compare the assisted period with a prior baseline or a deliberately defined manual sample. Evaluate qualified roles found, qualified applications submitted, review time per application, unsupported-claim rate, duplicate or wrong-fit rate, and follow-up completion. Do not count total applications as success. The system passes only if it increases useful coverage or reduces clerical effort without increasing unsupported claims, privacy incidents, or submissions I can't explain.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** The job search contains repeated transformations that are suitable for assistance but also creates external commitments.
   - **Source / artifact:** This chapter's workflow analysis; canonical issue #53 definition of done.
@@ -257,19 +233,3 @@ The agent has done its part: it widened the field and carried the repetitive loa
 The offer, if it comes, will be evidence about a particular search in a particular market. It will not prove that automation wins. The durable proof is smaller and more demanding: after the system runs, can I still recognize the work as my own, explain every important claim, and measure what improved?
 
 That is what it means to let agents apply before you do. They may go first into the listings. They don't go first into my identity.
-
-## QA checklist
-
-- [x] Opens with a lived scene or proof case
-- [x] Plain-language mechanics only
-- [x] Working example includes human decision points
-- [x] Failure mode and response included
-- [x] “Why this matters in 2026” included
-- [x] Counterargument addressed
-- [x] Operator rule stated
-- [x] Measurable test stated
-- [x] Claim/evidence ledger completed
-- [x] No invented experience, number, date, price, or product behavior
-- [x] Copy edit completed
-- [x] Technical QA completed
-- [ ] Publisher review completed

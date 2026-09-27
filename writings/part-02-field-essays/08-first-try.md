@@ -1,10 +1,5 @@
 # The First-Try Problem
 
-> **Status:** Draft for publisher review
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/56
-> **Target length:** 2,500–4,000 words
-
 ## Opening scene
 
 The first attempt looked like progress.
@@ -21,15 +16,8 @@ Instead, the mismatch became the work. Inspect the issue. Inspect the architectu
 
 Less dramatic than “the agent wrote a chapter.” Closer to what reliable work looks like. The first try is not the deliverable. It is a probe. It tells me what the system understood, what it missed, and what I must decide before another attempt.
 
-## Chapter promise
-
-By the end of this chapter, you should understand why a fluent first attempt is not evidence of a correct attempt; how to turn retries from vague regeneration into controlled learning; how to inspect the inputs, output, and failure boundary of an agent workflow; and how to decide when another attempt is useful rather than merely comforting.
-
 The core argument is simple: **do not ask whether the agent got it right on the first try. Ask whether the workflow makes the first try cheap to inspect, safe to reject, and informative enough to improve.**
-
-## Core argument
-
-### Fluency hides the first failure
+## Fluency hides the first failure
 
 A language model is optimized to produce a plausible continuation. An agent wrapped around a language model can also read files, call tools, edit a branch, and report completion. None of that changes the basic operational fact: a polished output can be wrong in ways that are difficult to notice from the output alone.
 
@@ -43,7 +31,7 @@ The first failure, then, is often an information-architecture failure. The agent
 
 My first job is making the target legible — not praising or punishing the prose.
 
-### A retry is not a method
+## A retry is not a method
 
 Many workflows treat regeneration as quality control. I read an answer, dislike a paragraph, and ask for a better version. The model produces another answer. I compare the two by feel. If the second sounds more confident, it wins.
 
@@ -60,7 +48,7 @@ If none of those changes, the second attempt is mostly another sample from the s
 
 This is why “try again” is a weak instruction. “Try again, using the canonical architecture rather than the archived outline; cite each technical claim; label repository evidence separately from personal evidence; and end with a measurable test” is a method. It changes the conditions under which the output is made and the standard by which it will be judged.
 
-### The first attempt should be designed to fail visibly
+## The first attempt should be designed to fail visibly
 
 A good workflow makes failures small and observable instead of trying to eliminate every early failure.
 
@@ -80,25 +68,23 @@ I want the first try to answer questions such as:
 
 If the workflow cannot answer those questions, a longer output only increases the cost of review.
 
-## Concepts and terms
-
-### First try
+## First try
 
 The first try is the first complete attempt produced by a workflow under a stated set of inputs and constraints. It is not necessarily the first sentence or first tool call. The useful boundary is the point at which the system presents an artifact for human judgment.
 
-### Verification
+## Verification
 
 Verification asks whether the artifact matches an external requirement. Does the file exist at the required path? Does the test pass? Does the cited source support the sentence? Is the number traceable? Verification is narrower than approval and often more mechanical.
 
-### Review
+## Review
 
 Review asks whether the artifact is worth accepting. A chapter can satisfy its headings and still be repetitive, timid, misleading, or badly placed in the book. Review requires judgment because the acceptance standard includes purpose, audience, taste, and consequences.
 
-### Evaluation
+## Evaluation
 
 An evaluation is a repeatable check against examples or criteria. It can be a test suite, a checklist, a word-count range, a claim ledger, a rubric, or a comparison against a known-good artifact. An evaluation is useful only if it can expose a meaningful difference between acceptable and unacceptable work.
 
-### Grounding
+## Grounding
 
 Grounding is the discipline of tying a claim to an available source or artifact. A repository file, issue, command result, official documentation page, paper, or clearly attributed public discussion can ground a statement. Grounding makes the path to checking the claim visible; it doesn't certify the claim as true.
 
@@ -177,7 +163,7 @@ For the next ten comparable tasks, record four things: the first-pass acceptance
 
 A useful workflow should make the defect visible sooner. If retries keep producing different prose with the same unsupported claim, the workflow is not learning. If the first pass is cheap to inspect and the second pass addresses a named failure, the workflow is improving even when the first pass is rejected.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** The current canonical queue is distinct from the archived 41-chapter outline.
   - **Source / artifact:** `writings/MANUSCRIPT-ARCHITECTURE.md`; GitHub issue #56.
@@ -216,18 +202,3 @@ I read the issue again. I check the path. I open the archive, then the architect
 Only now is another attempt worth making.
 
 The machine can produce the next draft. I decide what the next draft must learn.
-
-## QA checklist
-
-- [x] Plain-language explanation
-- [x] Working example included
-- [x] Failure mode included
-- [x] “Why this matters in 2026” included
-- [x] Claims separated from measurements
-- [x] Sources/evidence captured
-- [x] Human responsibility and limits are clear
-- [x] Operator rule stated
-- [x] Measurable test stated
-- [x] Copy edited for clarity and rhythm
-- [x] Technical QA completed
-- [ ] Publisher review pass

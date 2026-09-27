@@ -1,12 +1,5 @@
 # Execute in Parallel
 
-> **Status:** Draft
-> **Part:** part-03-running-the-day
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/59
-> **Target length:** 2,500–4,000 words
-
-## Editorial hook
-
 The proof is not a diagram. It is a branch.
 
 ## Opening scene
@@ -21,17 +14,6 @@ Those constraints are the work — not decoration. Once the constraints are expl
 
 The useful distinction is simple: **parallelize independent work; serialize decisions and shared state.**
 
-## Chapter promise
-
-By the end of this chapter, you should understand:
-
-- how to decide whether a task is genuinely independent before assigning it to another agent or process;
-- how to give parallel workers narrow lanes, explicit inputs, and inspectable outputs;
-- why shared files, mutable branches, credentials, and final claims turn apparent speed into coordination risk;
-- how to preserve one human owner for scope, tradeoffs, evidence, and consequences.
-
-## Core argument
-
 Parallel execution is not “more agents everywhere.” It is a controlled arrangement in which several workers make progress at once without silently making the same decision twice.
 
 Three ideas matter.
@@ -44,21 +26,19 @@ Third, **I stay on the critical path where judgment lives**. A worker can collec
 
 Parallelism reduces waiting. Responsibility stays with the human.
 
-## Concepts and terms
-
-### A lane is a bounded piece of work
+## A lane is a bounded piece of work
 
 A lane has one question, one owner, and one output. “Find evidence for the claim that matrix jobs can run independently” is a lane. “Improve the chapter” is not. The first can return links and notes. The second has no stable boundary and will overlap with every other worker.
 
 A good lane is narrow enough that another person can inspect it without reconstructing the entire assignment. It also has a stopping condition: a source list, a test result, a proposed outline, or a patch.
 
-### A dependency is a reason to wait
+## A dependency is a reason to wait
 
 Task B depends on task A when B cannot produce a trustworthy result without A’s output. The dependency can be technical—one build must finish before integration—or editorial—an argument must be selected before a copy editor can check its consistency.
 
 The mistake is to treat all time as dependency. Some work can begin with a stated assumption. For example, a researcher can investigate official documentation while the repository inspector maps the current files. The draft still waits for me to reconcile the two results, but the investigation itself need not wait.
 
-### Shared state is where parallel work gets dangerous
+## Shared state is where parallel work gets dangerous
 
 Shared state is anything multiple workers can change or rely on: a branch, a working directory, a database, a production account, a document, a generated artifact, or an evidence ledger. Shared state is not automatically bad. It is simply expensive to coordinate.
 
@@ -66,7 +46,7 @@ Git gives us a useful physical metaphor. `git worktree` supports multiple workin
 
 The clean worktree solves collision — not judgment.
 
-### A barrier is a deliberate handoff
+## A barrier is a deliberate handoff
 
 A barrier is the point where parallel outputs are collected and checked before the next stage begins. The barrier may be a person, a test suite, a review, or a generated manifest.
 
@@ -208,7 +188,7 @@ For the next five comparable requests, record:
 
 Compare the parallel workflow with the previous serial baseline. Keep the parallel design only if elapsed time falls **without** an increase in post-review defects or unresolved evidence gaps. If the result is faster but less trustworthy, the system did not improve.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** The canonical queue for this manuscript is a 20-chapter structure, and the 41-chapter outline is archived rather than the current drafting queue.
   - **Source / artifact:** `writings/MANUSCRIPT-ARCHITECTURE.md` in this repository; canonical issue #59.
@@ -233,18 +213,3 @@ The branch is still the proof.
 A dozen workers can search, outline, test, and comment while I hold the boundary of the work. At the end, there must be one artifact that someone can inspect: one chapter, one patch, one result, one explanation of what failed. If the outputs cannot be brought back to that artifact without guesswork, the system did not execute in parallel. It merely produced noise in parallel.
 
 My job is making sure that, when processes run at once, they're still moving toward the same accountable result — not making every process run at once.
-
-## QA checklist
-
-- [x] Opens with a lived scene or proof case
-- [x] Plain-language mechanics only
-- [x] Working example includes human decision points
-- [x] Failure mode and response included
-- [x] “Why this matters in 2026” included
-- [x] Counterargument addressed
-- [x] Operator rule stated
-- [x] Measurable test stated
-- [x] Claim/evidence ledger completed
-- [x] No invented experience, number, date, price, or product behavior
-- [x] Copy edit completed
-- [x] Technical QA completed

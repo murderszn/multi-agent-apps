@@ -1,10 +1,5 @@
 # I Don't Code Anymore. I Vibe.
 
-> **Status:** Draft — publisher review pass
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/49
-> **Target length:** 2,500–4,000 words
-
 ## The afternoon the code became a judgment call
 
 The most honest description I can give of vibe coding isn't any of the hype versions. Forget "I said one sentence and a whole app appeared." Forget the demo of a model generating a full stack in a conversation. What it actually is: a normal afternoon, at a normal desk, with a real thing to build and a standard the thing has to survive.
@@ -180,7 +175,7 @@ This is the strongest objection, and it's right about the bottleneck. Agents red
 
 It is not a failure of the tool. It is a boundary around responsible use. I keep that boundary because I've seen what happens without it.
 
-## Evidence ledger
+## Notes
 
 | Claim | Evidence or source | Status and boundary |
 |---|---|---|

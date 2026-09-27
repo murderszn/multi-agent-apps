@@ -1,10 +1,5 @@
 # The Small Factory Under the Desk
 
-> **Status:** Draft
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/50
-> **Target length:** 2,500–4,000 words
-
 You don't need a data center. You need a few cheap machines and a standard.
 
 ## The morning check-in
@@ -131,7 +126,7 @@ Small and reliable beats big and theatrical.
 
 For every agent in your system, write down its name, what it does, and where it runs. Then write down what happens when it fails. Then audit one output from each lane without letting a general agent summarize it for you. If any answer is missing — if you cannot name it, cannot describe its failure, or cannot check its work directly — the system is too big to trust, and the next job is to shrink it until every answer fits on one page.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** Builders are running AI agent setups on repurposed office mini PCs costing roughly $100 plus a chat subscription.
   - **Source:** Facebook homelab group post (July 12, 2026): three HP 800 G6 desktop minis, TP-Link Omada switch, Raspberry Pi 3B, Proxmox, Hermes agent "Cora," https://www.facebook.com/groups/1283855437217819/permalink/1370378965232132/
@@ -172,21 +167,6 @@ For every agent in your system, write down its name, what it does, and where it 
 - **Claim:** The chapter's operator rule, failure taxonomy, and measurable test are the author's framework; no external measurement asserted.
   - **Source:** Author's analytical framework; no external measurement asserted.
   - **Last checked:** September 23, 2026.
-
-## QA checklist
-
-- [x] Opens with a lived scene (the morning check-in on Joshua's real machines).
-- [x] Explains only necessary mechanics in plain language.
-- [x] Includes a working example with human decision points (the 4-hour book worker) and what failed (dead job listings; unverified tunnel claim).
-- [x] Includes failure modes with detection and human response.
-- [x] Includes "Why this matters in 2026."
-- [x] Addresses skeptical readers (three steelmanned objections).
-- [x] States operator rule and measurable test.
-- [x] Includes claim/evidence ledger with dates for current claims.
-- [x] Does not invent personal experiences, metrics, prices, or product outcomes.
-- [x] Copy edit completed.
-- [x] Technical QA completed.
-- [ ] Publisher review pass.
 
 ---
 

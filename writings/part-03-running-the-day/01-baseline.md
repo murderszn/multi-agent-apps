@@ -1,27 +1,10 @@
 # Human 1.0: The Baseline Before the Lab
 
-> **Status:** Draft for review
-> **Part:** part-03-running-the-day
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/57
-> **Target length:** 2,500–4,000 words
-
-## Editorial hook
-
 At 9:00, the workday looks available. The document is open. The code editor is open. The inbox is quiet enough to pretend it is quiet. Then the first meeting starts, a message arrives, a second meeting moves, and the work that mattered becomes the work that can be squeezed between other people's calendars.
 
 This is the baseline we usually skip. We say an agent made us faster, but we cannot say faster than what. We say a swarm gave us leverage, but we did not record how long the old workflow took, where it broke, or what “done” meant before the machinery arrived.
 
 Before Human 2.0, there is Human 1.0: one accountable person carrying intent, context, prioritization, execution, verification, and memory in one head and one calendar. That's the starting measurement, not an insult.
-
-## Chapter promise
-
-By the end of this chapter, you will have a practical baseline for work before delegation:
-
-- the smallest useful unit of work, from request to accepted result;
-- the time, interruptions, decisions, rework, and defects that baseline contains; and
-- a test for whether an agent improves the system rather than merely making activity look faster.
-
-The promise is deliberately modest. This chapter will not tell you that an agent will save a fixed percentage of your day. That number depends on the work, the tools, the review burden, and the cost of being wrong. It will show you how to find out without trusting a demo.
 
 ## Opening scene
 
@@ -45,8 +28,6 @@ Every step can be reasonable. The chain can still be expensive. The expense is n
 
 The first useful question is therefore not “Which agent should I use?” It is “What exactly did I do last time, and what did it cost?”
 
-## Core argument
-
 The baseline is part of the product.
 
 If I don't record the before-state, I can't distinguish improvement from novelty. A new tool can make a task feel easier while adding review work later. It can reduce drafting time while increasing the number of plausible mistakes. It can produce more output while making me less certain about which output deserves trust.
@@ -55,27 +36,25 @@ A baseline also protects human judgment. When the human is the only worker, resp
 
 The practical unit is a bounded work item: a request with an owner, an input, an acceptance test, and an artifact. “Improve the launch” is not a unit. “Turn these five customer notes into a one-page brief, preserve direct quotes, link each recommendation to a note, and get the owner’s approval” is a unit. It can be timed. It can fail visibly. It can be reviewed.
 
-## Concepts and terms
-
-### Baseline
+## Baseline
 
 A baseline is a recorded description of the current workflow before a change. It's a recorded description, not one magic number. For a work item, record elapsed time, active work time if you can estimate it honestly, interruptions, waiting, decisions, handoffs, rework, and defects found in review.
 
 Do not pretend these measures are cleaner than they are. “Active work time” is often an estimate. Mark it as an estimate. If you cannot measure it consistently, use elapsed time and record the conditions around it.
 
-### Context
+## Context
 
 Context is the information needed to make a decision: source files, prior decisions, constraints, examples, credentials, definitions, and the reason the work matters. A long transcript can contain less usable context than a short acceptance checklist — context isn't the same as volume.
 
-### Acceptance test
+## Acceptance test
 
 An acceptance test is the evidence that lets a human say the work is done. It can be a passing test suite, a reconciled total, a cited source list, a visual comparison, or an explicit approval. “Looks good” may be a human judgment, but it is a weak test unless the reviewer says what good means.
 
-### Rework
+## Rework
 
 Rework is effort spent correcting or redoing a result because it missed the request, violated a constraint, or failed review. It belongs in the baseline. A draft produced in ten minutes and corrected for an hour did not take ten minutes.
 
-### Decision load
+## Decision load
 
 Decision load is the number and difficulty of choices I must make to move the item forward. It includes scope decisions, tradeoffs, exceptions, and calls about whether a result is safe to accept. Agents may reduce mechanical effort while leaving decision load untouched. That's information, not failure.
 
@@ -172,7 +151,7 @@ Call the change an improvement only if all of the following are true:
 
 If any condition fails, treat it as a signal to inspect the boundary — scope, context, permissions, review, or measurement — not as “the agent failed” or “the human resisted.”
 
-## Evidence ledger
+## Notes
 
 - **Claim:** Employees were interrupted every two minutes during core work hours, or 275 times per day, by meetings, emails, or chats.
   - **Source / artifact:** Microsoft, *2025 Work Trend Index: The Year the Frontier Firm Is Born*, Microsoft 365 telemetry methodology and findings: https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born
@@ -195,18 +174,3 @@ If any condition fails, treat it as a signal to inspect the boundary — scope, 
 At the end of the day, the half-finished artifact is still on the desk. The difference is that it now has a timestamp, an owner, a stated test, and a note about what remains unknown. That is not yet an agent. It is something more basic: a human system that can be observed.
 
 Only after that can the machine earn a place in the chain: when I can point to the old cost, the new result, and the evidence between them — not to a faster sentence or a green dashboard.
-
-## QA checklist
-
-- [x] Opens with a lived scene or proof case
-- [x] Plain-language mechanics only
-- [x] Working example includes human decision points
-- [x] Failure mode and response included
-- [x] “Why this matters in 2026” included
-- [x] Counterargument addressed
-- [x] Operator rule stated
-- [x] Measurable test stated
-- [x] Claim/evidence ledger completed
-- [x] No invented experience, number, date, price, or product behavior
-- [x] Copy edit completed
-- [x] Technical QA completed
