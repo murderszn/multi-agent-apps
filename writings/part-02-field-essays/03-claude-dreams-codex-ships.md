@@ -1,10 +1,5 @@
 # Claude Dreams. Codex Ships.
 
-> **Status:** Draft
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/51
-> **Target length:** 2,500–4,000 words
-
 ## The handoff is the product
 
 The most useful artifact in this repository is the handoff — not a clever prompt.
@@ -19,18 +14,7 @@ This is why I prefer the blunt title: Claude dreams. Codex ships. The names are 
 
 I'm the routing layer and the accountable owner.
 
-## The chapter promise
-
-By the end of this chapter, you should be able to:
-
-- split a job into framing, implementation, and review lanes;
-- choose models by demonstrated task fit rather than reputation;
-- create handoffs that preserve intent, constraints, evidence, and stopping conditions;
-- recognize when specialization is adding ceremony instead of capability; and
-- measure whether a specialist workflow actually improves the outcome.
-
 The core argument is simple: models are workers with uneven strengths, not interchangeable minds. Specialization can improve a workflow, but only when the boundaries are explicit and a human verifies the transfer between them.
-
 ## Dreaming is not shipping
 
 “Dreamer” is not a claim that a model has imagination in the human sense. It is a job description. In this lane, the system expands the problem before anyone commits to implementation. It asks what the user actually needs, identifies missing inputs, proposes a shape for the work, and turns loose intention into a specification someone else can execute.
@@ -183,7 +167,7 @@ For the next ten comparable tasks, record the baseline workflow and the speciali
 
 The specialized workflow earns its place only if it reduces defects or rework without making review weaker or slower beyond the project’s tolerance. Also require one artifact per handoff: the request, the plan or specification, the implementation diff, the test result, and the human acceptance decision. If any link is missing, the workflow is not yet measurable.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** The canonical manuscript uses a queue, templates, branches, review, and a pull request as its operating path.
   - **Source / artifact:** Repository `writings/MANUSCRIPT-ARCHITECTURE.md`, issue #51, and the chapter template.
@@ -216,18 +200,3 @@ The useful picture is a desk with a request, a specification, a diff, a test res
 One worker helps name the work. Another makes the change. A reviewer tries to break the story. The human keeps the keys.
 
 That is the swarm when it is working: a set of bounded workers moving through a visible chain of responsibility, with judgment still sitting at the end of it. Claude dreams. Codex ships. Someone still has to decide whether the ship should leave the harbor.
-
-## QA checklist
-
-- [x] Opens with a lived scene or proof case
-- [x] Plain-language mechanics only
-- [x] Working example includes human decision points
-- [x] Failure mode and response included
-- [x] “Why this matters in 2026” included
-- [x] Counterargument addressed
-- [x] Operator rule stated
-- [x] Measurable test stated
-- [x] Claim/evidence ledger completed
-- [x] No invented experience, number, date, price, or product behavior
-- [x] Copy edit completed
-- [x] Technical QA completed
