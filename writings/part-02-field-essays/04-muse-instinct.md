@@ -1,10 +1,5 @@
 # Muse, Instinct, and the Remote Agent Wars
 
-> **Status:** Draft — publisher review pass
-> **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/52
-> **Target length:** 2,500–4,000 words
-
 ## The message that changed the comparison
 
 The remote agent lives in the part of the day when I'm tired, away from the desk, and still responsible for something — not in a benchmark chart.
@@ -157,7 +152,7 @@ A third reader might object that not everyone can afford multiple subscriptions,
 
 Finally, a reader might say that calling an agent “like a friend” encourages unhealthy dependence. The risk is real. The phrase should describe the ease of interaction, not the status of the system. Friendship includes responsibility, consent, and mutual knowledge. Software has none of those in the human sense. Keep the useful conversational surface; reject the emotional and moral shortcut.
 
-## Evidence ledger
+## Notes
 
 | Claim | Evidence or source | Boundary |
 |---|---|---|
