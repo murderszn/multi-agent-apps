@@ -19,7 +19,8 @@ This repository serves the Human 2.0 book site. The root is a landing page; `rea
 - `index.html` — book landing page.
 - `theme.css` — shared color and type foundation for both pages.
 - `styles.css` — landing page styles.
-- `line-field.svg` — decorative line illustration for the homepage.
+- `line-field.svg` — fine-line artwork for the homepage hero.
+- `hero-field.svg` — spare black-on-black line field, kept in assets.
 - `network-diagram-map.png` — preserved network illustration from the earlier root page.
 - `reader/` — one-word reader website and manuscript build script.
 - `.github/workflows/reader-audio.yml` — secure GitHub Actions generation of Gemini narration.

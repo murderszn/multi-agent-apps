@@ -10,10 +10,10 @@ button { cursor: pointer; }
 .app.playing:not(.show-chrome) .reader-controls { transform: translate(-50%, 7px); }
 .app.started .intro-hint { display: none; }
 
-.topbar { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; flex: none; height: 82px; padding: 0 clamp(23px, 5vw, 80px); border-bottom: 1px solid var(--rule); }
+.topbar { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; flex: none; height: 82px; padding: 0 clamp(23px, 5vw, 80px); border-bottom: 0; background: transparent; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; letter-spacing: -.055em; }
 .brand strong { font-weight: 800; }
-.brand-mark { color: var(--acid); font-size: 28px; font-weight: 400; line-height: 1; }
+.brand-mark { color: var(--acid); font-size: 28px; font-weight: 700; line-height: 1; }
 .topbar-right, .eyebrow { color: var(--dim); font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .15em; }
 .topbar-right { display: flex; align-items: center; }
 .topbar-right a { color: var(--white); text-decoration: none; }

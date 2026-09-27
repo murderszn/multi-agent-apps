@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Human 2.0 — Build notes</title>
+    <link>https://murderszn.github.io/multi-agent-apps/</link>
+    <description>Build notes for Human 2.0, an operating manual for the agent age. The full draft reads free in the one-word reader.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Part I — Crash course: the mechanics behind capable agents</title>
+      <link>https://murderszn.github.io/multi-agent-apps/reader/?chapter=01-models</link>
+      <guid>https://murderszn.github.io/multi-agent-apps/reader/?chapter=01-models</guid>
+      <pubDate>Sat, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Six chapters on models, context, tools, verification, cost, and alignment — only the mechanics needed to operate agents. Readable now in the reader.</description>
+    </item>
+    <item>
+      <title>Part II — Human 2.0 in the wild: field notes from a working six-agent lab</title>
+      <link>https://murderszn.github.io/multi-agent-apps/reader/?chapter=01-vibe-coding</link>
+      <guid>https://murderszn.github.io/multi-agent-apps/reader/?chapter=01-vibe-coding</guid>
+      <pubDate>Sat, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Eight first-person chapters: vibe-coding, the small factory, remote agents, the job search, security, and the first-try problem. Readable now in the reader.</description>
+    </item>
+    <item>
+      <title>Part III — Running the day: an operating loop for action and judgment</title>
+      <link>https://murderszn.github.io/multi-agent-apps/reader/?chapter=01-baseline</link>
+      <guid>https://murderszn.github.io/multi-agent-apps/reader/?chapter=01-baseline</guid>
+      <pubDate>Sat, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Six chapters on the Direct → Route → Execute → Verify → Learn loop, ending with what must stay human. Readable now in the reader.</description>
+    </item>
+  </channel>
+</rss>

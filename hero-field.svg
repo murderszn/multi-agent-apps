@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 860" fill="none" aria-hidden="true">
+  <!-- black-on-black field: concentric range rings around a single node -->
+  <circle cx="660" cy="400" r="90" stroke="#d6dbd2" stroke-opacity="0.14"/>
+  <circle cx="660" cy="400" r="150" stroke="#d6dbd2" stroke-opacity="0.11"/>
+  <circle cx="660" cy="400" r="220" stroke="#d6dbd2" stroke-opacity="0.09"/>
+  <circle cx="660" cy="400" r="300" stroke="#d6dbd2" stroke-opacity="0.07"/>
+  <circle cx="660" cy="400" r="390" stroke="#d6dbd2" stroke-opacity="0.05"/>
+  <!-- sparse drift lines, lower left to upper right -->
+  <path d="M -120 780 C 180 640, 420 500, 680 330 S 940 140, 1080 40" stroke="#d6dbd2" stroke-opacity="0.08"/>
+  <path d="M -120 830 C 180 690, 430 545, 690 375 S 950 185, 1080 85" stroke="#d6dbd2" stroke-opacity="0.06"/>
+  <path d="M -120 730 C 190 595, 410 460, 670 290 S 930 100, 1080 0" stroke="#d6dbd2" stroke-opacity="0.06"/>
+  <!-- hairline cross ticks -->
+  <line x1="660" y1="60" x2="660" y2="740" stroke="#d6dbd2" stroke-opacity="0.07"/>
+  <line x1="320" y1="400" x2="1000" y2="400" stroke="#d6dbd2" stroke-opacity="0.07"/>
+  <line x1="120" y1="700" x2="120" y2="760" stroke="#d6dbd2" stroke-opacity="0.10"/>
+  <line x1="90" y1="730" x2="150" y2="730" stroke="#d6dbd2" stroke-opacity="0.10"/>
+  <!-- the node: one acid point, no glow -->
+  <circle cx="660" cy="400" r="13" stroke="#baff39" stroke-opacity="0.4"/>
+  <circle cx="660" cy="400" r="4" fill="#baff39"/>
+</svg>
