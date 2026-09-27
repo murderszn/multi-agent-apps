@@ -1,10 +1,5 @@
 # Context, Retrieval, and Memory
 
-> **Status:** Draft
-> **Part:** part-01-crash-course
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/44
-> **Target length:** 2,500–4,000 words
-
 ## The file that remembers me
 
 My agents know things about me that I don't want them guessing. Not the way a chatbot "remembers" your name for the length of a session — in a file. I keep a YAML document in my resume repo with my legal name, my address, my work authorization status, my salary band, and a standing rule for the gaps: when an application asks for employment months and only years are known, January for starts, December for ends. Below that, a list of screening answers I've dictated once so I never have to dictate them again. Not a veteran. U.S. citizen. Authorized to work, no sponsorship needed. Fine relocating to California.
@@ -172,7 +167,7 @@ For a representative task set, compare a context-dump workflow with a curated co
 
 The curated workflow passes only if it improves source-supported correctness and reviewability without creating an unacceptable increase in omissions. Run the test on known cases, contradictory cases, and cases where the correct answer is "insufficient evidence." You specify the number of trials, the threshold, and the task mix before measurement — the chapter doesn't supply them for you.
 
-## Evidence ledger
+## Notes
 
 - **Claim:** Long-context models may use information unevenly based on its position in the input, with degradation when relevant material is in the middle in the evaluated tasks.
   - **Source:** Liu et al., *Lost in the Middle: How Language Models Use Long Contexts*, arXiv:2307.03172, https://arxiv.org/abs/2307.03172
@@ -201,19 +196,3 @@ The curated workflow passes only if it improves source-supported correctness and
 That YAML file doesn't make my agents smart. It does something more useful: it draws a visible line between what the system knows and what it's guessing. Everything on the inspectable side — the salary band, the veteran status, the January/December rule — is memory doing its job. Everything past the line is a pause, a flag, a human.
 
 A good context doesn't make the system omniscient. It makes the next decision inspectable. That is enough to build on — and enough to stop when the evidence runs out.
-
-## QA checklist
-
-- [x] Opens with a lived scene or proof case
-- [x] Plain-language mechanics only
-- [x] Working example includes human decision points
-- [x] Failure mode and response included
-- [x] “Why this matters in 2026” included
-- [x] Counterargument addressed
-- [x] Operator rule stated
-- [x] Measurable test stated
-- [x] Claim/evidence ledger completed
-- [x] No invented experience, number, date, price, or product behavior
-- [x] Copy edit completed
-- [x] Technical QA completed
-- [x] Publisher review pass
