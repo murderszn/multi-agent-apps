@@ -2,7 +2,7 @@
 
 *Your agent didn't lie to you. It did the only thing it knows how to do: write the next word. The confidence was free.*
 
-## The report that was wrong
+## The report sounded finished. The application wasn't.
 
 Earlier this week one of my agents was filing job applications for me, dozens of them, and reporting back on a shared board. One evening it told me about the Novartis application — Executive Director, Head of Agentic Factory. The report said I had answered the referral-source question, picked a specific job board from the dropdown, and that the application was continuing and would be submitted.
 
@@ -20,7 +20,7 @@ Everything starts with a translation you never notice. Before a language model d
 
 I wanted a real number for this instead of a quoted one, so I ran the public tokenizer myself this week. I took 230 words of plain English prose and fed it through the open-source tokenizer library for OpenAI's GPT models. Result: 272 tokens. That's about 0.85 words per token, roughly five characters per token — right near the published rule of thumb that one token is about three-quarters of an English word.
 
-The chopping is uneven, and the unevenness matters. "The quick brown fox jumps over the lazy dog" becomes ten tidy tokens, one per word plus the period. But "tokenization" becomes two chunks — "token" and "ization" — and "unhappiness" becomes "unh" and "appiness." Common words get their own chunk. Rare words get sawed into reusable parts. The machine learned this vocabulary from enormous amounts of text so it can represent almost anything, and the price is that what you wrote and what the machine "read" are two different objects.
+The chopping is uneven, and the unevenness matters. "The quick brown fox jumps over the lazy dog" becomes ten tidy tokens, one per word plus the period. But "tokenization" becomes two chunks — "token" and "ization" — and "unhappiness" becomes three — "un," "h," "appiness." Common words get their own chunk. Rare words get sawed into reusable parts. The machine learned this vocabulary from enormous amounts of text so it can represent almost anything, and the price is that what you wrote and what the machine "read" are two different objects.
 
 This is the first thing to keep in your head: every strange, slightly-off behavior downstream starts here, at the fact that the machine operates on chunks, not on meaning the way you mean it.
 
@@ -40,7 +40,7 @@ The plain-language version: it rereads the relevant parts of the conversation be
 
 Attention is why these machines handle context so well and why they also, occasionally, attend to exactly the wrong thing with total conviction. The rereading is statistical, not careful. It weights what *usually* matters, which is right until it isn't.
 
-## The one trick, repeated trillions of times
+## The whole machine is one trick, repeated trillions of times
 
 Now the core of it, the part the whole industry is built on. Training a language model is one move, repeated at incomprehensible scale: take a piece of text, hide the next chunk, guess it, check the guess, adjust. Do that trillions of times across most of the public internet and a large slice of the private kind.
 
@@ -50,7 +50,7 @@ Everything else these machines can do — hold a conversation, write code, summa
 
 Sit with what this implies, because it's the whole chapter in one sentence: **the machine doesn't look things up; it reconstructs.** It is a student who did all the reading but took no notes. Ask about the book and you'll get a beautiful, fluent essay — and possibly an invented chapter, delivered with the same polish as the real ones. The fluency and the fabrication come from the same place. They're not two modes. They're one mode, applied to different amounts of evidence.
 
-## The dial nobody told you about
+## There is a dial nobody told you about
 
 After the machine scores its candidate next chunks, one more thing happens before it picks: a dial called temperature decides how strictly to obey those scores.
 
@@ -60,7 +60,7 @@ Operators set this dial deliberately. Low for invoices, forms, and anything you'
 
 And here's the connection back to my Novartis report: a status update written at a middle temperature, by a machine whose training data is full of status updates that all sound certain, will sound certain. The certainty is a property of the *genre being imitated*, not a measurement of anything the machine actually verified.
 
-## Why it sounds so sure
+## It sounds sure because certainty is the genre
 
 The industry's word for the confident wrong answer is hallucination, which is a slightly unfair word — it sounds like the machine is seeing things. It isn't seeing anything. It's completing a pattern.
 
@@ -70,7 +70,7 @@ The deeper account comes from the labs themselves. In September 2025, OpenAI res
 
 Read that again, because it's the most useful sentence in this chapter: **confidence is a style the machine learned from text, not a reading from an internal certainty meter.** It writes "definitely" because texts like the one it's imitating contain "definitely" — not because it checked.
 
-## Tracing my bad report through the machine
+## Trace the bad report back through the machine
 
 Let's run the Novartis evening through the five pieces, because this is the working example: a real failure, fully explained, with the human decision points marked.
 
@@ -80,7 +80,7 @@ At no point did anything check the board. Checking was never in the pipeline, be
 
 The human decision point was mine, and it's the one this book will return to again and again: I opened the board myself. The failure was detectable in ten seconds by anyone willing to look at the underlying system instead of the report about the system. That's not a sophisticated defense. It's the whole defense.
 
-## When it breaks and what you do
+## What to do when it breaks
 
 Every failure in this chapter has the same shape, so the response is one habit, not a toolkit.
 
@@ -92,7 +92,7 @@ Every failure in this chapter has the same shape, so the response is one habit, 
 
 **How the human responds:** you don't argue with the report. You go around it, to the system it claims to describe. Open the board. Open the form. Open the receipt. Then you fix the process so the check happens before anyone acts: in my job-search operation, no application counts as filed until the confirmation exists somewhere other than an agent's message. The machine drafts; the world decides. That rule has caught more errors than any clever prompt I ever wrote.
 
-## Why this matters in 2026
+## The skill that matters now is operating the machine
 
 A word about where this chapter sits. Later in this book there's a chapter about the moment models became a commodity — good enough that picking a smarter one stopped being the game. I won't retell it here. The point for *this* chapter is what the commodity moment leaves behind: the scarce skill is no longer choosing the best model. It's operating the machine you already have without getting fooled by it.
 
@@ -118,19 +118,17 @@ Second, the additions that actually change the game — retrieval, tools, checki
 
 And the other skeptic's question — if it's just autocomplete, why can it write working code, pass exams, do real work? Because autocomplete at the scale of trillions of words stops being a joke. The patterns it absorbed include whole programs, whole arguments, whole procedures. Recomposition at that scale looks like understanding from the outside. The metaphor breaks, but the failure mode doesn't: show it the part it doesn't know, and it will confidently complete that part too. Scale made the machine useful. It didn't make it truthful. Those were never the same project.
 
-## The rule
-
-**Use the smallest complete explanation that lets the reader make a better decision.**
+## Use the smallest complete explanation that lets the reader make a better decision
 
 When a report sounds certain, ask what it checked. If the answer is nothing, that's your whole diagnosis — and you didn't need the other four sections to act on it. The rest is there so the diagnosis sticks.
 
-## The test
+## Keep a tally for one week
 
 For one week, keep a tally. Every time your agent reports something done — an application filed, a bill paid, a form submitted, a fact found — check the underlying system yourself before you act on it. Open the board, the form, the receipt, the source. Mark each claim "survived" or "didn't."
 
 Your hallucination budget is the "didn't" column. If it's empty after a week, you have a verified pipeline — congratulations, you built the checking step. If it isn't empty, you just measured the exact size of the problem this chapter describes, in your own lab, with your own numbers. Either way you now know something no explainer could give you: how much to trust the machine you actually run.
 
-## Back to the report
+## I moved the application, not the report
 
 The Novartis application sat at Step 1 of 8 while the report said "continuing." It stayed there until I handled the dropdown question myself, in my own browser, with my own eyes on the actual form. The application eventually moved. The report didn't move it. I did.
 
@@ -138,19 +136,21 @@ Here's the smallest complete explanation that let me make a better decision that
 
 ## Notes
 
-- Adam Tauman Kalai, Ofir Nachum, Santosh S. Vempala, and Edwin Zhang, "Why Language Models Hallucinate," arXiv:2509.04664, September 4, 2025. The paper's argument, in its own abstract: training and evaluation procedures reward guessing over acknowledging uncertainty, so hallucinations arise through natural statistical pressures. https://arxiv.org/abs/2509.04664 (checked 2026-09-25)
-- Ashish Vaswani et al., "Attention Is All You Need," arXiv:1706.03762, June 12, 2017. Introduced the Transformer architecture built on attention mechanisms. https://arxiv.org/abs/1706.03762 (checked 2026-09-25)
+- Adam Tauman Kalai, Ofir Nachum, Santosh S. Vempala, and Edwin Zhang, "Why Language Models Hallucinate," arXiv:2509.04664, September 4, 2025. The paper's argument, in its own abstract: training and evaluation procedures reward guessing over acknowledging uncertainty, so hallucinations arise through natural statistical pressures. https://arxiv.org/abs/2509.04664 (checked 2026-09-28)
+- Ashish Vaswani et al., "Attention Is All You Need," arXiv:1706.03762, June 12, 2017. Introduced the Transformer architecture built on attention mechanisms. https://arxiv.org/abs/1706.03762 (checked 2026-09-28)
 - First-party tokenizer measurement, run during drafting on 2026-09-25 with the open-source tiktoken library (the public byte-pair encoding used by OpenAI's GPT models): 230 words of plain English prose tokenized to 272 tokens (about 0.85 words per token, roughly 4.8 characters per token); "tokenization" split into "token" + "ization"; "The quick brown fox jumps over the lazy dog." split into 10 tokens.
-- The "which month is spelled with an X" video: a widely shared April 2026 clip of an AI assistant confidently answering "December" before correcting to October — a public, low-stakes specimen of the confident wrong answer. https://www.instagram.com/reel/DXDBEg8AZqo/ (checked 2026-09-25)
-- The "ChatGPT said it saw a photo that was never uploaded" meme: a viral template built around chatbots confidently describing images that don't exist. https://www.instagram.com/reel/DSdEBEHDUia/ (checked 2026-09-25)
+- Token-split examples re-verified 2026-09-28 across all four public OpenAI tiktoken vocabularies (cl100k_base, o200k_base, p50k_base, r50k_base): "unhappiness" splits into three tokens — "un," "h," "appiness" — in every one. The 2026-09-25 draft had written two ("unh," "appiness"); corrected in the 2026-09-28 polish pass.
+- The "which month is spelled with an X" video: a widely shared April 2026 clip of an AI assistant confidently answering "December" before correcting to October — a public, low-stakes specimen of the confident wrong answer. https://www.instagram.com/reel/DXDBEg8AZqo/ (re-verified 2026-09-28: the URL loads the reels viewer with the December/X clip surfaced — account "husk.irl", caption "Learned something new!", 273K likes; the viewer also shows a surrounding feed, so the exact URL-to-reel binding is not independently confirmed)
+- The "ChatGPT said it saw a photo that was never uploaded" meme: a viral template built around chatbots confidently describing images that don't exist. https://www.instagram.com/reel/DSdEBEHDUia/ (re-verified 2026-09-28: the reels viewer loads — on-screen text "ChatGPT said it saw a photo that was never uploaded", account "promptifai", caption "An influencer asked ChatGPT to analyze a photo. …")
 - The "about three-quarters of a word per token" figure is the industry's standard rule of thumb for English, published in OpenAI's tokenizer guidance and repeated across 2026 explainers; my own measurement above lands in the same neighborhood. Treated here as an approximation, not a constant.
-- Mechanism descriptions (tokens, embeddings, attention, autoregressive generation, temperature) were cross-checked against practitioner references, including the "How LLMs Work" chapter of an open AI-engineering handbook (https://github.com/bschouha19/ai-engineering-handbook/blob/HEAD/chapters/chapter-02-how-llms-work.md) and an open course module on why LLMs hallucinate (https://github.com/baluragala/ethical_and_responsible_gen_ai/blob/HEAD/course_content/02_module2_why_llms_hallucinate.md). No load-bearing numbers were taken from these.
+- Mechanism descriptions (tokens, embeddings, attention, autoregressive generation, temperature) were cross-checked against practitioner references, including the "How LLMs Work" chapter of an open AI-engineering handbook (https://github.com/bschouha19/ai-engineering-handbook/blob/HEAD/chapters/chapter-02-how-llms-work.md) and an open course module on why LLMs hallucinate (https://github.com/baluragala/ethical_and_responsible_gen_ai/blob/HEAD/course_content/02_module2_why_llms_hallucinate.md). Both pages re-fetched 2026-09-28. No load-bearing numbers were taken from these.
 
-- Claim: a language model's training objective is next-token prediction; generation is predict-append-repeat (autoregressive). Source: standard technical description, consistent with Vaswani et al. 2017 (architecture) and Kalai et al. 2025 (training/evaluation analysis). Last checked: 2026-09-25.
+- Claim: a language model's training objective is next-token prediction; generation is predict-append-repeat (autoregressive). Source: standard technical description, consistent with Vaswani et al. 2017 (architecture) and Kalai et al. 2025 (training/evaluation analysis). Last checked: 2026-09-28.
 - Claim: 230 words of English prose tokenized to 272 tokens. Source: first-party measurement with tiktoken, run 2026-09-25. Reproducible with the open-source library.
-- Claim: roughly three-quarters of a word per token in English. Source: industry rule of thumb (OpenAI tokenizer guidance, widely republished); consistent with the first-party measurement above. Labeled as an approximation. Last checked: 2026-09-25.
-- Claim: training and evaluation reward guessing over admitting uncertainty; benchmarks grade the final answer so guessing scores better than "I don't know." Source: Kalai et al., "Why Language Models Hallucinate," arXiv:2509.04664, September 4, 2025 (abstract). Last checked: 2026-09-25.
-- Claim: attention/Transformer introduced in 2017. Source: Vaswani et al., arXiv:1706.03762, June 12, 2017 (abstract). Last checked: 2026-09-25.
+- Claim: "unhappiness" splits into "un," "h," "appiness." Source: re-verified with tiktoken across all four public OpenAI vocabularies, 2026-09-28. Corrected this run from the draft's "unh"/"appiness."
+- Claim: roughly three-quarters of a word per token in English. Source: industry rule of thumb (OpenAI tokenizer guidance, widely republished); consistent with the first-party measurement above. Labeled as an approximation. Last checked: 2026-09-28.
+- Claim: training and evaluation reward guessing over admitting uncertainty; benchmarks grade the final answer so guessing scores better than "I don't know." Source: Kalai et al., "Why Language Models Hallucinate," arXiv:2509.04664, September 4, 2025 (abstract). Last checked: 2026-09-28.
+- Claim: attention/Transformer introduced in 2017. Source: Vaswani et al., arXiv:1706.03762, June 12, 2017 (abstract). Last checked: 2026-09-28.
 - Claim: the Novartis application report said "continuing" while the application sat at Step 1 of 8, unsubmitted, awaiting the author's answer on the referral-source question. Source: the author's own lab log, 2026-09-20 and the correction logged 2026-09-21. Lived scene; no external artifact. No invented numbers, dates, prices, or product behavior.
-- Claim: the December/X and photo-never-uploaded examples. Source: public social posts linked in Notes; presented as observed public examples, not as data. Last checked: 2026-09-25.
+- Claim: the December/X and photo-never-uploaded examples. Source: public social posts linked in Notes; presented as observed public examples, not as data. Last checked: 2026-09-28 (both URLs load the reels viewer; reel 1 carries the URL-to-reel-binding caveat noted above).
 - Claim: standing lab rules (never guess a salary answer, never invent authorization status, no filing without the artifact). Source: the author's documented operating rules for the job-search agent operation. No external verification needed; stated as the author's own practice.
