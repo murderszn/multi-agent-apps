@@ -6,11 +6,10 @@ The book is a field manual for someone meeting AI and the tools around it. The l
 
 ## Open queue
 
-Writing agents should take these issues and leave the rest alone. Housekeeping goes first so later edits hit the right files.
+Writing agents should take these issues and leave the rest alone.
 
 | Issue | Work |
 | --- | --- |
-| [#87](https://github.com/murderszn/multi-agent-apps/issues/87) | Make the Part II folder match the eight canonical chapters. |
 | [#82](https://github.com/murderszn/multi-agent-apps/issues/82) | Draft Models Represent and Predict. #43 was closed while the file was still an outline. |
 | [#60](https://github.com/murderszn/multi-agent-apps/issues/60) | Draft Verify and Review. |
 | [#61](https://github.com/murderszn/multi-agent-apps/issues/61) | Draft Learn, Measure, and Adopt Carefully. |
@@ -43,10 +42,10 @@ Only the mechanics needed to operate agents. Six chapters.
 
 ### Part II — Human 2.0 in the wild
 
-Eight chapters. The folder currently has ten files. These two are not canonical and should move into the archive:
+Eight chapters. Two superseded early drafts are archived:
 
-- `part-02-field-essays/07-vibe-coded-security.md` is an early short draft. The chapter is `06-security-build-public.md`.
-- `part-02-field-essays/09-build-in-public.md` is an early short draft. Build-in-public is already inside `06-security-build-public.md`.
+- `archive/41-chapter-outline/part-02-field-essays/07-vibe-coded-security-superseded-draft.md`. The chapter is `06-security-build-public.md`.
+- `archive/41-chapter-outline/part-02-field-essays/09-build-in-public-superseded-draft.md`. Build-in-public is already inside `06-security-build-public.md`.
 
 The eight that stay:
 
@@ -58,8 +57,8 @@ The eight that stay:
 | `part-02-field-essays/04-muse-instinct.md` | Draft | #52 |
 | `part-02-field-essays/05-job-search.md` | Draft. Ethics are right. The week is missing. | #53 |
 | `part-02-field-essays/06-security-build-public.md` | Draft. Strong. Ledger pass. | #54 |
-| `part-02-field-essays/08-office-is-a-swarm.md` | Draft. Stop re-introducing the lab. Renumber after the stale files move. | #55 |
-| `part-02-field-essays/08-first-try.md` | Draft. Renumber so it does not share `08` with the office chapter. | #56 |
+| `part-02-field-essays/07-office-is-a-swarm.md` | Draft. Stop re-introducing the lab. | #55 |
+| `part-02-field-essays/08-first-try.md` | Draft. | #56 |
 
 ### Part III — Running the day
 

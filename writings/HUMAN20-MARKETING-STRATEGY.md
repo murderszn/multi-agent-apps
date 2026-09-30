@@ -228,9 +228,9 @@ Ranked top 10 marked with ★. All citations to chapter files. All edited to <28
 30. **"Building in public means your mistakes are public too. Security debt compounds in the dark."** — `part-02-field-essays/06-security-build-public.md`
 31. **"The review is part of the loop, not a gate at the end. The agent that wrote the code never merges its own pull request."** — `part-02-field-essays/06-security-build-public.md`
 32. **"Speed got us here and is not going away. The question was never whether to slow down. It was whether the careful part could run as fast as the fast part, in the open, every single time."** — `part-02-field-essays/06-security-build-public.md`
-33. **"The office is a desk, power, Wi-Fi, and a swarm."** — `part-02-field-essays/08-office-is-a-swarm.md`
-34. **"The desk is where I ask, 'What happened?' The system must answer with artifacts rather than confidence."** — `part-02-field-essays/08-office-is-a-swarm.md`
-35. **"Attempted is not returned. Returned is not verified."** — `part-02-field-essays/08-office-is-a-swarm.md`
+33. **"The office is a desk, power, Wi-Fi, and a swarm."** — `part-02-field-essays/07-office-is-a-swarm.md`
+34. **"The desk is where I ask, 'What happened?' The system must answer with artifacts rather than confidence."** — `part-02-field-essays/07-office-is-a-swarm.md`
+35. **"Attempted is not returned. Returned is not verified."** — `part-02-field-essays/07-office-is-a-swarm.md`
 36. **"The first attempt looked like progress. That is the trap."** — `part-02-field-essays/08-first-try.md`
 37. **"Do not ask whether the agent got it right on the first try. Ask whether the workflow makes the first try cheap to inspect, safe to reject, and informative enough to improve."** — `part-02-field-essays/08-first-try.md`
 38. **"At 9:00, the workday looks available. Then the first meeting starts, and the work that mattered becomes the work that can be squeezed between other people's calendars."** — `part-03-running-the-day/01-baseline.md`

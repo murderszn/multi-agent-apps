@@ -2,7 +2,6 @@
 
 > **Status:** Draft
 > **Part:** part-02-field-essays
-> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/57
 > **Target length:** 2,500–4,000 words
 
 ## Editorial hook
