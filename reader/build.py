@@ -28,7 +28,7 @@ PARTS = [
         "part-02-field-essays/04-muse-instinct.md",
         "part-02-field-essays/05-job-search.md",
         "part-02-field-essays/06-security-build-public.md",
-        "part-02-field-essays/08-office-is-a-swarm.md",
+        "part-02-field-essays/07-office-is-a-swarm.md",
         "part-02-field-essays/08-first-try.md",
     ]),
     ("Part III", "Running the day", [
