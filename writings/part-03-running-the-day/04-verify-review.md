@@ -196,7 +196,7 @@ The skeptical reader is also right that humans are not perfect verifiers. Humans
 
 A verifier agent can help with the mechanical parts. It can list changed files, run checks, compare headings, find missing links, or flag claims without ledger entries. It cannot become the final authority merely by being assigned the word “reviewer.” Its report is another claim to verify, especially when the consequence belongs to a human.
 
-What remains uncertain is workload-specific. Verification can reduce defects, but the right amount depends on the work, the evidence available, and the cost of delay. Measure the whole path to an accepted result, not the time until the first approval button becomes available.
+What remains uncertain depends on the workload. Verification can reduce defects, but the right amount depends on the work, the evidence available, and the cost of delay. Measure the whole path to an accepted result, not the time until the first approval button becomes available.
 
 ## Operator rule
 
@@ -219,23 +219,23 @@ Keep the workflow only if the accepted-result time is stable or lower, post-acce
 
 - **Claim:** The canonical issue requires a proof case, failure modes, a 2026 section, a skeptical-reader response, an evidence ledger, an operator rule, and a measurable test.
   - **Source / artifact:** Repository issue #60 and `writings/part-03-running-the-day/04-verify-review.md` template.
-  - **Last checked:** September 25, 2026.
+  - **Last checked:** September 28, 2026.
 
 - **Claim:** The manuscript’s current structure is twenty canonical chapters and the older forty-one-chapter outline is archived.
   - **Source / artifact:** `writings/EDITORIAL-GUIDANCE.md` and `writings/MANUSCRIPT-ARCHITECTURE.md`.
-  - **Last checked:** September 25, 2026.
+  - **Last checked:** September 28, 2026.
 
 - **Claim:** Git provides a diff for comparing repository states, and GitHub documents pull-request review as collaboration around proposed changes.
   - **First-party sources:** Git documentation, https://git-scm.com/docs/git-diff; GitHub Docs, https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests.
-  - **Last checked:** September 25, 2026. Pages were fetched directly during this drafting pass.
+  - **Last checked:** September 28, 2026. Pages were fetched directly during this drafting pass.
 
 - **Claim:** OWASP treats code review as relevant to secure software practice.
   - **First-party source:** OWASP Code Review Guide, https://owasp.org/www-project-code-review-guide/.
-  - **Last checked:** September 25, 2026. Page was fetched directly during this drafting pass.
+  - **Last checked:** September 28, 2026. Page was fetched directly during this drafting pass.
 
 - **Number, date, price, or product behavior:** No external performance number, price, or product-behavior outcome is asserted. The five-item measurable test is a proposed operator measurement, not a reported result.
   - **First-party source:** This chapter’s test specification and repository QA requirements.
-  - **Last checked:** September 25, 2026.
+  - **Last checked:** September 28, 2026.
 
 ## Closing image
 
