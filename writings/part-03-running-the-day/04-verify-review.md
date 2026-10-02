@@ -1,12 +1,23 @@
 # Verify and Review
 
-The diff looked finished.
+The chapter arrived with its checklist green.
 
-The headings were in place. The prose was smooth. The links were formatted. The checklist at the bottom had green boxes all the way down. It was the kind of file that invites me to nod, commit, and move on.
+The drafting worker's report was confident: acceptance criteria met, every box ticked, definition of done satisfied. The file was right there on the branch. So I opened it expecting print-ready prose, and the first thing at the top of the file was this:
 
-I had a plausible artifact — not a verified chapter.
+> **Status:** Draft for review
+> **Part:** part-03-running-the-day
+> **Issue:** https://github.com/murderszn/multi-agent-apps/issues/60
+> **Target length:** 2,500–4,000 words
+
+Production scaffolding, inside the artifact. The issue template's machinery — status block, part label, issue link — had leaked into the chapter the way formwork stays behind in a poured wall. Worse, the bottom of the file carried the worker's own QA checklist, every box checked, including "No invented experience" and "Copy edit completed." The checklist was accurate about the prose and silent about the frame the prose arrived in.
+
+The report said finished. The artifact said not quite. And the gap was invisible from the report.
+
+That is the whole subject of this chapter in one scene, and it is a real one: this chapter's first draft shipped with its production machinery still attached, and the revision pass caught it because a human read the file itself instead of trusting the checklist beside it.
 
 That distinction is easy to miss when an agent has done the visible work. The agent has read the issue, inspected the repository, gathered sources, and returned a clean-looking document. The temptation is to treat review as a ceremony after the real work. Read the diff quickly. Confirm that nothing looks absurd. Click approve.
+
+The security chapter in this book already names that failure — rubber-stamping, the human who stops reading and starts clicking approve on quiet weeks — and shows it inside a working review loop. This chapter is the operator's half of that loop: what to actually check, and how, once the agent has done its visible work.
 
 Review is where the requested work becomes an accountable result — not the last polite step before shipping. It is where I ask whether the artifact says what the request required, whether its claims can be supported, whether the tests actually exercise the change, and whether anything outside the intended boundary moved with it.
 
@@ -148,6 +159,8 @@ The diff is large, the description is confident, and the reviewer is busy. Appro
 
 The signal is a review with no questions, no stated acceptance criteria, and no record of what was checked. The response is not to demand that a human reread every generated line forever. It is to make routine properties machine-checkable, keep changes small, and reserve human attention for scope, tradeoffs, privacy, and consequences.
 
+The opening scene of this chapter is the caught version of this failure. The draft arrived, the checklist was green, and the temptation was to trust the report. The reviewer opened the file instead and found the status blockquote and the QA checklist sitting in the chapter as if they were prose. The scaffolding was removed, the checklist's true claims survived it, and the file got shorter by twenty-one lines. That is the whole method in miniature: the report is a claim; the artifact is the evidence. When the two disagree, the artifact wins, and the twenty-one lines are the receipt.
+
 **The test checks the implementation, not the request.**
 
 A worker writes a test that confirms the behavior it implemented. The test passes. Nobody asks whether that behavior is the one the user needed.
@@ -233,7 +246,15 @@ Keep the workflow only if the accepted-result time is stable or lower, post-acce
   - **First-party source:** OWASP Code Review Guide, https://owasp.org/www-project-code-review-guide/.
   - **Last checked:** September 28, 2026. Page was fetched directly during this drafting pass.
 
-- **Number, date, price, or product behavior:** No external performance number, price, or product-behavior outcome is asserted. The five-item measurable test is a proposed operator measurement, not a reported result.
+- **Claim:** this chapter's own first draft shipped with production scaffolding — a Status blockquote and a self-graded QA checklist — inside the chapter file, and the REVISE #98 pass removed it (twenty-one lines deleted).
+  - **Source / artifact:** repository commit 66d58a7c ("REVISE #98: strip production scaffolding from part-03-running-the-day/04-verify-review.md"), https://github.com/murderszn/multi-agent-apps/commit/66d58a7c.
+  - **Last checked:** 2026-10-02.
+
+- **Claim:** the security chapter names rubber-stamping as the failure mode of a working review loop — the human stops reading and starts clicking approve — observed by the author in his own shop.
+  - **Source / artifact:** `writings/part-02-field-essays/06-security-build-public.md`, the Cerberus review-loop passage.
+  - **Last checked:** 2026-10-02.
+
+- **Number, date, price, or product behavior:** No external performance number, price, or product-behavior outcome is asserted. The six-item measurable test is a proposed operator measurement, not a reported result.
   - **First-party source:** This chapter’s test specification and repository QA requirements.
   - **Last checked:** September 28, 2026.
 
@@ -246,3 +267,4 @@ The proof is the request beside the changed artifact, the claim beside the sourc
 Agents can produce the first answer. They can also prepare much of the evidence. The acceptance decision still belongs to the person who owns the consequence.
 
 The work is finished when the result, the record, and the evidence agree — not when the answer merely looks finished.
+
