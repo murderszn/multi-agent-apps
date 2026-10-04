@@ -201,11 +201,11 @@ opened. Outstanding:
 
 ### 9. Filing / structure
 
-- The Part II folder holds ten files for eight canonical chapters:
-  `07-vibe-coded-security.md` and `09-build-in-public.md` are early drafts
-  slated for the archive, and two files share the `08-` prefix
-  (`08-office-is-a-swarm.md`, `08-first-try.md`). Housekeeping (#87) goes
-  first so later edits hit the right files.
+- The Part II folder holds eight files for eight canonical chapters:
+  `archive/41-chapter-outline/part-02-field-essays/07-vibe-coded-security-superseded-draft.md`
+  and `archive/41-chapter-outline/part-02-field-essays/09-build-in-public-superseded-draft.md`
+  are early drafts now in the archive, and the two files that shared the `08-`
+  prefix were renumbered (`07-office-is-a-swarm.md`, `08-first-try.md`) in #87.
 - I-01's branch draft (via #82, PR #95) is pass-grade — the editorial
   guidance's Part I table still calling it "Outline. Still needs a draft" is
   stale.
