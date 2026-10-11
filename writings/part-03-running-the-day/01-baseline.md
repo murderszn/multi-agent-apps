@@ -24,7 +24,7 @@ The old workflow is a chain — not “a human types into a computer”:
 6. The person explains the result to someone else.
 7. The person carries the remaining uncertainty into tomorrow.
 
-Every step can be reasonable. The chain can still be expensive. The expense is not only keystrokes. It is retrieval, switching, waiting, correction, and the invisible tax of being the only place where the whole problem is assembled.
+Every step can be reasonable. The chain can still be expensive. The expense runs past keystrokes: retrieval, switching, waiting, correction, and the invisible tax of being the only place where the whole problem is assembled.
 
 The first useful question is therefore not “Which agent should I use?” It is “What exactly did I do last time, and what did it cost?”
 
@@ -32,15 +32,15 @@ The baseline is part of the product.
 
 If I don't record the before-state, I can't distinguish improvement from novelty. A new tool can make a task feel easier while adding review work later. It can reduce drafting time while increasing the number of plausible mistakes. It can produce more output while making me less certain about which output deserves trust.
 
-A baseline also protects human judgment. When the human is the only worker, responsibility is obvious but the process is often blurry. When agents enter, the process becomes distributed, and blurry responsibility becomes dangerous. I need to know which decisions were mine before I decide which decisions may be delegated.
+A baseline also protects human judgment. When I am the only worker, responsibility is obvious but the process is often blurry. When agents enter, the process becomes distributed, and blurry responsibility becomes dangerous. I need to know which decisions were mine before I decide which decisions may be delegated.
 
 The practical unit is a bounded work item: a request with an owner, an input, an acceptance test, and an artifact. “Improve the launch” is not a unit. “Turn these five customer notes into a one-page brief, preserve direct quotes, link each recommendation to a note, and get the owner’s approval” is a unit. It can be timed. It can fail visibly. It can be reviewed.
 
 ## Baseline
 
-A baseline is a recorded description of the current workflow before a change. It's a recorded description, not one magic number. For a work item, record elapsed time, active work time if you can estimate it honestly, interruptions, waiting, decisions, handoffs, rework, and defects found in review.
+A baseline is a recorded description of the current workflow before a change. For a work item, I record elapsed time, active work time if I can estimate it honestly, interruptions, waiting, decisions, handoffs, rework, and defects found in review.
 
-Do not pretend these measures are cleaner than they are. “Active work time” is often an estimate. Mark it as an estimate. If you cannot measure it consistently, use elapsed time and record the conditions around it.
+I don't pretend these measures are cleaner than they are. “Active work time” is often an estimate, so I mark it as an estimate. When I can't measure it consistently, I fall back to elapsed time and record the conditions around it.
 
 ## Context
 
@@ -48,7 +48,7 @@ Context is the information needed to make a decision: source files, prior decisi
 
 ## Acceptance test
 
-An acceptance test is the evidence that lets a human say the work is done. It can be a passing test suite, a reconciled total, a cited source list, a visual comparison, or an explicit approval. “Looks good” may be a human judgment, but it is a weak test unless the reviewer says what good means.
+An acceptance test is the evidence that lets me say the work is done. It can be a passing test suite, a reconciled total, a cited source list, a visual comparison, or an explicit approval. “Looks good” may be my judgment, but it is a weak test unless I say what good means.
 
 ## Rework
 
@@ -60,9 +60,9 @@ Decision load is the number and difficulty of choices I must make to move the it
 
 ## Working example / proof case
 
-Use a small work item, not a heroic one. For this chapter, the proof case is a repository change: take an existing Markdown chapter template, turn it into readable prose, add evidence, and prepare it for review.
+I use a small work item, not a heroic one. For this chapter, the proof case is a repository change: I take an existing Markdown chapter template, turn it into readable prose, add evidence, and prepare it for review.
 
-The input is the template and its issue definition. The tools are the repository, Git, a text editor, command-line checks, and public documentation. The output is a committed Markdown file and a reviewable diff. The human decision points are the important part: which claims are supported, which examples are real, which sections belong in the chapter, and whether the requested length is compatible with the evidence.
+The input is the template and its issue definition. The tools are the repository, Git, a text editor, command-line checks, and public documentation. The output is a committed Markdown file and a reviewable diff. The decision points that matter are mine: which claims are supported, which examples are real, which sections belong in the chapter, and whether the requested length is compatible with the evidence.
 
 A baseline log can be plain text:
 
@@ -78,11 +78,11 @@ A baseline log can be plain text:
 | Defects | Count unsupported claims, broken links, formatting failures, or missing requirements |
 | Human review | What did the human verify and what remains uncertain? |
 
-This log changes the work before any agent is added. It turns a vague chore into an inspectable object. It also reveals where delegation might actually help. Research retrieval may be separable from argument. Formatting may be mechanical. Claim checking may be assisted. The editorial judgment is not automatically separable merely because a model can generate sentences.
+This log changes the work before any agent is added. It turns a vague chore into an inspectable object. It also reveals where delegation might actually help. Research retrieval may be separable from argument. Formatting may be mechanical. Claim checking may be assisted. A model that generates sentences doesn't automatically take over editorial judgment.
 
-The first attempt will not be clean. The writer may discover that the template says 2,500–4,000 words while the repository guide says 1,500–3,000. That conflict is itself a baseline finding. It must be surfaced and resolved by the responsible human; an agent should not silently pick the more convenient instruction. A source may describe a survey rather than a measurement. A product page may describe capability rather than behavior under your conditions. A generated paragraph may sound personal even though nobody lived it. Those are not small editorial defects. They are boundary failures.
+My first attempt is never clean. The template says 2,500–4,000 words while the repository guide says 1,500–3,000. That conflict is itself a baseline finding. I surface it and resolve it; no agent gets to silently pick the more convenient instruction. A source may describe a survey rather than a measurement. A product page may describe capability rather than behavior under my conditions. A generated paragraph may sound personal even though nobody lived it. Those are boundary failures.
 
-What failed, then? The fantasy that the work begins with writing. It begins with interpretation. It also fails when I record only the final duration and omit waiting, review, and corrections. Finally, it fails when the person treats a polished artifact as proof that the process was sound.
+What failed, then? The fantasy that the work begins with writing. It begins with interpretation. It also fails when I record only the final duration and omit waiting, review, and corrections. Finally, it fails when I treat a polished artifact as proof that the process was sound.
 
 My response is to keep the item bounded, write down the acceptance test, and stop when the evidence runs out. A baseline is the work's first safety rail — not bureaucracy added around it.
 
@@ -91,33 +91,33 @@ My response is to keep the item bounded, write down the acceptance test, and sto
 - **Failure mode: measuring only production speed.**
   **Why it happens:** typing and generation are visible; verification and rework are delayed.
   **How to detect it:** compare first-draft time with accepted-result time.
-  **How the human responds:** report both, and include defects discovered after the draft.
+  **How I respond:** I report both, and include defects discovered after the draft.
 
 - **Failure mode: making the baseline too elaborate to maintain.**
   **Why it happens:** I try to measure everything before learning what matters.
   **How to detect it:** the log takes longer than the work item or is filled in from memory.
-  **How the human responds:** keep five fields for the next run—elapsed time, interruptions, decisions, rework, and acceptance result.
+  **How I respond:** I keep five fields for the next run — elapsed time, interruptions, decisions, rework, and acceptance result.
 
 - **Failure mode: treating personal memory as shared context.**
-  **Why it happens:** the person who did the work can fill gaps quickly.
+  **Why it happens:** I did the work, so I can fill gaps quickly.
   **How to detect it:** another person cannot reproduce the decision from the artifact.
-  **How the human responds:** write the constraint and the reason into the work item.
+  **How I respond:** I write the constraint and the reason into the work item.
 
 - **Failure mode: delegating before defining authority.**
-  **Why it happens:** “the agent can handle it” replaces a specification.
+  **Why it happens:** I let “the agent can handle it” replace a specification.
   **How to detect it:** nobody can answer what the agent may change, what it may not touch, and who approves the result.
-  **How the human responds:** define permissions, escalation conditions, and the acceptance test before execution.
+  **How I respond:** I define permissions, escalation conditions, and the acceptance test before execution.
 
 - **Failure mode: inventing a before-state.**
   **Why it happens:** a clean number makes the later comparison persuasive.
   **How to detect it:** the number has no timestamp, artifact, or method.
-  **How the human responds:** label it unknown and run a measurement cycle. Unknown is more useful than false precision.
+  **How I respond:** I label it unknown and run a measurement cycle. Unknown is more useful than false precision.
 
 ## Why this matters in 2026
 
 The pressure to skip the baseline is now industrial. Microsoft’s 2025 Work Trend Index reports that, in its Microsoft 365 telemetry, employees were interrupted every two minutes during core work hours—275 interruptions a day—by meetings, email, or chats. The same report says 60% of meetings were ad hoc and that PowerPoint editing rose 122% in the final ten minutes before a meeting. Those are Microsoft’s operational definitions and rolling measurement windows, not universal laws of work. They are still a useful description of the environment many knowledge workers are being asked to improve.
 
-In that environment, an agent can be valuable simply by protecting a boundary: collecting inputs before a focus block, turning a request into a checklist, or preparing a review packet. But the same environment makes bad measurement easy. If the agent drafts while the human is in meetings, elapsed time may fall without attention becoming available. If the system sends more messages, it may reduce one queue while increasing interruption load elsewhere.
+In that environment, an agent can be valuable simply by protecting a boundary: collecting inputs before a focus block, turning a request into a checklist, or preparing a review packet. But the same environment makes bad measurement easy. If the agent drafts while I'm in meetings, elapsed time may fall without my attention becoming available. If the system sends more messages, it may reduce one queue while increasing interruption load elsewhere.
 
 The current moment also rewards claims that are narrower than the marketing. GitHub’s published Copilot research described a controlled experiment in which developers using Copilot completed a specified coding task faster than the control group. That is evidence about that task and study design; it is not proof that every developer, repository, or software problem becomes faster. The transferable lesson is methodological: name the task, the comparison, and the acceptance condition.
 
@@ -133,7 +133,7 @@ But this argument weakens as the work becomes more ambiguous, consequential, or 
 
 The answer is not permanent surveillance. It is a short measurement cycle. Pick a bounded item. Run the old or current workflow enough times to establish a range, not a mythical perfect average. Introduce one change. Keep the acceptance test stable. Record what failed. Stop measuring when the decision is clear. If the result is uncertain, say so.
 
-The skeptical reader is also right about one thing: a baseline can become theater. A spreadsheet of activity is not an explanation of value. The measure must serve a decision—adopt, adapt, reject, or investigate—not decorate a presentation.
+The skeptical reader is also right about one thing: a baseline can become theater. A spreadsheet of activity explains nothing by itself. The measure has to serve a decision — adopt, adapt, reject, or investigate — instead of decorating a presentation.
 
 ## Operator rule
 
@@ -141,13 +141,13 @@ The skeptical reader is also right about one thing: a baseline can become theate
 
 ## Measurable test
 
-For the next five comparable work items, record elapsed time, interruptions, decisions, rework, and whether the acceptance test passed on the first review. Then change one part of the workflow—one tool, one delegation boundary, or one context packet—and record the same fields for five more comparable items.
+For the next five comparable work items, record elapsed time, interruptions, decisions, rework, and whether the acceptance test passed on the first review. Then change one part of the workflow — one tool, one delegation boundary, or one context packet — and record the same fields for five more comparable items.
 
 Call the change an improvement only if all of the following are true:
 
 1. accepted-result time falls or stays within the previous range;
 2. first-review defects do not increase; and
-3. I can explain the result and reproduce the acceptance decision from the artifact.
+3. you can explain the result and reproduce the acceptance decision from the artifact.
 
 If any condition fails, treat it as a signal to inspect the boundary — scope, context, permissions, review, or measurement — not as “the agent failed” or “the human resisted.”
 
