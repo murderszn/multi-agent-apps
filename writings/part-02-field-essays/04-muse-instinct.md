@@ -6,13 +6,13 @@ The remote agent lives in the part of the day when I'm tired, away from the desk
 
 That is the scene I keep returning to. Not the launch video. Not the screenshot of a model completing a spectacular task. The ordinary moment when a person has a question, a half-formed idea, or a piece of work that needs moving, and reaches for the agent that is already part of the person's life.
 
-The interaction might be a message from a phone. It might be a request sent while walking between two rooms. It might be a check-in from an agent working on a machine somewhere else. The form matters because the form changes what gets delegated. A tool that is available only at a desk invites desk-shaped work. A remote agent invites a different relationship: state the job, let the worker go, receive a report, decide what happens next.
+The interaction might be a message from a phone. It might be a request sent while walking between two rooms. It might be a check-in from an agent working on a machine somewhere else. The form matters because the form changes what gets delegated. A tool that is available only at a desk invites desk-shaped work. A remote agent invites a different relationship: state the job, let it go, receive a report, decide what happens next.
 
 That is why Muse clicked for me as a remote-agent idea. What mattered was that the interaction felt close to the way a person actually asks for help — not that it won an argument about intelligence. I could give it a job rather than perform a ceremony around the interface.
 
 I need to be precise here. This is a fit observation, not a controlled productivity study. I am not claiming that Muse is objectively the best agent, that remote access always produces better work, or that a conversational interface is safe by default. I am saying that usability is not decoration. It determines which tool gets used, what work gets attempted, and where the human remains in the loop.
 
-The remote-agent wars are usually framed as a contest among vendors. Which model is smartest? Which company is winning? Which product has the best benchmark, the fastest coding demo, or the most impressive screenshot? Those questions can be useful for narrowing a field. They aren't the question that decides what happens at my desk — or away from it.
+The remote-agent wars are usually framed as a contest among vendors. Which model is smartest? Which company is winning? Which product has the best benchmark, the fastest coding demo, or the most impressive screenshot? Those questions can narrow a field. They don't decide what happens at my desk — or away from it.
 
 The question is smaller and more consequential: **which agent actually lives in your life?**
 
@@ -24,13 +24,11 @@ A real week contains interruptions, ambiguous requests, private material, stale 
 
 This is why “best model” is often a category error. The relevant unit is the whole working system — model, product, permissions, tools, context, cost, latency, and review loop — not the model in isolation.
 
-Anthropic’s launch material for Claude 3.5 Sonnet, for example, described a model’s benchmark performance, context window, availability, and API pricing. Those are useful facts about that release, checked against the company’s announcement. They are not a promise that the model will be the right remote worker for every operator. A model may be excellent at reasoning in a chat and still be a poor fit for a job that requires durable state, controlled access, or a reliable handoff.
+Anthropic’s launch material for Claude 3.5 Sonnet, for example, described a model’s benchmark performance, context window, availability, and API pricing. Those are useful facts about that release, checked against the company’s announcement. A model may be excellent at reasoning in a chat and still be a poor fit for a job that requires durable state, controlled access, or a reliable handoff.
 
 OpenAI’s Codex announcement described a different shape of work: a coding agent that can work on software tasks in its own environment and return results for review. That's a change in where the work happens and how the human receives it — not merely a larger chatbot window. The value is potentially high for tasks with clean repository boundaries. The risks are equally concrete: the task can be misunderstood, the environment can differ from production, and a successful run can be mistaken for a verified result.
 
-These product descriptions are evidence of architecture and intended behavior. They are not evidence of my personal outcome. The distinction matters because agent writing often slides from “the vendor says the system can do X” to “the system did X for me” without showing the bridge between them.
-
-I keep that bridge visible. What was requested? What access was granted? What artifact came back? What was checked? What remains unknown?
+These product descriptions are evidence of architecture and intended behavior — what the vendor says the system can do. Agent writing often slides from “the vendor says the system can do X” to “the system did X for me” without showing the bridge between them, so I keep that bridge visible. What was requested? What access was granted? What artifact came back? What was checked? What remains unknown?
 
 ## Why remote changes the relationship
 
@@ -58,11 +56,11 @@ The market rewards the first impression. Operators live with the return visit.
 
 A screenshot shows the moment when the system succeeded. It rarely shows the tenth request, the stale context, the unclear handoff, or the correction after the first attempt. A benchmark is valuable because it creates a repeatable comparison, but it still represents a task distribution and an evaluation design. It does not tell you whether you will remember to use the system on Tuesday afternoon when the work is messy and your attention is elsewhere.
 
-The useful test is behavioral. Pick a recurring job that is safe to delegate and easy to inspect. Use the candidate agent several times. Record the request, the response time, the artifact or action, the correction required, and the final human decision. Measure whether the workflow remained understandable — not just whether the first answer looked good.
+The useful test is behavioral. I pick a recurring job that is safe to delegate and easy to inspect, use the candidate agent several times, and record the request, the response time, the artifact or action, the correction required, and the final human decision. I measure whether the workflow stayed understandable — not just whether the first answer looked good.
 
-For a remote coding agent, that might mean asking it to inspect a small repository, propose a bounded change, make the patch, run the relevant checks, and return a link or diff. You verify the branch and read the change. For a research agent, it might mean asking for a short evidence brief with source links and a list of unresolved claims. You check the primary sources. For a personal workflow, it might mean drafting a plan without granting permission to send or purchase anything.
+For a remote coding agent, that might mean asking it to inspect a small repository, propose a bounded change, make the patch, run the relevant checks, and return a link or diff. I verify the branch and read the change. For a research agent, it might mean asking for a short evidence brief with source links and a list of unresolved claims. I check the primary sources. For a personal workflow, it might mean drafting a plan without granting permission to send or purchase anything.
 
-The candidate that earns repeat use is not necessarily the most capable in the abstract. It's the candidate whose failure modes are legible, whose output fits the next step, and whose authority can be kept proportional to the risk.
+The candidate that earns repeat use is the one whose failure modes are legible, whose output fits the next step, and whose authority I can keep proportional to the risk.
 
 That is a quiet standard. It is also a real one.
 
@@ -78,7 +76,7 @@ I return to the desk and review the artifact. My review finds that the prose is 
 
 What did the agent accomplish? It reduced the mechanical distance between an intention and a reviewable artifact. What did it not accomplish? It did not decide whether the evidence was sufficient, whether the voice was honest, or whether the chapter belonged in the book. Those decisions stayed mine.
 
-This is the kind of proof case I trust: a bounded request, a visible artifact, explicit failures, and a human decision at the end. It's a workable loop, not a productivity miracle.
+This is the kind of proof case I trust: a bounded request, a visible artifact, explicit failures, and a human decision at the end. A workable loop.
 
 ## What can go wrong
 
@@ -86,7 +84,7 @@ The first failure is usually not spectacular.
 
 A remote agent may select an old outline ticket because it looks similar to the canonical issue. It may read a draft’s claim ledger as proof rather than as a list of claims awaiting verification. It may find a vendor announcement and silently convert a dated capability into a current universal behavior. It may report “research complete” when one official page was inaccessible and no replacement source was found.
 
-These failures are easy to miss because the response sounds finished. The defense is not to make the agent timid. The defense is to make the work inspectable.
+These failures are easy to miss because the response sounds finished. The defense is to make the work inspectable.
 
 **Failure mode: the wrong target.**
 
@@ -185,6 +183,6 @@ For one recurring, low-risk workflow, run the candidate agent at least five time
 
 At the end, keep the agent only if the operator can identify its useful lane, name its recurring failure modes, reproduce the review step, and show that no irreversible action occurred without approval. If the agent is used only for demos, or if the operator cannot explain what it did, it does not live in the workflow yet.
 
-The remote agent is a worker that may be available when I'm not — not a friend waiting for a command. Give it a clear job. Give it a narrow door. Read what comes back.
+The remote agent is a worker that may be available when I'm not — not a friend waiting for a command. I give it a clear job. I give it a narrow door. I read what comes back.
 
 That is how instinct becomes evidence.

@@ -4,11 +4,11 @@
 
 My agents know things about me that I don't want them guessing. Not the way a chatbot "remembers" your name for the length of a session — in a file. I keep a YAML document in my resume repo with my legal name, my address, my work authorization status, my salary band, and a standing rule for the gaps: when an application asks for employment months and only years are known, January for starts, December for ends. Below that, a list of screening answers I've dictated once so I never have to dictate them again. Not a veteran. U.S. citizen. Authorized to work, no sponsorship needed. Fine relocating to California.
 
-When a form asks something the file doesn't answer, the worker stops and asks me. It never guesses a salary number, never invents a work-authorization status, never creates an account in my name without asking. That pause — the machine reaching the edge of what it actually knows and refusing to fill the gap with confidence — is the whole subject of this chapter.
+When a form asks something the file doesn't answer, my agent stops and asks me. It never guesses a salary number, never invents a work-authorization status, never creates an account in my name without asking. That pause — the machine reaching the edge of what it actually knows and refusing to fill the gap with confidence — is the whole subject of this chapter.
 
 Because here's the thing most people get backwards about AI systems: the model was never the hard part. The hard part is what you put in front of it. I can hand my agent the entire internet and it will still fail if the one paragraph that matters — the salary band, the don't-guess rule — isn't in front of it at the moment of the decision. And I can hand it a single page and watch it succeed, if that page is the right page.
 
-That page has three names depending on what job it's doing. Context is the material placed in front of the model right now. Retrieval is the deliberate act of finding the material that belongs there. Memory is the material the system carries forward between moments — like my YAML file. They're related, but they're not interchangeable, and confusing them is how people build systems that sound informed while quietly losing the plot.
+That page has three names depending on what job it's doing. Context is the material placed in front of the model right now. Retrieval is the deliberate act of finding the material that belongs there. Memory is the material the system carries forward between moments — like my YAML file. They're related, but they're different jobs, and confusing them is how people build systems that sound informed while quietly losing the plot.
 
 ## The promise of this chapter
 
@@ -37,7 +37,7 @@ So the first question I ask isn't "How much context can this model take?" It's "
 
 Retrieval is how my YAML file gets into the room at the moment it matters. It's the process of finding candidate information from a larger body of material and placing selected pieces into the working context. It can be as plain as searching filenames and reading a few documents. It can use keyword search, metadata filters, a database query, or embeddings. An embedding turns text into a numerical representation intended to capture some semantic relationships; a vector index can then find passages that are near a query in that representation.
 
-The mechanism is less important than the boundary, and the boundary is the part I want you to remember: retrieval is a selection system. It chooses what the model gets to see. It is not a truth machine.
+The mechanism is less important than the boundary, and the boundary is the part I want you to remember: retrieval is a selection system. It decides what the model gets to see — and it can decide wrong.
 
 The foundational RAG paper by Lewis and colleagues describes retrieval-augmented generation as combining a model's learned, parametric memory with an explicit non-parametric memory accessed through a retriever. The paper's motivation is practical: model parameters are limited as a precise and updateable store of knowledge, and retrieved evidence can provide access to external material and provenance. The paper reports gains on knowledge-intensive tasks in its evaluated setup. That does not mean every retrieval system improves every task. It means the architecture gives us a way to expose evidence that is outside the model's weights.
 
@@ -59,31 +59,21 @@ When I say an agent "remembers," I might mean four different systems, and I try 
 
 **External memory** is information kept in files, databases, issue trackers, or other systems — like my YAML profile. It can outlive a model call and be inspected by people. This is usually the most accountable form because it has an owner and an audit trail.
 
-**Parametric memory** is what the model has encoded in its learned parameters. It is not a searchable notebook with a visible citation for every fact. It can be broad and useful, but it is difficult to update at the level of one claim and difficult to inspect directly.
+**Parametric memory** is what the model has encoded in its learned parameters. It comes with no search box and no citation trail behind any single fact. It can be broad and useful, but it is difficult to update at the level of one claim and difficult to inspect directly.
 
 These layers fail differently, which is why I don't let myself call them all "memory" without thinking. Working memory can be overloaded. Conversation memory can preserve a misunderstanding. External memory can become stale or permission-sensitive. Parametric memory can be confidently wrong or out of date. Calling all of them memory hides the controls each one needs.
 
 The practical rule I run on: store decisions and durable facts outside the model when they matter, and make the model retrieve them when needed. Don't ask an opaque generation call to be the sole system of record. If a decision can't be reconstructed from an artifact, a source, or a human owner, it isn't operational memory yet. It's a sentence that happened.
 
-## The working example: a chapter worker
+## The working example: a job application
 
-Let me show you the same three ideas running inside the system that drafted this chapter — I set it up this way on purpose, so the example is honest.
+I run the same three-idea system every time an agent files an application for me. The assignment is never "go apply to something." It is a packet: the task-board entry naming the posting and its requirements, my profile file with the answers I have already dictated, and my standing rules — never guess a salary number, never invent a work-authorization status, never create an account in my name without asking.
 
-The assignment I gave it wasn't "write something interesting about AI." It specified a canonical queue, a target range, a voice, a template, research boundaries, a claim ledger, a measurable operator test, and a GitHub workflow. The worker had to act inside those constraints — constraints I defined, because the human decision points were mine to keep.
+That packet is the context, and it is small on purpose. My agent does not load the whole board, my entire career history as an essay, or every job I have ever considered. Just the posting, the profile, and the rules. When the form asks a screening question the profile answers — the salary band, the January/December rule, the "not a veteran" line — my agent reads the YAML file and enters the answer verbatim. That is retrieval: finding the one paragraph that matters at the moment the decision is made. The profile file itself, plus the shared board where every application lands with a status, is the memory — the part that outlives the run, the part I can read, and the part I can correct.
 
-The input set got assembled in stages, and the staging is the whole point:
+The important decision was what not to include. Selecting the smallest complete set of material that allows the next decision is the least glamorous and most useful part of the whole operation.
 
-1. The book guide defined the editorial standard and prohibited invented experiences, metrics, tool behavior, and outcomes.
-2. GitHub issue inspection identified issue 44 as the lowest-numbered open canonical chapter ticket after archived outline issues were excluded.
-3. The matching Markdown template defined the required sections.
-4. The repository state, including neighboring chapter outlines, supplied local structure and tone.
-5. Primary research supplied evidence about long-context behavior and retrieval-augmented generation.
-
-The important decision was what not to include. The worker didn't load every issue, every historical chapter, or the entire repository into one prompt. It used the queue to choose the task and the template to choose the shape. It used targeted reads to understand the local manuscript. It used source pages for specific technical claims. This is context engineering in its least glamorous and most useful form: selecting the smallest complete set of material that allows the next decision.
-
-There was also a failure, and I kept it in because the failure is instructive. The first web research route was unavailable — the configured web-search service lacked credentials. The worker didn't turn that failure into a fabricated citation or pretend the search had succeeded. It diagnosed the external blocker and used a narrower, inspectable route: direct retrieval of the arXiv records and official documentation pages through `curl`. That workaround didn't make every source equally strong. It did make the evidence path visible.
-
-The human checkpoints stayed where I put them. I defined the book's voice and boundaries. The worker selected a canonical ticket according to the stated queue rule and chose which local files and sources were relevant. I still have to review whether the drafted interpretation is faithful, whether the sources really support the claims, and whether the chapter belongs in the manuscript. The system accelerated selection and composition. It didn't transfer authorship or accountability — those are still mine.
+The failure this boundary caught is one I tell in full in the tools chapter, so here is the short version. One company's application asked "how did you hear about us," and my standing answer was not among the options. My agent found the closest match and stopped. The retrieval did its job — it found a candidate. The rule did its job — it refused the candidate, because the closest match on a source-of-hire question is a small lie, and small lies in hiring systems compound. Retrieval selects. It does not decide.
 
 ## What can go wrong
 
@@ -147,7 +137,7 @@ You're right about one thing: not every task deserves a research apparatus. If t
 
 But that argument supports proportional controls, not no controls. The test I use is whether the cost of verification is lower than the cost of being wrong. For a disposable draft, light review may be enough. For a production change, a policy answer, a financial decision, or a manuscript claim, source visibility and change history are cheap compared with an invisible error.
 
-The uncertain part is generalization, and I'll state it plainly: a result from one model, corpus, retriever, or task doesn't establish performance for another. The long-context research identifies a risk, not a universal ranking of systems. The RAG research establishes an evaluated architecture and reported results, not a guarantee for a local index. Good operators keep those boundaries visible — including me.
+The uncertain part is generalization, and I'll state it plainly: a result from one model, corpus, retriever, or task doesn't establish performance for another. The long-context research identifies a risk, not a universal ranking of systems. The RAG research establishes an evaluated architecture and reported results, not a guarantee for a local index. I try to keep those boundaries visible — including in this chapter's own ledger.
 
 ## Operator rule
 
@@ -178,14 +168,6 @@ The curated workflow passes only if it improves source-supported correctness and
   - **Source:** Lewis et al., *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*, arXiv:2005.11401, https://arxiv.org/abs/2005.11401
   - **Last checked:** September 22, 2026
   - **Boundary:** The reported results belong to the paper's architecture, data, and evaluation setup.
-
-- **Claim:** The chapter worker selected issue 44 by inspecting the repository's open canonical issue queue, excluding archived outline issues, and reading the matching template.
-  - **Source:** Repository run in `murderszn/multi-agent-apps`; issue 44 and `writings/part-01-crash-course/02-context-retrieval-memory.md`.
-  - **Last checked:** September 22, 2026
-
-- **Claim:** The research search service was unavailable in this run and direct source retrieval through official pages was used as a workaround.
-  - **Source:** Tool output from the run; direct retrieval of the two arXiv records and official documentation pages.
-  - **Last checked:** September 22, 2026
 
 - **Number/date:** The target manuscript length is 2,500–4,000 words; the source records identify submission or revision dates shown on their arXiv pages.
   - **First-party sources:** The canonical template and the linked arXiv records above.

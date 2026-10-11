@@ -22,13 +22,13 @@ That's useful. It's also dangerous in the ordinary way delegation is dangerous. 
 
 My response isn't nostalgia for manual typing. It's a stronger operating loop:
 
-1. State the outcome and the boundary.
-2. Ask the agent to inspect before changing.
-3. Make the change small enough to review.
-4. Read the diff, not just the explanation.
-5. Run tests that can fail for meaningful reasons.
-6. Exercise the edge cases the happy path hides.
-7. Keep or reject the change explicitly.
+1. I state the outcome and the boundary.
+2. I ask the agent to inspect before changing.
+3. I keep the change small enough to review.
+4. I read the diff, not just the explanation.
+5. I run tests that can fail for meaningful reasons.
+6. I exercise the edge cases the happy path hides.
+7. I keep or reject the change explicitly.
 
 "Vibe" is an acceptable name for the first pass. It doesn't qualify as a quality standard for the last pass.
 
@@ -44,7 +44,7 @@ Forget advanced concerns — those are the floor beneath the demo.
 
 The model will often make the happy path feel complete because the happy path is legible. It has a beginning, a middle, and a satisfying result. Durability is less cinematic. It's a collection of decisions about invalid states, recovery, authorization, observability, and maintenance.
 
-This is where my work moved. Fast generation became common enough that speed alone stopped distinguishing a serious operator from a careless one. The scarce resource isn't the ability to produce code. It's the ability to recognize which code is merely convincing and which code is fit for the stated use. I think of it as the difference between generating and judging — and judging is the job now.
+This is where my work moved. Fast generation became common enough that speed alone stopped distinguishing careful work from careless work. The scarce resource is the ability to recognize which code is merely convincing and which code is fit for the stated use. I think of it as the difference between generating and judging — and judging is the job now.
 
 A useful prompt therefore names the non-demo conditions. I ask for input validation, explicit failure behavior, tests, and a description of assumptions. I ask the agent to show me the files it plans to change before it changes them. I ask for a small patch rather than an unsolicited rewrite. None of those requests guarantees a good result. They create surfaces on which a bad result can be seen.
 
@@ -52,7 +52,7 @@ A useful prompt therefore names the non-demo conditions. I ask for input validat
 
 A demo prompt describes an image: "Build a clean dashboard that lets me filter these records." A stability prompt describes a responsibility: "Build the smallest dashboard that filters these records. Inspect the existing data shape first. Do not change the schema. Treat missing data as an empty state, reject invalid filter values, preserve the current authorization boundary, add tests for empty and malformed input, and report what you could not verify."
 
-The second prompt isn't magic. It's a better contract.
+The second prompt is a better contract.
 
 The distinction matters because agents tend to optimize for the visible request unless the invisible obligations are made explicit. That's a property of underspecified work, not a moral failure by the machine. If I request a button, the agent can add a button. If I request a dependable operation with a defined failure mode, the agent has more constraints to reason about — and I have more things to check.
 
@@ -65,13 +65,13 @@ The practical unit of work isn't "make an app." It's a change with a boundary. T
 
 The fourth question is the one that disappears in a polished agent transcript. A generated explanation can be accurate, incomplete, or wrong. It's a useful index into the patch, not a substitute for the patch. I treat "all tests passed" as a claim that needs context: which tests, against what environment, with what coverage, and did the tests exercise the risk that motivated the change?
 
-A responsible agent workflow also separates read authority from write authority. My agents can inspect broadly and edit narrowly. They can propose a plan without receiving permission to touch unrelated files. They can run a test suite without receiving permission to deploy. These boundaries aren't bureaucracy. They're how I keep a fast worker from turning a local misunderstanding into a repository-wide event.
+A responsible agent workflow also separates read authority from write authority. My agents can inspect broadly and edit narrowly. They can propose a plan without receiving permission to touch unrelated files. They can run a test suite without receiving permission to deploy. These boundaries are how I keep a fast worker from turning a local misunderstanding into a repository-wide event.
 
 ## The repository is part of the proof
 
-My own project makes the difference visible. The Human 2.0 manuscript is organized into canonical chapters, while the former outline is explicitly preserved as an archive. The chapter issue identifies the target file, the definition of done, and the requirement for an evidence ledger. That's not an ornamental process. It's an executable description of what "finished" means for this work — I wrote it that way because I needed the workers to know.
+My own project makes the difference visible. The Human 2.0 manuscript is organized into canonical chapters, while the former outline is explicitly preserved as an archive. The chapter issue identifies the target file, the definition of done, and the requirement for an evidence ledger. It's an executable description of what "finished" means for this work — I wrote it that way because I needed the workers to know.
 
-The chapter file starts as a structured draft. It carries an issue link, an editorial hook, a working example, failure modes, a section on why the topic matters now, a skeptical-reader response, an operator rule, a measurable test, and an evidence ledger. The document isn't complete merely because paragraphs exist. It's complete when the claims, structure, and checks are visible enough for another person — me — to review.
+The chapter file starts as a structured draft. It carries an issue link, an editorial hook, a working example, failure modes, a section on why the topic matters now, a skeptical-reader response, an operator rule, a measurable test, and an evidence ledger. The document is complete when the claims, structure, and checks are visible enough for another person — me — to review.
 
 That's the same pattern as an agent-built software change. The artifact needs a boundary, a reason, an inspection path, and evidence. A good agent can help produce all four. It can't own the meaning of them. I do that part.
 
@@ -87,13 +87,13 @@ The first implementation produces a visible interface and the expected result fo
 
 - An empty data source produces a confusing blank region rather than a deliberate empty state.
 - The filter accepts values outside the supported set.
-- The operation leaves no useful record of what happened, so a later operator can't distinguish "no matches" from "the query failed."
+- The operation leaves no useful record of what happened, so I can't distinguish "no matches" from "the query failed."
 
 I ask for those cases explicitly. The agent adds an empty state, validation, and structured logging that respects the existing privacy boundary. I review again and discover the validation is too strict for a real value already present in the data. That's an important failure, and it's the reason the human stays in the loop: the agent followed a plausible interpretation of the specification; I knew the specification was incomplete.
 
 The rule gets adjusted. Tests cover populated data, no matching records, an empty source, and invalid input. I run the tests and then perform one manual check using a record shape the fixture didn't represent. The tool ships only after I can explain what happens in each case.
 
-Nothing in this example requires pretending the agent had a personal insight or that I achieved a measured productivity miracle. The evidence is the sequence of requested behavior, changed artifact, test result, and human decision. That's enough. The point isn't that an agent always follows this sequence. The point is that a trustworthy workflow makes it difficult to skip.
+Nothing in this example requires pretending the agent had a personal insight or that I achieved a measured productivity miracle. The evidence is the sequence of requested behavior, changed artifact, test result, and human decision. That's enough. The point is that a trustworthy workflow makes it difficult to skip.
 
 What failed? The first pass optimized for the visible success case. The second pass encoded an assumption too aggressively. The tool improved because I recognized both failures. The agent was valuable as a fast implementer. It was never the authority on what the data meant.
 
@@ -173,7 +173,7 @@ Sometimes it is, and the phrase shouldn't be used to disguise weak engineering. 
 
 This is the strongest objection, and it's right about the bottleneck. Agents reduce some implementation cost; they don't eliminate domain knowledge, judgment, or accountability. I can build a small personal tool with a modest review burden. I shouldn't place an agent-generated system in a high-consequence setting without the ability and the process to examine it.
 
-It is not a failure of the tool. It is a boundary around responsible use. I keep that boundary because I've seen what happens without it.
+It's a boundary around responsible use. I keep that boundary because I've seen what happens without it.
 
 ## Notes
 
