@@ -8,7 +8,7 @@ My lab says otherwise. A model is a file, a set of operations, and a workload. I
 
 I've learned this from my own operation, not from a heroic benchmark. The earlier chapters in this book move from models that represent and predict, to context and retrieval, to tools that let a model act, and then to coordination and verification. Each step adds an operational surface, and I pay for every one of them. The tool-using worker isn't only a model call; it's a model call plus a runtime, credentials, state, latency, and a receipt. The coordinated system isn't only several calls; it's also the cost of moving information between them and checking the result.
 
-That's the lived proof I can offer: my agent systems are built from ordinary machines, cloud services, boards, repositories, and repeated runs. The system works only when those pieces agree. A cheap call that can't finish a task isn't cheap. A powerful call that produces no verifiable improvement isn't intelligence; it's overhead with a persuasive interface.
+That's the lived proof I can offer: my agent systems are built from ordinary machines, cloud services, boards, repositories, and repeated runs. The system works only when those pieces agree. A cheap call that can't finish a task still shows up in the ledger. A powerful call that produces no verifiable improvement is overhead wearing a persuasive interface.
 
 This chapter's promise is simple: by the end, you should be able to choose where intelligence runs — on your computer, in a rented cloud, or behind a provider API — based on workload, evidence, and total cost rather than prestige. You should also know what the hardware does *not* tell you. A larger GPU does not guarantee a more truthful answer. A cheaper token does not guarantee a cheaper workflow. A local model does not automatically make your data private. Every one of those statements requires a boundary and a test, and I'll show you how I set them.
 
@@ -56,9 +56,9 @@ Cloud capacity introduces another operational dependency: availability. The mach
 
 An API is the easiest place to start. You send a request and pay according to a provider's published or account-specific terms. The provider manages hardware, model serving, upgrades, and much of the scaling.
 
-The trade is less control. The model version may change. Rate limits may shape your architecture. Data handling depends on the provider's contract and configuration. Pricing may differ between input and output tokens, cached and uncached input, or standard and priority service. A multi-step agent can turn one user request into many billable calls, plus retries and verification.
+The API is a metered dependency: I trade control for someone else carrying the hardware and the operations. The model version may change. Rate limits may shape your architecture. Data handling depends on the provider's contract and configuration. Pricing may differ between input and output tokens, cached and uncached input, or standard and priority service. A multi-step agent can turn one user request into many billable calls, plus retries and verification.
 
-The API isn't "serverless intelligence." It's a metered dependency. The right question isn't whether the price per token looks small. It's whether the complete task produces enough value per successful run, after retries, tool calls, review, and failures.
+The price per token looking small settles nothing. The number I need is the complete task's value per successful run — after retries, tool calls, review, and failures.
 
 ## A cost model that does not lie to you
 
@@ -85,7 +85,7 @@ For local hardware:
 
 These equations are deliberately boring. Boring is good. They force the hidden work into the ledger.
 
-Take an agent that uses a planning call, three research calls, a drafting call, and a verification call. Even without assigning a price, that's six model calls. If the first researcher fails and gets retried, it's seven. If the verifier asks for a correction and the draft runs again, it's eight. A product that quotes the price of "one request" hasn't priced your workflow.
+I run the same arithmetic on my own agents. Say one uses a planning call, three research calls, a drafting call, and a verification call. Even without assigning a price, that's six model calls. If the first researcher fails and gets retried, it's seven. If the verifier asks for a correction and the draft runs again, it's eight. A product that quotes the price of "one request" hasn't priced my workflow.
 
 I don't fill the ledger with invented numbers. I pull current prices from the provider's official pricing page, then measure my own token counts and wall-clock behavior. Prices change. Model names change. A claim like "this workflow costs two cents" is incomplete unless it includes the date, provider, model, units, and assumptions.
 
@@ -99,7 +99,7 @@ A cheaper model that needs extensive repair can lose to a more expensive model t
 
 ## A working example: the manuscript pipeline
 
-Take the worker that drafts these chapters. It selects a GitHub issue, reads a template, researches a topic, writes Markdown, runs checks, commits, pushes, opens a pull request, and links that pull request back to the issue. The model is only one component, and honestly it's not even the interesting one.
+The worker that drafts these chapters is the proof I run every day. It selects a GitHub issue, reads a template, researches a topic, writes Markdown, runs checks, commits, pushes, opens a pull request, and links that pull request back to the issue. The model is only one component, and honestly it's not even the interesting one.
 
 The inputs include the issue body, repository files, current sources, and the editorial guide. The tools include Git, GitHub CLI, file operations, and web retrieval. The outputs include a manuscript file, a commit, a branch, a pull request, and an issue comment. I keep the human decisions at the boundary: whether the evidence supports the claim, whether the prose sounds like me, and whether a change should merge.
 
@@ -109,7 +109,7 @@ The pipeline also has a failure that belongs specifically to infrastructure. If 
 
 That definition changes hardware choices. For this task, local execution may be adequate for editing and deterministic checks. A provider API may be useful for research synthesis. A cloud GPU is justified only if the workload includes a model or batch operation that demonstrably benefits from it. Renting an accelerator for the status of running an AI lab would be theater, and I've seen enough theater.
 
-The same reasoning applies to a customer-support worker, a coding agent, or a job-search pipeline. Name the artifact that proves success. Price the whole path to that artifact.
+The same reasoning applies to a customer-support worker, a coding agent, or a job-search pipeline. I name the artifact that proves success, then price the whole path to it.
 
 ## What failed, and how I catch it
 
@@ -165,7 +165,7 @@ Choose the environment by workload, evidence, and cost — not by the largest mo
 
 For one representative task, I run at least three configurations: a local or smaller model, a hosted API, and — only if relevant — a rented accelerator. I record the model version, hardware or service, input and output tokens, wall-clock latency, total billed or allocated cost, tool calls, retries, human correction time, and whether the result passed the same acceptance test.
 
-I repeat each configuration enough times to reveal ordinary variation, then calculate cost per accepted result, and I keep the raw run records. The winner isn't the configuration with the cheapest token or the fastest demo. It's the one that meets the quality, privacy, latency, and accountability requirements at a cost I can defend.
+I repeat each configuration enough times to reveal ordinary variation, then calculate cost per accepted result, and I keep the raw run records. The winner is the configuration that meets the quality, privacy, latency, and accountability requirements at a cost I can defend — not the one with the cheapest token or the fastest demo.
 
 The lab has a power bill. I put it in the experiment log.
 
