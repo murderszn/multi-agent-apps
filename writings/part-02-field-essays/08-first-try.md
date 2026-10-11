@@ -2,26 +2,19 @@
 
 ## Opening scene
 
-The first attempt looked like progress.
+I have agents that apply to jobs and review repos. I still sit there regenerating answers.
 
-An issue said what the chapter needed. The repository had a place for it. The branch existed. The agent had enough context to begin. The obvious move was to generate the chapter, scan it for obvious mistakes, and call the work done.
+That line comes from the old outline for this chapter, and it is the most honest sentence in the file. The agents are out doing the work — one applying to jobs, one reviewing repos — while I sit at my desk regenerating a draft, comparing two paragraphs by feel, picking the one that sounds more confident.
 
-That is the trap.
+The first attempt looked like progress. It had headings. It had sentences that sounded like the right sentences. It even had a conclusion. The relief it gave me was the trap: the artifact told me the hard part was over before I had checked whether it answered the actual question.
 
-The first attempt is often the most dangerous version of the work because it is coherent enough to create relief. It has headings. It has sentences that sound like the right sentences. It may even contain a conclusion. The artifact gives me the feeling that the hard part is over before I've checked whether the artifact answers the actual question.
+The first attempt is often the most dangerous version of the work, because it is coherent enough to create that relief. So the argument of this chapter is simple, and it is mine: I don't ask whether the agent got it right on the first try. I ask whether the workflow makes the first try cheap to inspect, safe to reject, and informative enough to improve.
 
-This chapter began with a small proof of that problem. The repository's canonical issue for this chapter did not point to a blank page. It pointed to an archived outline. The current queue had moved on from the old 41-chapter structure, but the matching file named in the new issue did not yet exist in the canonical directory. The issue was current; the template was historical. The first response to that mismatch could have been to draft into the old file and preserve the old shape by accident.
-
-Instead, the mismatch became the work. Inspect the issue. Inspect the architecture. Pull the current branch. Compare the archive with the new book rules. Find the gap. Only then write.
-
-Less dramatic than “the agent wrote a chapter.” Closer to what reliable work looks like. The first try is not the deliverable. It is a probe. It tells me what the system understood, what it missed, and what I must decide before another attempt.
-
-The core argument is simple: **do not ask whether the agent got it right on the first try. Ask whether the workflow makes the first try cheap to inspect, safe to reject, and informative enough to improve.**
 ## Fluency hides the first failure
 
 A language model is optimized to produce a plausible continuation. An agent wrapped around a language model can also read files, call tools, edit a branch, and report completion. None of that changes the basic operational fact: a polished output can be wrong in ways that are difficult to notice from the output alone.
 
-The failure can be a wrong target, a missing constraint, a stale template, an untested assumption, or an answer that satisfies the words of the request while missing its purpose — not just a hallucinated fact.
+The failure can be a wrong target, a missing constraint, a stale template, an untested assumption, or an answer that satisfies the words of the request while missing its purpose. Hallucinated facts are the least of it.
 
 In this book repository, the relevant constraints were not all in one place. The issue specified the canonical chapter, its location, and a target length. The architecture document said the book had been tightened into three parts and that every chapter should end with an operator rule and measurable test. The guide required current research, a claim ledger, failure reporting, and no invented personal experience. The archived outline supplied useful editorial prompts but belonged to the old structure.
 
@@ -35,7 +28,7 @@ My first job is making the target legible — not praising or punishing the pros
 
 Many workflows treat regeneration as quality control. I read an answer, dislike a paragraph, and ask for a better version. The model produces another answer. I compare the two by feel. If the second sounds more confident, it wins.
 
-That's aesthetic drift, not iteration.
+That is aesthetic drift, not iteration. The second version wins the comparison, and I have learned nothing either way.
 
 A useful retry changes one of four things:
 
@@ -50,15 +43,15 @@ This is why “try again” is a weak instruction. “Try again, using the canon
 
 ## The first attempt should be designed to fail visibly
 
-A good workflow makes failures small and observable instead of trying to eliminate every early failure.
+I don't try to eliminate every early failure. I make failures small and observable.
 
-For writing, that means drafting on a branch, preserving the source files, keeping an evidence ledger, and using headings that expose missing sections. For code, it means a failing test, a small diff, and a command that can be rerun. For research, it means recording the source, claim, date checked, and the distinction between a primary result and public discussion.
+For writing, that means I draft on a branch, preserve the source files, keep an evidence ledger, and use headings that expose missing sections. For code, it means a failing test, a small diff, and a command I can rerun. For research, it means I record the source, the claim, the date I checked it, and whether it is a primary result or public discussion.
 
 Visibility matters because an agent's own completion statement is not an independent verifier. “Done” means the agent reached the end of its procedure. Whether the artifact meets my purpose is a separate question.
 
 The repository made that visible in a mundane way. The expected file was absent from the current canonical tree. The archive contained the older outline and several older drafts. GitHub contained the current issue queue. Those facts were not interchangeable. The missing file was a signal to inspect — not permission to invent a history for the chapter.
 
-I want the first try to answer questions such as:
+I want the first try to answer questions like these:
 
 - Did the agent use the current target or a stale one?
 - Which sources shaped the claim?
@@ -94,13 +87,13 @@ The first pass was reconnaissance, not “write 3,000 words.”
 
 **Pass one: establish the target.** The issue identified “The First-Try Problem” as the lowest-numbered open canonical chapter issue. Its definition of done required a lived scene or proof case, a 2,500–4,000-word draft, plain-language mechanics, a working example, failure analysis, a section titled “Why this matters in 2026,” a claim/evidence ledger, an operator rule, a measurable test, and QA. The architecture document added the larger manuscript rules: use the lab and lived result as the spine, distinguish the current 20-chapter queue from the archived 41-chapter outline, and do not invent experiences or outcomes.
 
-**Pass two: locate the evidence.** The current canonical directory did not contain the named file. The archive did contain the older outline. That outline was useful for the editorial hook—“We have agents that apply to jobs and review repos. We still sit there regenerating answers”—but it was not the current template. The difference mattered. The current chapter needed to include the new manuscript's operator rule, measurable test, and evidence discipline. The archive could inform the subject; it could not silently define the book.
+**Pass two: locate the evidence.** The current canonical directory did not contain the named file. The archive did contain the older outline. That outline was useful — it supplied the opening scene — but it was not the current template. The difference mattered. The current chapter needed to include the new manuscript's operator rule, measurable test, and evidence discipline. The archive could inform the subject; it could not silently define the book.
 
 **Pass three: research the mechanism.** The public technical record supports a cautious version of the argument. Anthropic's “Building effective agents” material describes patterns for building reliable agents and distinguishes simpler workflows from more autonomous arrangements. OpenAI's evaluation documentation frames evals as a way to test and improve model outputs. The SWE-bench paper introduced a benchmark of 2,294 real-world software engineering problems drawn from 12 Python repositories. These sources support the need for evaluation and the difficulty of judging agentic work; they do not prove that one particular agent, model, or retry strategy will succeed in this repository.
 
-That distinction is the whole point. A source can establish what a benchmark measured. It cannot establish what happened in our run unless our run produced the artifact and measurement.
+That distinction is the whole point. A source can establish what a benchmark measured. Only an artifact from my own run can establish what happened in it.
 
-**Pass four: draft and inspect.** The chapter was written on a branch. It names the repository discovery as repository evidence, not as my personal memory. It does not claim that an agent completed a job application, fixed a bug, or improved a metric unless an artifact demonstrates that outcome. It makes the failure boundary explicit: an agent can follow a stale template with confidence; a human must resolve the conflict between local instructions and current architecture.
+**Pass four: draft and inspect.** The chapter was written on a branch. It names the repository discovery as repository evidence, not as my personal memory. It does not claim that an agent completed a job application, fixed a bug, or improved a metric unless an artifact demonstrates that outcome. It makes the failure boundary explicit: an agent can follow a stale template with confidence; I must resolve the conflict between local instructions and current architecture.
 
 It's a reproducible workflow, even if it isn't glamorous. The workflow is inspectable: the issue, the architecture file, the archive, the branch, and the sources are all there. Anyone who disagrees with the argument can check the work without having to guess what happened.
 
@@ -109,27 +102,27 @@ It's a reproducible workflow, even if it isn't glamorous. The workflow is inspec
 - **Failure mode: the agent uses the nearest file rather than the canonical file.**
   - **Why it happens:** filenames are suggestive, archives look authoritative, and context windows reward whatever was included.
   - **How to detect it:** compare the path named by the issue with the tracked tree; check status markers, issue numbers, and architecture documents.
-  - **How the human responds:** stop drafting, establish precedence, and record the mismatch as part of the evidence.
+  - **How I respond:** I stop drafting, establish precedence, and record the mismatch as part of the evidence.
 
 - **Failure mode: regeneration changes tone but not truth.**
   - **Why it happens:** I give a stylistic instruction—“make it sharper”—when the real problem is missing evidence or a wrong target.
   - **How to detect it:** compare claims and sources, not adjectives. If the unsupported claim remains, the retry did not solve the problem.
-  - **How the human responds:** change the input, constraint, procedure, or evaluator.
+  - **How I respond:** I change the input, the constraint, the procedure, or the evaluator.
 
 - **Failure mode: a benchmark becomes a promise.**
   - **Why it happens:** a published number is memorable, while its task definition and limitations are easy to omit.
   - **How to detect it:** ask what was measured, on which tasks, under what setup, and whether the claim is about the benchmark or the present workflow.
-  - **How the human responds:** narrow the sentence and link the primary source.
+  - **How I respond:** I narrow the sentence and link the primary source.
 
 - **Failure mode: the agent invents the missing lived scene.**
   - **Why it happens:** the requested voice implies a personal history, but the source material does not contain one.
   - **How to detect it:** flag first-person claims that have no supplied note, log, artifact, or clearly attributed source.
-  - **How the human responds:** write from repository evidence, use a labeled proof case, or leave the personal claim out. A convincing fiction is still a false record.
+  - **How I respond:** I write from repository evidence, use a labeled proof case, or leave the personal claim out. A convincing fiction is still a false record.
 
 - **Failure mode: completion is confused with acceptance.**
   - **Why it happens:** tool calls return success, a file appears, or a pull request opens.
   - **How to detect it:** run the checks and inspect the diff. Confirm the artifact is in the right place, the links work, and the issue checklist is actually satisfied.
-  - **How the human responds:** reject the artifact without treating rejection as failure of the whole system. The rejection is the system doing its job.
+  - **How I respond:** I reject the artifact without treating the rejection as failure of the whole system. The rejection is the system doing its job.
 
 ## Why this matters in 2026
 
@@ -139,7 +132,7 @@ That changes the economics of work. If generation is cheap but review is expensi
 
 It also changes the meaning of speed. Speed is not the time until the model stops typing. Speed is the time from request to a trustworthy decision. Sometimes the fastest path is to reject the first result immediately because it used the wrong source. Sometimes the fastest path is to let a small agent workflow produce a rough artifact and use that artifact to expose the missing requirements. The correct choice depends on the cost of inspection and the consequences of being wrong.
 
-The pressure to regenerate will increase because the interface makes retrying frictionless. That convenience is useful for low-stakes drafting. It is dangerous for decisions, code, research, security, hiring, finance, and any work where a plausible error can travel farther than its correction.
+The pressure to regenerate will increase because the interface makes retrying frictionless. That convenience serves low-stakes drafting fine. It turns dangerous for decisions, code, research, security, hiring, finance, and any work where a plausible error can travel farther than its correction.
 
 So I give every attempt a boundary — what it may change, what it must show, and what causes my rejection — instead of stopping using agents.
 
